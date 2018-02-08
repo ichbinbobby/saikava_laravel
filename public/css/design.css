@@ -1,0 +1,89 @@
+/* design.css */
+body{
+  background-color: #85eaa6;
+  font-family: Tahoma, Lucida, Helvetica, Arial, Verdana;
+}
+
+h2{
+  color: #fdfea5; /* rot */
+  font-family: Tahoma, Lucida, Helvetica, Arial, Verdana;
+}
+
+h2:hover {
+  color: #D138BF;
+  text-decoration: none;
+}
+
+a:hover{
+  text-decoration: none;
+}
+
+#banner{
+  text-align: center;
+  background-image: url('/images/saikava_banner.png');
+  background-size: cover;
+  padding: 150px;
+  width: 100%;
+  top: 0;
+}
+
+#banner h1{
+  font-size: 100px;
+  text-shadow: 1px 1px 1px black;
+  text-align: center;
+  font-family: Tahoma, Lucida, Helvetica, Arial, Verdana;
+}
+
+#banner p{
+  font-size: 25px;
+  color: #f459bf;
+}
+
+#banner a{
+  color: #f459bf; /* DVA Spray Color */
+}
+
+#banner a:hover {
+  text-decoration: none;
+  color: #D138BF;
+}
+
+#container {
+  text-align: center;
+}
+
+.footer{
+  background: #51567b;
+  color: lightgrey;
+  display: inline-flex;
+  width: 100%;
+}
+
+#contact{
+  padding: 30px;
+  height: 150px;
+  min-width: 200px;
+}
+
+#centerFooter{
+  width: 80%;
+}
+
+.left{
+  float: left;
+}
+
+.right{
+  float: right;
+}
+
+/*
+color code:
+#44CCFF blue
+#D138BF lila
+#35FF69 grün
+#C9F0FF sehr helles blau
+#FA7921 orange
+#e86c60 herzrot
+#FF3366 schönes rot
+*/
