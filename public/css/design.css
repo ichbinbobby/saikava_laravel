@@ -1,62 +1,71 @@
 /* design.css */
-body{
-  background-color: #85eaa6;
-  font-family: Tahoma, Lucida, Helvetica, Arial, Verdana;
+html, body {
+  margin:0;
+  padding:0;
+  height:100%;
+  background-color:#85eaa6;
 }
 
-h2{
-  color: #fdfea5; /* rot */
-  font-family: Tahoma, Lucida, Helvetica, Arial, Verdana;
-}
-
-h2:hover {
-  color: #D138BF;
-  text-decoration: none;
-}
-
-a:hover{
-  text-decoration: none;
-}
-
-#banner{
-  text-align: center;
-  background-image: url('/images/saikava_banner.png');
-  background-size: cover;
-  padding: 150px;
+.header {
   width: 100%;
-  top: 0;
+  height: 50%;
+  overflow: hidden;
 }
 
-#banner h1{
-  font-size: 100px;
+.headline {
+  position: absolute;
+  text-align: center;
+  font-size: 10em;
   text-shadow: 1px 1px 1px black;
-  text-align: center;
-  font-family: Tahoma, Lucida, Helvetica, Arial, Verdana;
+  z-index: 499;
+  color: white;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%,-50%);
 }
 
-#banner p{
-  font-size: 25px;
-  color: #f459bf;
+.header_overlay {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+.header_overlay video {
+  width: 100%;
+  display: block;
+}
+.header_overlay:before {
+  content: '';
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
-#banner a{
-  color: #f459bf; /* DVA Spray Color */
-}
+/*
+Navigation has its own css file
+*/
 
-#banner a:hover {
-  text-decoration: none;
-  color: #D138BF;
-}
-
+/* Main */
 #container {
-  text-align: center;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  position:relative;
+  color: #fdfea5;
 }
 
+/* Footer */
 .footer{
   background: #51567b;
-  color: lightgrey;
+  color: #FFFFFF;
   display: inline-flex;
-  width: 100%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width:100%;
 }
 
 #contact{
@@ -77,12 +86,21 @@ a:hover{
   float: right;
 }
 
+.riko_green {
+  background-color: #85eaa6;
+  color: #fdfea5;
+}
+
+.riko_yellow {
+  background-color: #fdfea5;
+  color: #85eaa6;
+}
 /*
 color code:
-#44CCFF blue
-#D138BF lila
-#35FF69 grün
-#C9F0FF sehr helles blau
+#85eaa6 Saikawa green
+#51567b Kanna black
+#e9ebee facebook grey
+#fdfea5 Saikawa yellow
 #FA7921 orange
 #e86c60 herzrot
 #FF3366 schönes rot

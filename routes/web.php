@@ -22,7 +22,3 @@ Route::get('/', function () {
 Route::get('arcade', function () {
     return view('arcade');
 });
-
-Route::get('minecraft', function () {
-    return view('minecraft');
-});

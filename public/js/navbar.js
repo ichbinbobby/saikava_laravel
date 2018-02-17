@@ -15,3 +15,13 @@ function stickyNavbar() {
     navbar.classList.remove("sticky");
   }
 }
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function menu_toggle() {
+    var x = document.getElementById("menu_icon");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
