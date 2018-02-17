@@ -1,1 +1,8 @@
 Initial Creation of README
+
+How it is deployed: https://www.hugeserver.com/kb/install-laravel5-php7-apache-ubuntu16/
+
+  - install Apache
+  - install PHP 7.1
+  - download composer
+  - set document root
