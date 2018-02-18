@@ -5,4 +5,8 @@ How it is deployed: https://www.hugeserver.com/kb/install-laravel5-php7-apache-u
   - install Apache
   - install PHP 7.1
   - download composer
-  - set document root
+  - set document root: vim /etc/apache2/sites-available/000-default.conf
+
+Give User permission to upload via FTP: https://askubuntu.com/questions/489349/ftp-sftp-not-allowing-any-writing
+
+    sudo chmod -R 757 /var/www
