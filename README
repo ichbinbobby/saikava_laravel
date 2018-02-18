@@ -10,3 +10,36 @@ How it is deployed: https://www.hugeserver.com/kb/install-laravel5-php7-apache-u
 Give User permission to upload via FTP: https://askubuntu.com/questions/489349/ftp-sftp-not-allowing-any-writing
 
     sudo chmod -R 757 /var/www
+    
+Add User to group www-data
+
+    sudo usermod -a -G www-data saikava
+
+Make that only user and group can write
+
+    sudo chmod -R 775 /var/www
+
+Errorlog
+
+    less /var/log/apache2/error.log
+    less /var/log/apache2/access.log
+
+Change .htaccess file
+
+    $ sudo vim /var/www/html/laravel/public/.htaccess
+    
+Allow reading of .htaccess: https://stackoverflow.com/questions/5210820/apache-server-ignores-htaccess
+
+put this in the default Vhost configuration: vim /etc/apache2/sites-available/000-default.conf
+    <Directory "/var/www/html/laravel">
+      AllowOverride All
+    </Directory>
+    
+enable access to routes/blades
+
+    sudo a2enmod expires
+    sudo a2enmod rewrite
+
+Then restart apache
+
+    service apache2 restart
