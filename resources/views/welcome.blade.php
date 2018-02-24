@@ -29,7 +29,7 @@
 
 <!-- Header -->
 <header class="header">
-  <a href="{{ url('/') }}">
+  <a class="headlinelink" href="{{ url('/') }}">
     <p class="headline">SaikaVA</p>
   </a>
   <div class="header_overlay">
