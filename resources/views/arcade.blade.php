@@ -47,8 +47,3 @@
   </div>
 @endsection()
 
-@section('scripts')
-  <script>
-    alert('Lokales Skript');
-  </script>
-@endsection()
