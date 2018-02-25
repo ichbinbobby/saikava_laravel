@@ -6,48 +6,59 @@ html, body {
   background-color:#85eaa6;
 }
 
+a:hover{
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: big_noodle_titling_oblique;
+  src: url('/fonts/big_noodle_titling_oblique.ttf');
+}
+
 .header {
   width: 100%;
   overflow: hidden;
   position: relative;
 }
 
+/* Make headline font responsive */
 .headlinelink{
   position: absolute;
   top: 50%;
   left: 50%;
   z-index: 500;
 }
+
 @media screen{
   .headline{
     font-size: 5em;
   }
-} 
-
+}
 @media screen and (min-width: 450px){
   .headline{
     font-size: 7em;
   }
-} 
+}
 @media screen and (min-width: 550px){
   .headline{
     font-size: 10em;
   }
-} 
+}
 @media screen and (min-width: 850px){
   .headline{
     font-size: 15em;
   }
-} 
+}
 
 .headline {
   text-align: center;
   text-shadow: 1px 1px 1px black;
   z-index: 499;
-  color: white;
+  color: #f459bf;
   top: 25%;
   left: 50%;
   transform: translate(-50%,-50%);
+  font-family: big_noodle_titling_oblique;
 }
 
 .header_overlay {
@@ -129,6 +140,5 @@ color code:
 #e9ebee facebook grey
 #fdfea5 Saikawa yellow
 #FA7921 orange
-#e86c60 herzrot
-#FF3366 schönes rot
+#f459bf DVA font
 */

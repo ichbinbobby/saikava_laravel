@@ -58,4 +58,3 @@
       <h1 class="w3-margin w3-xlarge">"I need to prepare my heart." - Episode 6</h1>
   </div>
 @endsection
-
