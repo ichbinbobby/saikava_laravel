@@ -1,7 +1,7 @@
 /* navbar.css */
 #navbar {
   overflow: hidden;
-  background-color: #51567b;
+  background-color: #FFFFFF;
   box-shadow: 0 2px 3px rgba(0, 0, 0, .4);
   /* z-index makes our navbar always above other elements */
   z-index: 500;
@@ -10,7 +10,6 @@
 #navbar a {
   float: left;
   display: block;
-  color: #FFFFFF;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -18,7 +17,7 @@
 }
 
 #navbar a:hover {
-  color: #85eaa6;
+  color: #E3E3E3;
 }
 
 .content {

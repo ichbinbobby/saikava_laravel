@@ -1,9 +1,9 @@
 /* design.css */
 html, body {
-  margin:0;
-  padding:0;
-  height:100%;
-  background-color:#85eaa6;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #FAFAFA;
 }
 
 a:hover{
@@ -92,13 +92,12 @@ Navigation has its own css file
   margin-left: auto;
   margin-right: auto;
   position:relative;
-  color: #fdfea5;
 }
 
-/* Footer */
+/* Footer #51567b color: #FFFFFF;*/
 .footer{
-  background: #51567b;
-  color: #FFFFFF;
+  background: #EEEEEE;
+
   display: inline-flex;
   right: 0;
   bottom: 0;

@@ -8,7 +8,7 @@
 
 
       <!-- First Grid -->
-    <div class="w3-row-padding w3-padding-64 w3-container riko_green" >
+    <div class="w3-row-padding w3-padding-64 w3-container" >
       <div class="w3-content">
         <div class="w3-twothird">
           <h1>Saikawa Riko</h1>
@@ -29,7 +29,7 @@
     </div>
 
     <!-- Second Grid -->
-    <div class="w3-row-padding w3-padding-64 w3-container riko_yellow">
+    <div class="w3-row-padding w3-padding-64 w3-container">
       <div class="w3-content">
         <div class="w3-third w3-center">
           <img src="images/riko_pose.png" alt="">
