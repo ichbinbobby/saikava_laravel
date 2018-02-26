@@ -22,3 +22,7 @@ Route::get('/', function () {
 Route::get('arcade', function () {
     return view('arcade');
 });
+
+Route::get('arcade/flappy', function () {
+    return view('games/flappy/flappy');
+});

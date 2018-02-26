@@ -24,19 +24,6 @@
     <title>@yield('title')</title>
 </head>
 <body>
-    <!-- Header -->
-<header class="header">
-  <a class="headlinelink" href="{{ url('/') }}">
-    <p class="headline">SaikaVA</p>
-  </a>
-  <div class="header_overlay">
-    <video autoplay="true" poster"images/saikava_banner.png" loop muted>
-      <source src="videos/loopingBlushTopLeft.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>
-</header>
-
     <!-- Navigation -->
     <div id="navbar">
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large "
@@ -46,10 +33,10 @@
     >
         <i class="fa fa-bars"></i>
     </a>
-    <a href="{{ url('/') }}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-light-grey">Home</a>
-    <a href="https://www.youtube.com/c/SaikaVa" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-light-grey">Youtube</a>
-    <a href="https://discord.gg/9R4BRdM" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-light-grey">Community</a>
-    <a href="{{ url('arcade') }}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-light-grey">Arcade</a>
+    <a href="{{ url('/') }}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Home</a>
+    <a href="https://www.youtube.com/c/SaikaVa" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Youtube</a>
+    <a href="https://discord.gg/9R4BRdM" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Community</a>
+    <a href="{{ url('arcade') }}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Arcade</a>
 
     <!-- Navbar on small screens TODO animate meno icon -->
     <div id="menu_icon" class="w3-bar-block w3-hide w3-hide-large w3-hide-medium w3-large">
@@ -63,6 +50,29 @@
     <!-- Main -->
         @yield('content')
     <!-- /Main -->
+
+    <!-- Discuss Area -->
+        <div id="disqus_thread"></div>
+        <script>
+        
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        /*
+        var disqus_config = function () {
+        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        */
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://{{{ $disqusThread }}}.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <!-- /Discuss Area -->
 
     <!-- Footer -->
     <div class="footer">
@@ -83,6 +93,7 @@
 
     <script type="text/javascript" src="/js/navbar.js"></script>
     <script type="text/javascript" src="/js/app.js"></script>
+    <script id="dsq-count-scr" src="//{{{ $disqusThread }}}.disqus.com/count.js" async></script>
     @section('scripts')
 
     @show
