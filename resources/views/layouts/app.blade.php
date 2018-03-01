@@ -39,25 +39,27 @@
 
     <!-- Navigation -->
     <div id="navbar">
-    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large "
-        href="javascript:void(0);"
-        onclick="menu_toggle()"
-        title="Toggle Navigation Menu"
-    >
-        <i class="fa fa-bars"></i>
-    </a>
-    <a href="{{ url('/') }}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-light-grey">Home</a>
-    <a href="https://www.youtube.com/c/SaikaVa" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-light-grey">Youtube</a>
-    <a href="https://discord.gg/9R4BRdM" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-light-grey">Community</a>
-    <a href="{{ url('arcade') }}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-light-grey">Arcade</a>
+      <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large "
+          href="javascript:void(0);"
+          onclick="menu_toggle()"
+          title="Toggle Navigation Menu"
+      >
+          <i class="fa fa-bars"></i>
+      </a>
+      <a href="{{ url('/') }}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-light-grey">Home</a>
+      <a href="https://www.youtube.com/c/SaikaVa" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-light-grey">Youtube</a>
+      <a href="https://twitter.com/RikoSaikaVA" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-light-grey">Twitter</a>
+      <a href="https://discord.gg/9R4BRdM" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-light-grey">Community</a>
+      <a href="{{ url('arcade') }}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-light-grey">Arcade</a>
 
-    <!-- Navbar on small screens TODO animate meno icon -->
-    <div id="menu_icon" class="w3-bar-block w3-hide w3-hide-large w3-hide-medium w3-large">
-        <a href="{{ url('/') }}" class="w3-bar-item w3-button w3-padding-large">Home</a>
-        <a href="https://www.youtube.com/c/SaikaVa" class="w3-bar-item w3-button w3-padding-large">Youtube</a>
-        <a href="https://discord.gg/9R4BRdM" class="w3-bar-item w3-button w3-padding-large">Community</a>
-        <a href="{{ url('arcade') }}" class="w3-bar-item w3-button w3-padding-large">Arcade</a>
-    </div>
+      <!-- Navbar on small screens TODO animate meno icon -->
+      <div id="menu_icon" class="w3-bar-block w3-hide w3-hide-large w3-hide-medium w3-large">
+          <a href="{{ url('/') }}" class="w3-bar-item w3-button w3-padding-large">Home</a>
+          <a href="https://www.youtube.com/c/SaikaVa" class="w3-bar-item w3-button w3-padding-large">Youtube</a>
+          <a href="https://twitter.com/RikoSaikaVA" class="w3-bar-item w3-button w3-padding-large">Twitter</a>
+          <a href="https://discord.gg/9R4BRdM" class="w3-bar-item w3-button w3-padding-large">Community</a>
+          <a href="{{ url('arcade') }}" class="w3-bar-item w3-button w3-padding-large">Arcade</a>
+      </div>
     </div>
 
     <!-- Main -->
