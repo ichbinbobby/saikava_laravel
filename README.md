@@ -36,6 +36,34 @@ Errorlog
 Change .htaccess file
 
   sudo vim /var/www/html/laravel/public/.htaccess
+  
+ `<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    RewriteEngine On
+
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    # Handle Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+
+    # Change example.com to your domain name
+    RewriteCond %{HTTP_HOST} ^81\.169\.135\.243$
+
+    RewriteRule ^(/)?$ /index.php [L]
+</IfModule>`
+
     
 Allow reading of .htaccess 
     
