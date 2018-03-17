@@ -23,6 +23,11 @@ Route::get('arcade', function () {
     return view('arcade');
 });
 
-Route::get('arcade/flappy', function () {
-    return view('games/flappy/flappy');
+// Arcade Games
+Route::get('arcade/flappy_saikawa', function () {
+    return view('games/flappy_saikawa/flappy_saikawa');
+});
+
+Route::get('arcade/hungry_kannapillar', function () {
+    return view('games/hungry_kannapillar/hungry_kannapillar');
 });

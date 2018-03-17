@@ -11,7 +11,7 @@
       <div class="w3-card w3-container" style="min-height:460px">
       <h3>Flappy Saikawa</h3><br>
       <i class="fa fa-desktop w3-margin-bottom w3-text-theme" style="font-size:120px"></i>
-      <p>Flappy Bird</p>
+      <a href="{{ url('arcade/flappy_saikawa') }}"><p>Flappy Bird</p></a>
       <p>Coming soon</p>
       <p>Highscore</p>
       <p>Play Button</p>
@@ -22,7 +22,7 @@
       <div class="w3-card w3-container" style="min-height:460px">
       <h3>The very hungry Kannapillar</h3><br>
       <i class="fa fa-desktop w3-margin-bottom w3-text-theme" style="font-size:120px"></i>
-      <p>Snake Game</p>
+      <a href="{{ url('arcade/hungry_kannapillar') }}"><p>Snake Game</p></a>
       <p>Coming soon</p>
       <p>Highscore</p>
       <p>Play Button</p>
