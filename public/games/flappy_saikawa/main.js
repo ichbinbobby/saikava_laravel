@@ -16,12 +16,13 @@ function preload ()
 {
   this.load.image(
     'background',
-    'games/flappy_saikawa/assets/background_school.png'
+    '/games/flappy_saikawa/assets/background_school.png'
   );
 }
 
 function create ()
 {
+  //in Phaser 3 all Game Objects are positioned based on their center by default
   this.add.image(667, 375, 'background');
 }
 

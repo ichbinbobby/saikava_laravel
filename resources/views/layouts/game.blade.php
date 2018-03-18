@@ -21,7 +21,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/navbar.css"/>
     <link rel="stylesheet" type="text/css" href="/css/design.css"/>
-    <link rel="stylesheet" type="text/css" href="/css/games.css"/>
     <title>@yield('title')</title>
 </head>
 <body>
@@ -100,7 +99,6 @@
     <script type="text/javascript" src="/js/navbar.js"></script>
     <script type="text/javascript" src="/js/app.js"></script>
     <script type="text/javascript" src="/js/phaser.min.js"></script>
-    <script id="dsq-count-scr" src="//{{{ $disqusThread }}}.disqus.com/count.js" async></script>
     @section('scripts')
 
     @show
