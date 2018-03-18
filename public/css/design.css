@@ -107,10 +107,18 @@ Navigation has its own css file
   position:relative;
 }
 
+#game_container {
+  border-style: solid;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  width: 1334px;
+  height: 750px;
+}
+
 /* Footer #51567b color: #FFFFFF;*/
 .footer{
   background: #EEEEEE;
-
   display: inline-flex;
   right: 0;
   bottom: 0;
@@ -134,16 +142,6 @@ Navigation has its own css file
 
 .right{
   float: right;
-}
-
-.riko_green {
-  background-color: #85eaa6;
-  color: #fdfea5;
-}
-
-.riko_yellow {
-  background-color: #fdfea5;
-  color: #85eaa6;
 }
 /*
 color code:

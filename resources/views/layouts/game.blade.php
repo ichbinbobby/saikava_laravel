@@ -51,8 +51,11 @@
       </div>
     </div>
 
+    <!-- Prevent the navigation bar from scrolling over the content -->
+    <div id="container" style="height: 48px;"></div>
+
     <!-- Main -->
-        @yield('content')
+      @yield('content')
     <!-- /Main -->
 
     <!-- Discuss Area -->
@@ -96,6 +99,7 @@
 
     <script type="text/javascript" src="/js/navbar.js"></script>
     <script type="text/javascript" src="/js/app.js"></script>
+    <script type="text/javascript" src="/js/phaser.min.js"></script>
     <script id="dsq-count-scr" src="//{{{ $disqusThread }}}.disqus.com/count.js" async></script>
     @section('scripts')
 
