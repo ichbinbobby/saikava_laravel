@@ -76,7 +76,9 @@ function draw() {
 
 
 
-
+  //TRY set a width to trigger the condition
+  //( x + dx < paddleX && x + dx > paddleX - paddleWidth )
+  //( x + dx > paddleX2 && x + dx < paddleX2 + paddleWidth )
 
   if( x + dx < paddleX ) {
     //console.log("Point for Player 2, ball hit left wall");
@@ -86,7 +88,7 @@ function draw() {
     } else if ( x + dx < 0 ){
         resetBall();
     }
-  } else if ( x + dx > paddleX2 - ballRadius ) {
+  } else if ( x + dx > paddleX2 ) {
     //console.log("Point for Player 1, ball hit right wall");
     if (y < paddleY2 && y > paddleY2 - paddleHeight) {
       dx = -1 * (dx + 0.5);
@@ -138,6 +140,7 @@ function keyUpHandler(e) {
     }
 }
 
+// Numpad 8 and 2
 function keyDownHandler2(e) {
     if(e.keyCode == 104) {
         upPressed = true;
