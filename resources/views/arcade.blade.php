@@ -67,9 +67,9 @@
 
     <div class="w3-third">
       <div class="w3-card w3-container" style="min-height:460px">
-      <h3>Loli Jump</h3><br>
+      <h3>Ping Pong</h3><br>
       <i class="fa fa-desktop w3-margin-bottom w3-text-theme" style="font-size:120px"></i>
-      <p>Doodle Jump</p>
+      <a href="{{ url('arcade/ping_pong') }}"><p>Ping Pong</p></a>
       <p>Coming soon</p>
       <p>Highscore</p>
       <p>Play Button</p>
