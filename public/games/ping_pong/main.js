@@ -35,6 +35,16 @@ function Ball () {
     this.x += this.xSpeed;
     this.y += this.ySpeed;
   }
+
+  this.reset = function() {
+    this.x = canvas.width/2;
+    this.y = canvas.height-30;
+    this.xSpeed = 2;
+    this.ySpeed = -2;
+    if( Math.random() > 0.5 ) {
+      this.xSpeed *= -1;
+    }
+  }
 }
 
 // contructor
@@ -57,9 +67,9 @@ function Player( x ) {
   }
 
   this.movement = function() {
-    if( this.down && this.y < canvas.height - this.height ) {
+    if( this.up && this.y < canvas.height - this.height ) {
       this.y += 7;
-    } else if ( this.up && this.y > 0 ) {
+    } else if ( this.down && this.y > 0 ) {
       this.y -= 7;
     }
   }
@@ -71,10 +81,13 @@ var player1 = new Player( canvas.width * 0.05 );
 var player2 = new Player( canvas.width * 0.95 );
 
 // element.addEventListener(event, function, useCapture);
-document.addEventListener("keydown", keyHandlerPlayer1, false);
-document.addEventListener("keydown", keyHandlerPlayer2, false);
+document.addEventListener("keydown", keyDownHandlerPlayer1, false);
+document.addEventListener("keyup", keyUpHandlerPlayer1, false);
 
-function keyHandlerPlayer1(e) {
+document.addEventListener("keydown", keyDownHandlerPlayer2, false);
+document.addEventListener("keyup", keyUpHandlerPlayer2, false);
+
+function keyDownHandlerPlayer1(e) {
     if(e.keyCode == 83) {
         player1.up = true;
     }
@@ -83,13 +96,45 @@ function keyHandlerPlayer1(e) {
     }
 }
 
-function keyHandlerPlayer2(e) {
+function keyUpHandlerPlayer1(e) {
+    if(e.keyCode == 83) {
+        player1.up = false;
+    }
+    else if(e.keyCode == 87) {
+        player1.down = false;
+    }
+}
+
+function keyDownHandlerPlayer2(e) {
     if(e.keyCode == 98) {
         player2.up = true;
     }
     else if(e.keyCode == 104) {
         player2.down = true;
-    } 
+    }
+}
+
+function keyUpHandlerPlayer2(e) {
+    if(e.keyCode == 98) {
+        player2.up = false;
+    }
+    else if(e.keyCode == 104) {
+        player2.down = false;
+    }
+}
+
+function drawLine() {
+  ctx.beginPath();
+  ctx.rect(canvas.width/2, 0, 1, canvas.height);
+  ctx.fillStyle = "#0095DD";
+  ctx.fill();
+  ctx.closePath();
+}
+
+function drawScore( score, x, y ) {
+  ctx.font = "16px Arial";
+  ctx.fillStyle = "#0095DD";
+  ctx.fillText("Score: " + score, x, y);
 }
 
 function drawGame() {
@@ -98,12 +143,33 @@ function drawGame() {
   ball.draw();
   player1.draw();
   player2.draw();
+  drawLine();
 
   ball.wallCollider();
   ball.move();
 
   player1.movement();
   player2.movement();
+
+  if ( ball.x < player1.x + player1.width ) {
+    if ( ball.y > player1.y && ball.y < player1.y + player1.height ) {
+      ball.xSpeed *= -1.1;
+    } else if ( ball.x < 0 ) {
+      player2.score++;
+      ball.reset();
+    }
+  }
+  if ( ball.x > player2.x - ball.radius ) {
+    if ( ball.y > player2.y && ball.y < player2.y + player2.height ) {
+      ball.xSpeed *= -1.1;
+    } else if ( ball.x > canvas.width ) {
+      player1.score++;
+      ball.reset();
+    }
+  }
+
+  drawScore( player1.score, 8, 20 );
+  drawScore( player2.score, canvas.width * 0.91, 20 );
 
   requestAnimationFrame(drawGame);
 }
