@@ -12,6 +12,11 @@ container in the game config should you wish. -->
             style="border-style: dotted"
             width="1334" height="750"></canvas>
   </div>
+  <div class="w3-center w3-margin-top" width="1334">
+    <p>Player 1 use the w-key to move up and the s-key to move down.</p>
+    <p>Player 2 use the Numpad Up(8) and Down(2) to move.</p>
+    <a href="https://github.com/ichbinbobby/saikava/tree/master/public/games/ping_pong">Link to the Code.</a>
+  </div>
 
 @endsection()
 
