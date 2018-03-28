@@ -11,8 +11,8 @@ var ctx = canvas.getContext("2d");
 function Ball () {
   this.x = canvas.width/2;
   this.y = canvas.height-30;
-  this.xSpeed = 2;
-  this.ySpeed = -2;
+  this.xSpeed = 3;
+  this.ySpeed = -3;
   this.radius = 10;
 
   this.draw = function() {
@@ -39,8 +39,8 @@ function Ball () {
   this.reset = function() {
     this.x = canvas.width/2;
     this.y = canvas.height-30;
-    this.xSpeed = 2;
-    this.ySpeed = -2;
+    this.xSpeed = 3;
+    this.ySpeed = -3;
     if( Math.random() > 0.5 ) {
       this.xSpeed *= -1;
     }
@@ -134,7 +134,7 @@ function drawLine() {
 function drawScore( score, x, y ) {
   ctx.font = "16px Arial";
   ctx.fillStyle = "#0095DD";
-  ctx.fillText("Score: " + score, x, y);
+  ctx.fillText( score, x, y );
 }
 
 function drawGame() {
@@ -151,25 +151,27 @@ function drawGame() {
   player1.movement();
   player2.movement();
 
-  if ( ball.x < player1.x + player1.width ) {
+  // paddles are drawn to the right, so left paddle needs more pixels
+  if ( ball.x > (player1.x + ball.radius) &&
+       ball.x < (player1.x + ball.radius*2) ) {
     if ( ball.y > player1.y && ball.y < player1.y + player1.height ) {
       ball.xSpeed *= -1.1;
-    } else if ( ball.x < 0 ) {
-      player2.score++;
-      ball.reset();
     }
+  } else if ( ball.x < 0 ) {
+    player2.score++;
+    ball.reset();
   }
-  if ( ball.x > player2.x - ball.radius ) {
+  if ( ball.x > (player2.x - ball.radius) &&  ball.x < player2.x ) {
     if ( ball.y > player2.y && ball.y < player2.y + player2.height ) {
       ball.xSpeed *= -1.1;
-    } else if ( ball.x > canvas.width ) {
-      player1.score++;
-      ball.reset();
     }
+  } else if ( ball.x > canvas.width ) {
+    player1.score++;
+    ball.reset();
   }
 
-  drawScore( player1.score, 8, 20 );
-  drawScore( player2.score, canvas.width * 0.91, 20 );
+  drawScore( player1.score, canvas.width * 0.01, 20 );
+  drawScore( player2.score, canvas.width * 0.98, 20 );
 
   requestAnimationFrame(drawGame);
 }
