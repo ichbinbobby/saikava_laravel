@@ -154,7 +154,7 @@ function drawGame() {
   // paddles are drawn to the right, so left paddle needs more pixels
   if ( ball.x > (player1.x + ball.radius) &&
        ball.x < (player1.x + ball.radius*2) ) {
-    if ( ball.y > player1.y && ball.y < player1.y + player1.height ) {
+    if ( ball.y + ball.radius > player1.y && ball.y < player1.y + player1.height ) {
       ball.xSpeed *= -1.1;
     }
   } else if ( ball.x < 0 ) {
@@ -162,7 +162,7 @@ function drawGame() {
     ball.reset();
   }
   if ( ball.x > (player2.x - ball.radius) &&  ball.x < player2.x ) {
-    if ( ball.y > player2.y && ball.y < player2.y + player2.height ) {
+    if ( ball.y + ball.radius > player2.y && ball.y < player2.y + player2.height ) {
       ball.xSpeed *= -1.1;
     }
   } else if ( ball.x > canvas.width ) {

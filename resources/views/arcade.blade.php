@@ -11,10 +11,12 @@
       <div class="w3-card w3-container" style="min-height:460px">
       <h3>Flappy Saikawa</h3><br>
       <i class="fa fa-desktop w3-margin-bottom w3-text-theme" style="font-size:120px"></i>
-      <a href="{{ url('arcade/flappy_saikawa') }}"><p>Flappy Bird</p></a>
+      <p>Flappy Bird</p>
       <p>Coming soon</p>
       <p>Highscore</p>
-      <p>Play Button</p>
+      <a href="{{ url('arcade/flappy_saikawa') }}">
+        <p>Play Button</p>
+      </a>
       </div>
     </div>
 
@@ -22,10 +24,12 @@
       <div class="w3-card w3-container" style="min-height:460px">
       <h3>The very hungry Kannapillar</h3><br>
       <i class="fa fa-desktop w3-margin-bottom w3-text-theme" style="font-size:120px"></i>
-      <a href="{{ url('arcade/hungry_kannapillar') }}"><p>Snake Game</p></a>
+      <p>Snake Game</p>
       <p>Coming soon</p>
       <p>Highscore</p>
-      <p>Play Button</p>
+      <a href="{{ url('arcade/hungry_kannapillar') }}">
+        <p>Play Button</p>
+      </a>
       </div>
     </div>
 
@@ -56,12 +60,14 @@
 
     <div class="w3-third">
       <div class="w3-card w3-container" style="min-height:460px">
-      <h3>Dragon Feeder</h3><br>
+      <h3>Breakout</h3><br>
       <i class="fa fa-desktop w3-margin-bottom w3-text-theme" style="font-size:120px"></i>
-      <p>Bubble Shooter</p>
+      <p>Breakout</p>
       <p>Coming soon</p>
-      <p>Highscore</p>
-      <p>Play Button</p>
+      <p>Singleplayer</p>
+      <a href="{{ url('arcade/breakout') }}">
+        <p>Play Button</p>
+      </a>
       </div>
     </div>
 
@@ -69,10 +75,12 @@
       <div class="w3-card w3-container" style="min-height:460px">
       <h3>Ping Pong</h3><br>
       <i class="fa fa-desktop w3-margin-bottom w3-text-theme" style="font-size:120px"></i>
-      <a href="{{ url('arcade/ping_pong') }}"><p>Ping Pong</p></a>
+      <p>Ping Pong</p></a>
       <p>Coming soon</p>
-      <p>Highscore</p>
-      <p>Play Button</p>
+      <p>Multilayer</p>
+      <a href="{{ url('arcade/ping_pong') }}">
+        <p>Play Button</p>
+      </a>
       </div>
     </div>
   </div>
