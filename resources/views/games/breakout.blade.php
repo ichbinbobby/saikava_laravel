@@ -13,7 +13,7 @@ container in the game config should you wish. -->
             width="1334" height="750"></canvas>
   </div>
   <div class="w3-center w3-margin-top" width="1334">
-    <p></p>
+    <p>Use the mouse or left and right arrows on the keyboard to move.</p>
     <p></p>
     <a href="">Link to the Code.</a>
   </div>
