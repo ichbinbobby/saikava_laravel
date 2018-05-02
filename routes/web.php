@@ -24,16 +24,20 @@ Route::get('arcade', function () {
 });
 
 // Arcade Games
+Route::get('arcade/breakout', function () {
+    return view('games/breakout');
+});
+
 Route::get('arcade/flappy_saikawa', function () {
     return view('games/flappy_saikawa');
 });
 
-Route::get('arcade/hungry_kannapillar', function () {
-    return view('games/hungry_kannapillar');
+Route::get('arcade/frogger', function () {
+    return view('games/frogger');
 });
 
-Route::get('arcade/breakout', function () {
-    return view('games/breakout');
+Route::get('arcade/hungry_kannapillar', function () {
+    return view('games/hungry_kannapillar');
 });
 
 Route::get('arcade/ping_pong', function () {

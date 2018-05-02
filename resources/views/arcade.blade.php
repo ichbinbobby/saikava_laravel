@@ -49,12 +49,14 @@
   <div class="w3-row-padding w3-center w3-margin-top">
     <div class="w3-third">
       <div class="w3-card w3-container" style="min-height:460px">
-      <h3>Maid Invader</h3><br>
+      <h3></h3><br>
       <i class="fa fa-desktop w3-margin-bottom w3-text-theme" style="font-size:120px"></i>
-      <p>Space Invader</p>
+      <p>Frogger</p>
       <p>Coming soon</p>
       <p>Highscore</p>
-      <p>Play Button</p>
+      <a href="{{ url('arcade/frogger') }}">
+        <p>Play Button</p>
+      </a>
       </div>
     </div>
 
