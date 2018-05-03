@@ -40,6 +40,10 @@ Route::get('arcade/hungry_kannapillar', function () {
     return view('games/hungry_kannapillar');
 });
 
+Route::get('arcade/mario', function () {
+    return view('games/mario');
+});
+
 Route::get('arcade/ping_pong', function () {
     return view('games/ping_pong');
 });

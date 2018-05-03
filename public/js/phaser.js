@@ -654,7 +654,7 @@ var GameObject = new Class({
      * Returns an array containing the display list index of either this Game Object, or if it has one,
      * its parent Container. It then iterates up through all of the parent containers until it hits the
      * root of the display list (which is index 0 in the returned array).
-     * 
+     *
      * Used internally by the InputPlugin but also useful if you wish to find out the display depth of
      * this Game Object and all of its ancestors.
      *
@@ -670,7 +670,7 @@ var GameObject = new Class({
         var parent = this.parentContainer;
 
         var indexes = [];
-        
+
         while (parent)
         {
             // indexes.unshift([parent.getIndex(child), parent.name]);
@@ -2115,7 +2115,7 @@ var PluginManager = new Class({
             var pluginKey = globalPlugins[i];
 
             // console.log('PluginManager.global', pluginKey);
-            
+
             if (game[pluginKey])
             {
                 sys[pluginKey] = game[pluginKey];
@@ -2156,7 +2156,7 @@ var PluginManager = new Class({
             var source = plugins[pluginKey];
 
             var plugin = new source.plugin(scene);
-            
+
             sys[source.mapping] = plugin;
 
             //  Scene level injection
@@ -2207,7 +2207,7 @@ var PluginManager = new Class({
  *
  * @method Phaser.Boot.PluginManager.register
  * @since 3.0.0
- * 
+ *
  * @param {string} key - [description]
  * @param {object} plugin - [description]
  * @param {string} mapping - [description]
@@ -2330,7 +2330,7 @@ var GameObjectFactory = new Class({
 
     /**
      * Adds an existing Game Object to this Scene.
-     * 
+     *
      * If the Game Object renders, it will be added to the Display List.
      * If it has a `preUpdate` method, it will be added to the Update List.
      *
@@ -3112,7 +3112,7 @@ var MATH_CONST = {
 
     /**
      * The value of PI * 2.
-     * 
+     *
      * @name Phaser.Math.PI2
      * @type {number}
      * @since 3.0.0
@@ -3121,7 +3121,7 @@ var MATH_CONST = {
 
     /**
      * The value of PI * 0.5.
-     * 
+     *
      * @name Phaser.Math.TAU
      * @type {number}
      * @since 3.0.0
@@ -3130,7 +3130,7 @@ var MATH_CONST = {
 
     /**
      * An epsilon value (1.0e-6)
-     * 
+     *
      * @name Phaser.Math.EPSILON
      * @type {number}
      * @since 3.0.0
@@ -3139,7 +3139,7 @@ var MATH_CONST = {
 
     /**
      * For converting degrees to radians (PI / 180)
-     * 
+     *
      * @name Phaser.Math.DEG_TO_RAD
      * @type {number}
      * @since 3.0.0
@@ -3148,7 +3148,7 @@ var MATH_CONST = {
 
     /**
      * For converting radians to degrees (180 / PI)
-     * 
+     *
      * @name Phaser.Math.RAD_TO_DEG
      * @type {number}
      * @since 3.0.0
@@ -3157,7 +3157,7 @@ var MATH_CONST = {
 
     /**
      * An instance of the Random Number Generator.
-     * 
+     *
      * @name Phaser.Math.RND
      * @type {Phaser.Math.RandomDataGenerator}
      * @since 3.0.0
@@ -3282,7 +3282,7 @@ var FILE_CONST = {
 
     /**
      * The Loader is idle.
-     * 
+     *
      * @name Phaser.Loader.LOADER_IDLE
      * @type {integer}
      * @since 3.0.0
@@ -3291,7 +3291,7 @@ var FILE_CONST = {
 
     /**
      * The Loader is actively loading.
-     * 
+     *
      * @name Phaser.Loader.LOADER_LOADING
      * @type {integer}
      * @since 3.0.0
@@ -3300,7 +3300,7 @@ var FILE_CONST = {
 
     /**
      * The Loader is processing files is has loaded.
-     * 
+     *
      * @name Phaser.Loader.LOADER_PROCESSING
      * @type {integer}
      * @since 3.0.0
@@ -3309,7 +3309,7 @@ var FILE_CONST = {
 
     /**
      * The Loader has completed loading and processing.
-     * 
+     *
      * @name Phaser.Loader.LOADER_COMPLETE
      * @type {integer}
      * @since 3.0.0
@@ -3318,7 +3318,7 @@ var FILE_CONST = {
 
     /**
      * The Loader is shutting down.
-     * 
+     *
      * @name Phaser.Loader.LOADER_SHUTDOWN
      * @type {integer}
      * @since 3.0.0
@@ -3327,7 +3327,7 @@ var FILE_CONST = {
 
     /**
      * The Loader has been destroyed.
-     * 
+     *
      * @name Phaser.Loader.LOADER_DESTROYED
      * @type {integer}
      * @since 3.0.0
@@ -3336,7 +3336,7 @@ var FILE_CONST = {
 
     /**
      * File is in the load queue but not yet started
-     * 
+     *
      * @name Phaser.Loader.FILE_PENDING
      * @type {integer}
      * @since 3.0.0
@@ -3345,7 +3345,7 @@ var FILE_CONST = {
 
     /**
      * File has been started to load by the loader (onLoad called)
-     * 
+     *
      * @name Phaser.Loader.FILE_LOADING
      * @type {integer}
      * @since 3.0.0
@@ -3353,8 +3353,8 @@ var FILE_CONST = {
     FILE_LOADING: 11,
 
     /**
-     * File has loaded successfully, awaiting processing    
-     * 
+     * File has loaded successfully, awaiting processing
+     *
      * @name Phaser.Loader.FILE_LOADED
      * @type {integer}
      * @since 3.0.0
@@ -3363,7 +3363,7 @@ var FILE_CONST = {
 
     /**
      * File failed to load
-     * 
+     *
      * @name Phaser.Loader.FILE_FAILED
      * @type {integer}
      * @since 3.0.0
@@ -3372,7 +3372,7 @@ var FILE_CONST = {
 
     /**
      * File is being processed (onProcess callback)
-     * 
+     *
      * @name Phaser.Loader.FILE_PROCESSING
      * @type {integer}
      * @since 3.0.0
@@ -3381,7 +3381,7 @@ var FILE_CONST = {
 
     /**
      * File is waiting for its linkfile to load.
-     * 
+     *
      * @name Phaser.Loader.FILE_WAITING_LINKFILE
      * @type {integer}
      * @since 3.0.0
@@ -3390,7 +3390,7 @@ var FILE_CONST = {
 
     /**
      * The File has errored somehow during processing.
-     * 
+     *
      * @name Phaser.Loader.FILE_ERRORED
      * @type {integer}
      * @since 3.0.0
@@ -3399,7 +3399,7 @@ var FILE_CONST = {
 
     /**
      * File has finished processing.
-     * 
+     *
      * @name Phaser.Loader.FILE_COMPLETE
      * @type {integer}
      * @since 3.0.0
@@ -3408,7 +3408,7 @@ var FILE_CONST = {
 
     /**
      * File has been destroyed
-     * 
+     *
      * @name Phaser.Loader.FILE_DESTROYED
      * @type {integer}
      * @since 3.0.0
@@ -3417,7 +3417,7 @@ var FILE_CONST = {
 
     /**
      * File was populated from local data and doesn't need an HTTP request
-     * 
+     *
      * @name Phaser.Loader.FILE_POPULATED
      * @type {integer}
      * @since 3.0.0
@@ -3426,7 +3426,7 @@ var FILE_CONST = {
 
     /**
      * A special Texture Atlas const.
-     * 
+     *
      * @name Phaser.Loader.TEXTURE_ATLAS_JSON_ARRAY
      * @type {integer}
      * @since 3.0.0
@@ -3435,7 +3435,7 @@ var FILE_CONST = {
 
     /**
      * A special Texture Atlas const.
-     * 
+     *
      * @name Phaser.Loader.TEXTURE_ATLAS_JSON_HASH
      * @type {integer}
      * @since 3.0.0
@@ -3927,7 +3927,7 @@ module.exports = File;
 
 /**
  * Global consts.
- * 
+ *
  * @ignore
  */
 
@@ -3935,7 +3935,7 @@ var CONST = {
 
     /**
      * Phaser Release Version
-     * 
+     *
      * @name Phaser.VERSION
      * @readOnly
      * @type {string}
@@ -3949,7 +3949,7 @@ var CONST = {
 
     /**
      * AUTO Detect Renderer.
-     * 
+     *
      * @name Phaser.AUTO
      * @readOnly
      * @type {integer}
@@ -3959,7 +3959,7 @@ var CONST = {
 
     /**
      * Canvas Renderer.
-     * 
+     *
      * @name Phaser.CANVAS
      * @readOnly
      * @type {integer}
@@ -3969,7 +3969,7 @@ var CONST = {
 
     /**
      * WebGL Renderer.
-     * 
+     *
      * @name Phaser.WEBGL
      * @readOnly
      * @type {integer}
@@ -3979,7 +3979,7 @@ var CONST = {
 
     /**
      * Headless Renderer.
-     * 
+     *
      * @name Phaser.HEADLESS
      * @readOnly
      * @type {integer}
@@ -3990,7 +3990,7 @@ var CONST = {
     /**
      * In Phaser the value -1 means 'forever' in lots of cases, this const allows you to use it instead
      * to help you remember what the value is doing in your code.
-     * 
+     *
      * @name Phaser.FOREVER
      * @readOnly
      * @type {integer}
@@ -4000,7 +4000,7 @@ var CONST = {
 
     /**
      * Direction constant.
-     * 
+     *
      * @name Phaser.NONE
      * @readOnly
      * @type {integer}
@@ -4010,7 +4010,7 @@ var CONST = {
 
     /**
      * Direction constant.
-     * 
+     *
      * @name Phaser.UP
      * @readOnly
      * @type {integer}
@@ -4020,7 +4020,7 @@ var CONST = {
 
     /**
      * Direction constant.
-     * 
+     *
      * @name Phaser.DOWN
      * @readOnly
      * @type {integer}
@@ -4030,7 +4030,7 @@ var CONST = {
 
     /**
      * Direction constant.
-     * 
+     *
      * @name Phaser.LEFT
      * @readOnly
      * @type {integer}
@@ -4040,7 +4040,7 @@ var CONST = {
 
     /**
      * Direction constant.
-     * 
+     *
      * @name Phaser.RIGHT
      * @readOnly
      * @type {integer}
@@ -4086,7 +4086,7 @@ var GetFastValue = __webpack_require__(2);
  * @param {integer} height - [description]
  * @param {object} GetTilesWithinFilteringOptions - Optional filters to apply when getting the tiles.
  * @param {Phaser.Tilemaps.LayerData} layer - The Tilemap Layer to act upon.
- * 
+ *
  * @return {Phaser.Tilemaps.Tile[]} Array of Tile objects.
  */
 var GetTilesWithin = function (tileX, tileY, width, height, filteringOptions, layer)
@@ -4319,7 +4319,7 @@ var _disableContextSmoothing = false;
 
 /**
  * The CanvasPool is a global static object, that allows Phaser to recycle and pool 2D Context Canvas DOM elements.
- * It does not pool WebGL Contexts, because once the context options are set they cannot be modified again, 
+ * It does not pool WebGL Contexts, because once the context options are set they cannot be modified again,
  * which is useless for some of the Phaser pipelines / renderer.
  *
  * This singleton is instantiated as soon as Phaser loads, before a Phaser.Game instance has even been created.
@@ -4671,12 +4671,12 @@ module.exports = {
      *
      * @function Phaser.Renderer.WebGL.Utils.getTintFromFloats
      * @since 3.0.0
-     * 
+     *
      * @param {number} r - [description]
      * @param {number} g - [description]
      * @param {number} b - [description]
      * @param {number} a - [description]
-     * 
+     *
      * @return {number} [description]
      */
     getTintFromFloats: function (r, g, b, a)
@@ -4694,10 +4694,10 @@ module.exports = {
      *
      * @function Phaser.Renderer.WebGL.Utils.getTintAppendFloatAlpha
      * @since 3.0.0
-     * 
+     *
      * @param {number} rgb - [description]
      * @param {number} a - [description]
-     * 
+     *
      * @return {number} [description]
      */
     getTintAppendFloatAlpha: function (rgb, a)
@@ -4711,10 +4711,10 @@ module.exports = {
      *
      * @function Phaser.Renderer.WebGL.Utils.getTintAppendFloatAlphaAndSwap
      * @since 3.0.0
-     * 
+     *
      * @param {number} rgb - [description]
      * @param {number} a - [description]
-     * 
+     *
      * @return {number} [description]
      */
     getTintAppendFloatAlphaAndSwap: function (rgb, a)
@@ -4732,9 +4732,9 @@ module.exports = {
      *
      * @function Phaser.Renderer.WebGL.Utils.getFloatsFromUintRGB
      * @since 3.0.0
-     * 
+     *
      * @param {number} rgb - [description]
-     * 
+     *
      * @return {number} [description]
      */
     getFloatsFromUintRGB: function (rgb)
@@ -4751,10 +4751,10 @@ module.exports = {
      *
      * @function Phaser.Renderer.WebGL.Utils.getComponentCount
      * @since 3.0.0
-     * 
+     *
      * @param {number} attributes - [description]
      * @param {WebGLRenderingContext} glContext - [description]
-     * 
+     *
      * @return {number} [description]
      */
     getComponentCount: function (attributes, glContext)
@@ -4764,7 +4764,7 @@ module.exports = {
         for (var index = 0; index < attributes.length; ++index)
         {
             var element = attributes[index];
-            
+
             if (element.type === glContext.FLOAT)
             {
                 count += element.size;
@@ -4793,7 +4793,7 @@ module.exports = {
 
 /**
  * Tests if the start and end indexes are a safe range for the given array.
- * 
+ *
  * @function Phaser.Utils.Array.SafeRange
  * @since 3.4.0
  *
@@ -5397,7 +5397,7 @@ module.exports = {
 
     /**
      * CSV Map Type
-     * 
+     *
      * @name Phaser.Tilemaps.Formats.CSV
      * @type {number}
      * @since 3.0.0
@@ -5406,7 +5406,7 @@ module.exports = {
 
     /**
      * Tiled JSON Map Type
-     * 
+     *
      * @name Phaser.Tilemaps.Formats.TILED_JSON
      * @type {number}
      * @since 3.0.0
@@ -5415,7 +5415,7 @@ module.exports = {
 
     /**
      * 2D Array Map Type
-     * 
+     *
      * @name Phaser.Tilemaps.Formats.ARRAY_2D
      * @type {number}
      * @since 3.0.0
@@ -5424,7 +5424,7 @@ module.exports = {
 
     /**
      * Weltmeister (Impact.js) Map Type
-     * 
+     *
      * @name Phaser.Tilemaps.Formats.WELTMEISTER
      * @type {number}
      * @since 3.0.0
@@ -6242,7 +6242,7 @@ module.exports = Common;
                 }
             }
         }
-        
+
         return obj;
     };
 
@@ -6282,7 +6282,7 @@ module.exports = Common;
      */
     Common.values = function(obj) {
         var values = [];
-        
+
         if (Object.keys) {
             var keys = Object.keys(obj);
             for (var i = 0; i < keys.length; i++) {
@@ -6290,7 +6290,7 @@ module.exports = Common;
             }
             return values;
         }
-        
+
         // avoid hasOwnProperty for performance
         for (var key in obj)
             values.push(obj[key]);
@@ -6409,7 +6409,7 @@ module.exports = Common;
     Common.isString = function(obj) {
         return Object.prototype.toString.call(obj) === '[object String]';
     };
-    
+
     /**
      * Returns the given value clamped between a minimum and maximum value.
      * @method clamp
@@ -6425,7 +6425,7 @@ module.exports = Common;
             return max;
         return value;
     };
-    
+
     /**
      * Returns the sign of the given value.
      * @method sign
@@ -6435,7 +6435,7 @@ module.exports = Common;
     Common.sign = function(value) {
         return value < 0 ? -1 : 1;
     };
-    
+
     /**
      * Returns the current timestamp since the time origin (e.g. from page load).
      * The result will be high-resolution including decimal places if available.
@@ -6453,7 +6453,7 @@ module.exports = Common;
 
         return (new Date()) - Common._nowStartTime;
     };
-    
+
     /**
      * Returns a random value between a minimum and a maximum value inclusive.
      * The function uses a seeded random generator.
@@ -6494,7 +6494,7 @@ module.exports = Common;
 
     /**
      * The console logging level to use, where each level includes all levels above and excludes the levels below.
-     * The default level is 'debug' which shows all console messages.  
+     * The default level is 'debug' which shows all console messages.
      *
      * Possible level values are:
      * - 0 = None
@@ -6951,7 +6951,7 @@ module.exports = Clone;
 
 /**
  * Phaser Blend Modes.
- * 
+ *
  * @name Phaser.BlendModes
  * @enum {integer}
  * @memberOf Phaser
@@ -6963,126 +6963,126 @@ module.exports = {
 
     /**
      * Skips the Blend Mode check in the renderer.
-     * 
+     *
      * @name Phaser.BlendModes.SKIP_CHECK
      */
     SKIP_CHECK: -1,
 
     /**
      * Normal blend mode.
-     * 
+     *
      * @name Phaser.BlendModes.NORMAL
      */
     NORMAL: 0,
 
     /**
      * Add blend mode.
-     * 
+     *
      * @name Phaser.BlendModes.ADD
      */
     ADD: 1,
 
     /**
      * Multiply blend mode.
-     * 
+     *
      * @name Phaser.BlendModes.MULTIPLY
      */
     MULTIPLY: 2,
 
     /**
      * Screen blend mode.
-     * 
+     *
      * @name Phaser.BlendModes.SCREEN
      */
     SCREEN: 3,
 
     /**
      * Overlay blend mode.
-     * 
+     *
      * @name Phaser.BlendModes.OVERLAY
      */
     OVERLAY: 4,
 
     /**
      * Darken blend mode.
-     * 
+     *
      * @name Phaser.BlendModes.DARKEN
      */
     DARKEN: 5,
 
     /**
      * Lighten blend mode.
-     * 
+     *
      * @name Phaser.BlendModes.LIGHTEN
      */
     LIGHTEN: 6,
 
     /**
      * Color Dodge blend mode.
-     * 
+     *
      * @name Phaser.BlendModes.COLOR_DODGE
      */
     COLOR_DODGE: 7,
 
     /**
      * Color Burn blend mode.
-     * 
+     *
      * @name Phaser.BlendModes.COLOR_BURN
      */
     COLOR_BURN: 8,
 
     /**
      * Hard Light blend mode.
-     * 
+     *
      * @name Phaser.BlendModes.HARD_LIGHT
      */
     HARD_LIGHT: 9,
 
     /**
      * Soft Light blend mode.
-     * 
+     *
      * @name Phaser.BlendModes.SOFT_LIGHT
      */
     SOFT_LIGHT: 10,
 
     /**
      * Difference blend mode.
-     * 
+     *
      * @name Phaser.BlendModes.DIFFERENCE
      */
     DIFFERENCE: 11,
 
     /**
      * Exclusion blend mode.
-     * 
+     *
      * @name Phaser.BlendModes.EXCLUSION
      */
     EXCLUSION: 12,
 
     /**
      * Hue blend mode.
-     * 
+     *
      * @name Phaser.BlendModes.HUE
      */
     HUE: 13,
 
     /**
      * Saturation blend mode.
-     * 
+     *
      * @name Phaser.BlendModes.SATURATION
      */
     SATURATION: 14,
 
     /**
      * Color blend mode.
-     * 
+     *
      * @name Phaser.BlendModes.COLOR
      */
     COLOR: 15,
 
     /**
      * Luminosity blend mode.
-     * 
+     *
      * @name Phaser.BlendModes.LUMINOSITY
      */
     LUMINOSITY: 16
@@ -7113,7 +7113,7 @@ module.exports = {
  * nearest integer.
  * @param {Phaser.Cameras.Scene2D.Camera} [camera=main camera] - [description]
  * @param {Phaser.Tilemaps.LayerData} layer - The Tilemap Layer to act upon.
- * 
+ *
  * @return {number} The Y location in tile units.
  */
 var WorldToTileY = function (worldY, snapToFloor, camera, layer)
@@ -7165,7 +7165,7 @@ module.exports = WorldToTileY;
  * nearest integer.
  * @param {Phaser.Cameras.Scene2D.Camera} [camera=main camera] - [description]
  * @param {Phaser.Tilemaps.LayerData} layer - The Tilemap Layer to act upon.
- * 
+ *
  * @return {number} The X location in tile units.
  */
 var WorldToTileX = function (worldX, snapToFloor, camera, layer)
@@ -7248,7 +7248,7 @@ module.exports = Contains;
 
 /**
  * Scene consts.
- * 
+ *
  * @ignore
  */
 
@@ -7256,7 +7256,7 @@ var CONST = {
 
     /**
      * Scene state.
-     * 
+     *
      * @name Phaser.Scenes.PENDING
      * @readOnly
      * @type {integer}
@@ -7266,7 +7266,7 @@ var CONST = {
 
     /**
      * Scene state.
-     * 
+     *
      * @name Phaser.Scenes.INIT
      * @readOnly
      * @type {integer}
@@ -7276,7 +7276,7 @@ var CONST = {
 
     /**
      * Scene state.
-     * 
+     *
      * @name Phaser.Scenes.START
      * @readOnly
      * @type {integer}
@@ -7286,7 +7286,7 @@ var CONST = {
 
     /**
      * Scene state.
-     * 
+     *
      * @name Phaser.Scenes.LOADING
      * @readOnly
      * @type {integer}
@@ -7296,7 +7296,7 @@ var CONST = {
 
     /**
      * Scene state.
-     * 
+     *
      * @name Phaser.Scenes.CREATING
      * @readOnly
      * @type {integer}
@@ -7306,7 +7306,7 @@ var CONST = {
 
     /**
      * Scene state.
-     * 
+     *
      * @name Phaser.Scenes.RUNNING
      * @readOnly
      * @type {integer}
@@ -7316,7 +7316,7 @@ var CONST = {
 
     /**
      * Scene state.
-     * 
+     *
      * @name Phaser.Scenes.PAUSED
      * @readOnly
      * @type {integer}
@@ -7326,7 +7326,7 @@ var CONST = {
 
     /**
      * Scene state.
-     * 
+     *
      * @name Phaser.Scenes.SLEEPING
      * @readOnly
      * @type {integer}
@@ -7336,7 +7336,7 @@ var CONST = {
 
     /**
      * Scene state.
-     * 
+     *
      * @name Phaser.Scenes.SHUTDOWN
      * @readOnly
      * @type {integer}
@@ -7346,7 +7346,7 @@ var CONST = {
 
     /**
      * Scene state.
-     * 
+     *
      * @name Phaser.Scenes.DESTROYED
      * @readOnly
      * @type {integer}
@@ -7374,10 +7374,10 @@ module.exports = CONST;
  * These values are read-only and populated during the boot sequence of the game.
  * They are then referenced by internal game systems and are available for you to access
  * via `this.sys.game.device.os` from within any Scene.
- * 
+ *
  * @typedef {object} Phaser.Device.OS
  * @since 3.0.0
- * 
+ *
  * @property {boolean} android - Is running on android?
  * @property {boolean} chromeOS - Is running on chromeOS?
  * @property {boolean} cocoonJS - Is the game running under CocoonJS?
@@ -7493,24 +7493,24 @@ function init ()
     {
         OS.webApp = true;
     }
-    
+
     if (window.cordova !== undefined)
     {
         OS.cordova = true;
     }
-    
+
     if (process && process.versions && process.versions.node)
     {
         OS.node = true;
     }
-    
+
     if (OS.node && typeof process.versions === 'object')
     {
         OS.nodeWebkit = !!process.versions['node-webkit'];
-        
+
         OS.electron = !!process.versions.electron;
     }
-    
+
     if (navigator.isCocoonJS)
     {
         OS.cocoonJS = true;
@@ -7593,7 +7593,7 @@ module.exports = DistanceBetween;
 
 /**
  * Phaser Scale Modes.
- * 
+ *
  * @name Phaser.ScaleModes
  * @enum {integer}
  * @memberOf Phaser
@@ -7605,21 +7605,21 @@ module.exports = {
 
     /**
      * Default Scale Mode (Linear).
-     * 
+     *
      * @name Phaser.ScaleModes.DEFAULT
      */
     DEFAULT: 0,
 
     /**
      * Linear Scale Mode.
-     * 
+     *
      * @name Phaser.ScaleModes.LINEAR
      */
     LINEAR: 0,
 
     /**
      * Nearest Scale Mode.
-     * 
+     *
      * @name Phaser.ScaleModes.NEAREST
      */
     NEAREST: 1
@@ -7694,7 +7694,7 @@ var TWEEN_CONST = {
 
     /**
      * TweenData state.
-     * 
+     *
      * @name Phaser.Tweens.CREATED
      * @type {integer}
      * @since 3.0.0
@@ -7703,7 +7703,7 @@ var TWEEN_CONST = {
 
     /**
      * TweenData state.
-     * 
+     *
      * @name Phaser.Tweens.INIT
      * @type {integer}
      * @since 3.0.0
@@ -7712,7 +7712,7 @@ var TWEEN_CONST = {
 
     /**
      * TweenData state.
-     * 
+     *
      * @name Phaser.Tweens.DELAY
      * @type {integer}
      * @since 3.0.0
@@ -7721,7 +7721,7 @@ var TWEEN_CONST = {
 
     /**
      * TweenData state.
-     * 
+     *
      * @name Phaser.Tweens.OFFSET_DELAY
      * @type {integer}
      * @since 3.0.0
@@ -7730,7 +7730,7 @@ var TWEEN_CONST = {
 
     /**
      * TweenData state.
-     * 
+     *
      * @name Phaser.Tweens.PENDING_RENDER
      * @type {integer}
      * @since 3.0.0
@@ -7739,7 +7739,7 @@ var TWEEN_CONST = {
 
     /**
      * TweenData state.
-     * 
+     *
      * @name Phaser.Tweens.PLAYING_FORWARD
      * @type {integer}
      * @since 3.0.0
@@ -7748,7 +7748,7 @@ var TWEEN_CONST = {
 
     /**
      * TweenData state.
-     * 
+     *
      * @name Phaser.Tweens.PLAYING_BACKWARD
      * @type {integer}
      * @since 3.0.0
@@ -7757,7 +7757,7 @@ var TWEEN_CONST = {
 
     /**
      * TweenData state.
-     * 
+     *
      * @name Phaser.Tweens.HOLD_DELAY
      * @type {integer}
      * @since 3.0.0
@@ -7766,7 +7766,7 @@ var TWEEN_CONST = {
 
     /**
      * TweenData state.
-     * 
+     *
      * @name Phaser.Tweens.REPEAT_DELAY
      * @type {integer}
      * @since 3.0.0
@@ -7775,7 +7775,7 @@ var TWEEN_CONST = {
 
     /**
      * TweenData state.
-     * 
+     *
      * @name Phaser.Tweens.COMPLETE
      * @type {integer}
      * @since 3.0.0
@@ -7786,7 +7786,7 @@ var TWEEN_CONST = {
 
     /**
      * Tween state.
-     * 
+     *
      * @name Phaser.Tweens.PENDING_ADD
      * @type {integer}
      * @since 3.0.0
@@ -7795,7 +7795,7 @@ var TWEEN_CONST = {
 
     /**
      * Tween state.
-     * 
+     *
      * @name Phaser.Tweens.PAUSED
      * @type {integer}
      * @since 3.0.0
@@ -7804,7 +7804,7 @@ var TWEEN_CONST = {
 
     /**
      * Tween state.
-     * 
+     *
      * @name Phaser.Tweens.LOOP_DELAY
      * @type {integer}
      * @since 3.0.0
@@ -7813,7 +7813,7 @@ var TWEEN_CONST = {
 
     /**
      * Tween state.
-     * 
+     *
      * @name Phaser.Tweens.ACTIVE
      * @type {integer}
      * @since 3.0.0
@@ -7822,7 +7822,7 @@ var TWEEN_CONST = {
 
     /**
      * Tween state.
-     * 
+     *
      * @name Phaser.Tweens.COMPLETE_DELAY
      * @type {integer}
      * @since 3.0.0
@@ -7831,7 +7831,7 @@ var TWEEN_CONST = {
 
     /**
      * Tween state.
-     * 
+     *
      * @name Phaser.Tweens.PENDING_REMOVE
      * @type {integer}
      * @since 3.0.0
@@ -7840,7 +7840,7 @@ var TWEEN_CONST = {
 
     /**
      * Tween state.
-     * 
+     *
      * @name Phaser.Tweens.REMOVED
      * @type {integer}
      * @since 3.0.0
@@ -9456,7 +9456,7 @@ module.exports = SetTileCollision;
 
 /**
  * Arcade Physics consts.
- * 
+ *
  * @ignore
  */
 
@@ -9464,7 +9464,7 @@ var CONST = {
 
     /**
      * [description]
-     * 
+     *
      * @name Phaser.Physics.Arcade.DYNAMIC_BODY
      * @readOnly
      * @type {number}
@@ -9474,7 +9474,7 @@ var CONST = {
 
     /**
      * [description]
-     * 
+     *
      * @name Phaser.Physics.Arcade.STATIC_BODY
      * @readOnly
      * @type {number}
@@ -9484,7 +9484,7 @@ var CONST = {
 
     /**
      * [description]
-     * 
+     *
      * @name Phaser.Physics.Arcade.GROUP
      * @readOnly
      * @type {number}
@@ -9494,7 +9494,7 @@ var CONST = {
 
     /**
      * [description]
-     * 
+     *
      * @name Phaser.Physics.Arcade.TILEMAPLAYER
      * @readOnly
      * @type {number}
@@ -9504,7 +9504,7 @@ var CONST = {
 
     /**
      * [description]
-     * 
+     *
      * @name Phaser.Physics.Arcade.FACING_NONE
      * @readOnly
      * @type {number}
@@ -9514,7 +9514,7 @@ var CONST = {
 
     /**
      * [description]
-     * 
+     *
      * @name Phaser.Physics.Arcade.FACING_UP
      * @readOnly
      * @type {number}
@@ -9524,7 +9524,7 @@ var CONST = {
 
     /**
      * [description]
-     * 
+     *
      * @name Phaser.Physics.Arcade.FACING_DOWN
      * @readOnly
      * @type {number}
@@ -9534,7 +9534,7 @@ var CONST = {
 
     /**
      * [description]
-     * 
+     *
      * @name Phaser.Physics.Arcade.FACING_LEFT
      * @readOnly
      * @type {number}
@@ -9544,7 +9544,7 @@ var CONST = {
 
     /**
      * [description]
-     * 
+     *
      * @name Phaser.Physics.Arcade.FACING_RIGHT
      * @readOnly
      * @type {number}
@@ -11579,10 +11579,10 @@ var OS = __webpack_require__(53);
  * These values are read-only and populated during the boot sequence of the game.
  * They are then referenced by internal game systems and are available for you to access
  * via `this.sys.game.device.browser` from within any Scene.
- * 
+ *
  * @typedef {object} Phaser.Device.Browser
  * @since 3.0.0
- * 
+ *
  * @property {boolean} chrome - Set to true if running in Chrome.
  * @property {boolean} edge - Set to true if running in Microsoft Edge browser.
  * @property {boolean} firefox - Set to true if running in Firefox.
@@ -12883,7 +12883,7 @@ var Axes = __webpack_require__(667);
     };
 
     /**
-     * Sets the moment of inertia (i.e. second moment of area) of the body of the body. 
+     * Sets the moment of inertia (i.e. second moment of area) of the body of the body.
      * Inverse inertia is automatically updated to reflect the change. Mass is not changed.
      * @method setInertia
      * @param {body} body
@@ -13087,7 +13087,7 @@ var Axes = __webpack_require__(667);
                 sin = Math.sin(rotation),
                 dx = body.position.x - point.x,
                 dy = body.position.y - point.y;
-                
+
             Body.setPosition(body, {
                 x: point.x + (dx * cos - dy * sin),
                 y: point.y + (dx * sin + dy * cos)
@@ -13136,7 +13136,7 @@ var Axes = __webpack_require__(667);
         }
 
         // handle circles
-        if (body.circleRadius) { 
+        if (body.circleRadius) {
             if (scaleX === scaleY) {
                 body.circleRadius *= scaleX;
             } else {
@@ -13192,7 +13192,7 @@ var Axes = __webpack_require__(667);
             var part = body.parts[i];
 
             Vertices.translate(part.vertices, body.velocity);
-            
+
             if (i > 0) {
                 part.position.x += body.velocity.x;
                 part.position.y += body.velocity.y;
@@ -13316,7 +13316,7 @@ var Axes = __webpack_require__(667);
      */
 
     /**
-     * An array of bodies that make up this body. 
+     * An array of bodies that make up this body.
      * The first body in the array must always be a self reference to the current body instance.
      * All bodies in the `parts` array together form a single rigid compound body.
      * Parts are allowed to overlap, have gaps or holes or even form concave bodies.
@@ -13358,7 +13358,7 @@ var Axes = __webpack_require__(667);
      *     [{ x: 0, y: 0 }, { x: 25, y: 50 }, { x: 50, y: 0 }]
      *
      * When passed via `Body.create`, the vertices are translated relative to `body.position` (i.e. world-space, and constantly updated by `Body.update` during simulation).
-     * The `Vector` objects are also augmented with additional properties required for efficient collision detection. 
+     * The `Vector` objects are also augmented with additional properties required for efficient collision detection.
      *
      * Other properties such as `inertia` and `bounds` are automatically calculated from the passed vertices (unless provided via `options`).
      * Concave hulls are not currently supported. The module `Matter.Vertices` contains useful methods for working with vertices.
@@ -13410,7 +13410,7 @@ var Axes = __webpack_require__(667);
      */
 
     /**
-     * A `Vector` that _measures_ the current velocity of the body after the last `Body.update`. It is read-only. 
+     * A `Vector` that _measures_ the current velocity of the body after the last `Body.update`. It is read-only.
      * If you need to modify a body's velocity directly, you should either apply a force or simply change the body's `position` (as the engine uses position-Verlet integration).
      *
      * @readOnly
@@ -13420,7 +13420,7 @@ var Axes = __webpack_require__(667);
      */
 
     /**
-     * A `Number` that _measures_ the current angular velocity of the body after the last `Body.update`. It is read-only. 
+     * A `Number` that _measures_ the current angular velocity of the body after the last `Body.update`. It is read-only.
      * If you need to modify a body's angular velocity directly, you should apply a torque or simply change the body's `angle` (as the engine uses position-Verlet integration).
      *
      * @readOnly
@@ -13518,7 +13518,7 @@ var Axes = __webpack_require__(667);
 
     /**
      * A `Number` that defines the restitution (elasticity) of the body. The value is always positive and is in the range `(0, 1)`.
-     * A value of `0` means collisions may be perfectly inelastic and no bouncing may occur. 
+     * A value of `0` means collisions may be perfectly inelastic and no bouncing may occur.
      * A value of `0.8` means the body may bounce back with approximately 80% of its kinetic energy.
      * Note that collision response is based on _pairs_ of bodies, and that `restitution` values are _combined_ with the following formula:
      *
@@ -13534,7 +13534,7 @@ var Axes = __webpack_require__(667);
      * A value of `0` means that the body may slide indefinitely.
      * A value of `1` means the body may come to a stop almost instantly after a force is applied.
      *
-     * The effects of the value may be non-linear. 
+     * The effects of the value may be non-linear.
      * High values may be unstable depending on the body.
      * The engine uses a Coulomb friction model including static and kinetic friction.
      * Note that collision response is based on _pairs_ of bodies, and that `friction` values are _combined_ with the following formula:
@@ -13547,7 +13547,7 @@ var Axes = __webpack_require__(667);
      */
 
     /**
-     * A `Number` that defines the static friction of the body (in the Coulomb friction model). 
+     * A `Number` that defines the static friction of the body (in the Coulomb friction model).
      * A value of `0` means the body will never 'stick' when it is nearly stationary and only dynamic `friction` is used.
      * The higher the value (e.g. `10`), the more force it will take to initially get the body moving when nearly stationary.
      * This value is multiplied with the `friction` property to make it easier to change `friction` and maintain an appropriate amount of static friction.
@@ -13558,10 +13558,10 @@ var Axes = __webpack_require__(667);
      */
 
     /**
-     * A `Number` that defines the air friction of the body (air resistance). 
+     * A `Number` that defines the air friction of the body (air resistance).
      * A value of `0` means the body will never slow as it moves through space.
      * The higher the value, the faster a body slows when moving through space.
-     * The effects of the value are non-linear. 
+     * The effects of the value are non-linear.
      *
      * @property frictionAir
      * @type number
@@ -13677,7 +13677,7 @@ var Axes = __webpack_require__(667);
      * @property render.sprite.texture
      * @type string
      */
-     
+
     /**
      * A `Number` that defines the scaling in the x-axis for the sprite, if any.
      *
@@ -13745,13 +13745,13 @@ var Axes = __webpack_require__(667);
      * @property axes
      * @type vector[]
      */
-     
+
     /**
      * A `Number` that _measures_ the area of the body's convex hull, calculated at creation by `Body.create`.
      *
      * @property area
      * @type string
-     * @default 
+     * @default
      */
 
     /**
@@ -16750,7 +16750,7 @@ var List = new Class({
      * For example: `getAll('parent')` would return only children that have a property called `parent`.
      *
      * You can also specify a value to compare the property to:
-     * 
+     *
      * `getAll('visible', true)` would return only children that have their visible property set to `true`.
      *
      * Optionally you can specify a start and end index. For example if this List had 100 children,
@@ -16910,7 +16910,7 @@ var List = new Class({
      * @since 3.0.0
      *
      * @genericUse {Phaser.Structs.List.<T>} - [$return]
-     * 
+     *
      * @param {boolean} [skipCallback=false] - Skip calling the List.removeCallback.
      *
      * @return {Phaser.Structs.List} This List object.
@@ -19257,7 +19257,7 @@ module.exports = Tween;
 
 /**
  * @typedef {object} Phaser.Tweens.TweenConfigDefaults
- * 
+ *
  * @property {(object|object[])} targets - [description]
  * @property {number} [delay=0] - [description]
  * @property {number} [duration=1000] - [description]
@@ -19544,7 +19544,7 @@ var MapData = new Class({
 
         /**
          * [description]
-         * 
+         *
          * @name Phaser.Tilemaps.MapData#name
          * @type {string}
          * @since 3.0.0
@@ -19553,7 +19553,7 @@ var MapData = new Class({
 
         /**
          * [description]
-         * 
+         *
          * @name Phaser.Tilemaps.MapData#width
          * @type {number}
          * @since 3.0.0
@@ -19562,7 +19562,7 @@ var MapData = new Class({
 
         /**
          * [description]
-         * 
+         *
          * @name Phaser.Tilemaps.MapData#height
          * @type {number}
          * @since 3.0.0
@@ -19571,7 +19571,7 @@ var MapData = new Class({
 
         /**
          * [description]
-         * 
+         *
          * @name Phaser.Tilemaps.MapData#tileWidth
          * @type {number}
          * @since 3.0.0
@@ -19580,7 +19580,7 @@ var MapData = new Class({
 
         /**
          * [description]
-         * 
+         *
          * @name Phaser.Tilemaps.MapData#tileHeight
          * @type {number}
          * @since 3.0.0
@@ -19589,7 +19589,7 @@ var MapData = new Class({
 
         /**
          * [description]
-         * 
+         *
          * @name Phaser.Tilemaps.MapData#widthInPixels
          * @type {number}
          * @since 3.0.0
@@ -19598,7 +19598,7 @@ var MapData = new Class({
 
         /**
          * [description]
-         * 
+         *
          * @name Phaser.Tilemaps.MapData#heightInPixels
          * @type {number}
          * @since 3.0.0
@@ -19607,7 +19607,7 @@ var MapData = new Class({
 
         /**
          * [description]
-         * 
+         *
          * @name Phaser.Tilemaps.MapData#format
          * @type {integer}
          * @since 3.0.0
@@ -19616,7 +19616,7 @@ var MapData = new Class({
 
         /**
          * [description]
-         * 
+         *
          * @name Phaser.Tilemaps.MapData#orientation
          * @type {string}
          * @since 3.0.0
@@ -19625,7 +19625,7 @@ var MapData = new Class({
 
         /**
          * [description]
-         * 
+         *
          * @name Phaser.Tilemaps.MapData#version
          * @type {string}
          * @since 3.0.0
@@ -19634,7 +19634,7 @@ var MapData = new Class({
 
         /**
          * [description]
-         * 
+         *
          * @name Phaser.Tilemaps.MapData#properties
          * @type {object}
          * @since 3.0.0
@@ -19643,7 +19643,7 @@ var MapData = new Class({
 
         /**
          * [description]
-         * 
+         *
          * @name Phaser.Tilemaps.MapData#layers
          * @type {array}
          * @since 3.0.0
@@ -19652,7 +19652,7 @@ var MapData = new Class({
 
         /**
          * [description]
-         * 
+         *
          * @name Phaser.Tilemaps.MapData#images
          * @type {array}
          * @since 3.0.0
@@ -19661,7 +19661,7 @@ var MapData = new Class({
 
         /**
          * [description]
-         * 
+         *
          * @name Phaser.Tilemaps.MapData#objects
          * @type {object}
          * @since 3.0.0
@@ -19670,7 +19670,7 @@ var MapData = new Class({
 
         /**
          * [description]
-         * 
+         *
          * @name Phaser.Tilemaps.MapData#collision
          * @type {object}
          * @since 3.0.0
@@ -19679,7 +19679,7 @@ var MapData = new Class({
 
         /**
          * [description]
-         * 
+         *
          * @name Phaser.Tilemaps.MapData#tilesets
          * @type {array}
          * @since 3.0.0
@@ -19688,7 +19688,7 @@ var MapData = new Class({
 
         /**
          * [description]
-         * 
+         *
          * @name Phaser.Tilemaps.MapData#imageCollections
          * @type {array}
          * @since 3.0.0
@@ -19697,7 +19697,7 @@ var MapData = new Class({
 
         /**
          * [description]
-         * 
+         *
          * @name Phaser.Tilemaps.MapData#tiles
          * @type {array}
          * @since 3.0.0
@@ -19950,7 +19950,7 @@ module.exports = LayerData;
  * @param {integer} tileX - [description]
  * @param {integer} tileY - [description]
  * @param {Phaser.Tilemaps.LayerData} layer - The Tilemap Layer to act upon.
- * 
+ *
  * @return {boolean}
  */
 var IsInLayerBounds = function (tileX, tileY, layer)
@@ -24577,7 +24577,7 @@ module.exports = Systems;
 
 /**
  * Keyboard Codes.
- * 
+ *
  * @name Phaser.Input.Keyboard.KeyCodes
  * @enum {integer}
  * @memberOf Phaser.Input.Keyboard
@@ -25050,10 +25050,10 @@ var CanvasPool = __webpack_require__(22);
  * These values are read-only and populated during the boot sequence of the game.
  * They are then referenced by internal game systems and are available for you to access
  * via `this.sys.game.device.features` from within any Scene.
- * 
+ *
  * @typedef {object} Phaser.Device.Features
  * @since 3.0.0
- * 
+ *
  * @property {?boolean} canvasBitBltShift - True if canvas supports a 'copy' bitblt onto itself when the source and destination regions overlap.
  * @property {boolean} canvas - Is canvas available?
  * @property {boolean} file - Is file available?
@@ -25983,7 +25983,7 @@ var Camera = new Class({
 
     /**
      * Set the rotation of this Camera. This causes everything it renders to appear rotated.
-     * 
+     *
      * Rotating a camera does not rotate the viewport itself, it is applied during rendering.
      *
      * @method Phaser.Cameras.Scene2D.Camera#setAngle
@@ -26004,7 +26004,7 @@ var Camera = new Class({
 
     /**
      * Sets the background color for this Camera.
-     * 
+     *
      * By default a Camera has a transparent background but it can be given a solid color, with any level
      * of transparency, via this method.
      *
@@ -26075,7 +26075,7 @@ var Camera = new Class({
 
     /**
      * Set the position of the Camera viewport within the game.
-     * 
+     *
      * This does not change where the camera is 'looking'. See `setScroll` to control that.
      *
      * @method Phaser.Cameras.Scene2D.Camera#setPosition
@@ -26098,7 +26098,7 @@ var Camera = new Class({
 
     /**
      * Set the rotation of this Camera. This causes everything it renders to appear rotated.
-     * 
+     *
      * Rotating a camera does not rotate the viewport itself, it is applied during rendering.
      *
      * @method Phaser.Cameras.Scene2D.Camera#setRotation
@@ -26156,7 +26156,7 @@ var Camera = new Class({
      * Set the position of where the Camera is looking within the game.
      * You can also modify the properties `Camera.scrollX` and `Camera.scrollY` directly.
      * Use this method, or the scroll properties, to move your camera around the game world.
-     * 
+     *
      * This does not change where the camera viewport is placed. See `setPosition` to control that.
      *
      * @method Phaser.Cameras.Scene2D.Camera#setScroll
@@ -26208,7 +26208,7 @@ var Camera = new Class({
      * If you're trying to change where the Camera is looking at in your game, then see
      * the method `Camera.setScroll` instead. This method is for changing the viewport
      * itself, not what the camera can see.
-     * 
+     *
      * By default a Camera is the same size as the game, but can be made smaller via this method,
      * allowing you to create mini-cam style effects by creating and positioning a smaller Camera
      * viewport within your game.
@@ -27019,8 +27019,8 @@ module.exports = Vector;
      * @private
      */
     Vector._temp = [
-        Vector.create(), Vector.create(), 
-        Vector.create(), Vector.create(), 
+        Vector.create(), Vector.create(),
+        Vector.create(), Vector.create(),
         Vector.create(), Vector.create()
     ];
 
@@ -27175,7 +27175,7 @@ var BuildGameObjectAnimation = function (sprite, config)
         var repeat = GetAdvancedValue(animConfig, 'repeat', 0);
         var repeatDelay = GetAdvancedValue(animConfig, 'repeatDelay', 0);
         var yoyo = GetAdvancedValue(animConfig, 'yoyo', false);
-        
+
         var play = GetAdvancedValue(animConfig, 'play', false);
         var delayedPlay = GetAdvancedValue(animConfig, 'delayedPlay', 0);
 
@@ -28211,7 +28211,7 @@ var TextureTintPipeline = new Class({
         }
 
         this.setTexture2D(texture, 0);
-        
+
         for (var emitterIndex = 0; emitterIndex < emitterCount; ++emitterIndex)
         {
             var emitter = emitters[emitterIndex];
@@ -28367,7 +28367,7 @@ var TextureTintPipeline = new Class({
                 }
             }
         }
-        
+
         this.setTexture2D(texture, 0);
     },
 
@@ -28466,7 +28466,7 @@ var TextureTintPipeline = new Class({
                 var ty0 = x * b + y * d + f;
                 var tx1 = xw * a + yh * c + e;
                 var ty1 = xw * b + yh * d + f;
-            
+
                 // Bind Texture if texture wasn't bound.
                 // This needs to be here because of multiple
                 // texture atlas.
@@ -28481,7 +28481,7 @@ var TextureTintPipeline = new Class({
                     tx1 |= 0;
                     ty1 |= 0;
                 }
-            
+
                 vertexViewF32[vertexOffset + 0] = tx0;
                 vertexViewF32[vertexOffset + 1] = ty0;
                 vertexViewF32[vertexOffset + 2] = uvs.x0;
@@ -28556,7 +28556,7 @@ var TextureTintPipeline = new Class({
         {
             this.flush();
         }
-        
+
         var roundPixels = this.renderer.config.roundPixels;
         var getTint = Utils.getTintAppendFloatAlpha;
         var vertexViewF32 = this.vertexViewF32;
@@ -29062,7 +29062,7 @@ var TextureTintPipeline = new Class({
             {
                 this.flush();
             }
-            
+
             vertexOffset = this.vertexCount * this.vertexComponentCount;
 
             if (roundPixels)
@@ -29107,7 +29107,7 @@ var TextureTintPipeline = new Class({
             vertexViewF32[vertexOffset + 27] = umax;
             vertexViewF32[vertexOffset + 28] = vmin;
             vertexViewU32[vertexOffset + 29] = vTintTR;
-        
+
             this.vertexCount += 6;
         }
     },
@@ -29300,7 +29300,7 @@ var TextureTintPipeline = new Class({
 
             glyphW = glyph.width;
             glyphH = glyph.height;
-            
+
             x = (indexCount + glyph.xOffset + xAdvance) - scrollX;
             y = (glyph.yOffset + yAdvance) - scrollY;
 
@@ -29407,7 +29407,7 @@ var TextureTintPipeline = new Class({
             {
                 this.flush();
             }
-            
+
             vertexOffset = this.vertexCount * this.vertexComponentCount;
 
             if (roundPixels)
@@ -29452,7 +29452,7 @@ var TextureTintPipeline = new Class({
             vertexViewF32[vertexOffset + 27] = umax;
             vertexViewF32[vertexOffset + 28] = vmin;
             vertexViewU32[vertexOffset + 29] = vTintTR;
-        
+
             this.vertexCount += 6;
         }
 
@@ -29742,7 +29742,7 @@ var TextureTintPipeline = new Class({
         var v0 = (frameY / textureHeight) + vOffset;
         var u1 = (frameX + frameWidth) / textureWidth + uOffset;
         var v1 = (frameY + frameHeight) / textureHeight + vOffset;
-        
+
         this.setTexture2D(texture, 0);
 
         vertexOffset = this.vertexCount * this.vertexComponentCount;
@@ -29890,7 +29890,7 @@ var TextureTintPipeline = new Class({
         var u1 = (frameX + frameWidth) / textureWidth;
         var v1 = (frameY + frameHeight) / textureHeight;
         tint = Utils.getTintAppendFloatAlpha(tint, alpha);
-        
+
         this.setTexture2D(texture, 0);
 
         vertexOffset = this.vertexCount * this.vertexComponentCount;
@@ -30262,13 +30262,13 @@ module.exports = ValueToColor;
  * This would return: `bob---` as it has padded it out to 6 characters, using the `-` on the right.
  *
  * You can also use it to pad numbers (they are always returned as strings):
- * 
+ *
  * `pad(512, 6, '0', 1)`
  *
  * Would return: `000512` with the string padded to the left.
  *
  * If you don't specify a direction it'll pad to both sides:
- * 
+ *
  * `pad('c64', 7, '*')`
  *
  * Would return: `**c64**`
@@ -30280,7 +30280,7 @@ module.exports = ValueToColor;
  * @param {integer} [len=0] - The number of characters to be added.
  * @param {string} [pad=" "] - The string to pad it out with (defaults to a space).
  * @param {integer} [dir=3] - The direction dir = 1 (left), 2 (right), 3 (both).
- * 
+ *
  * @return {string} The padded string.
  */
 var Pad = function (str, len, pad, dir)
@@ -30889,7 +30889,7 @@ module.exports = Tileset;
  * @param {integer} tileY - [description]
  * @param {Phaser.Cameras.Scene2D.Camera} [camera=main camera] - [description]
  * @param {Phaser.Tilemaps.LayerData} layer - The Tilemap Layer to act upon.
- * 
+ *
  * @return {number}
  */
 var TileToWorldY = function (tileY, camera, layer)
@@ -30934,7 +30934,7 @@ module.exports = TileToWorldY;
  * @param {integer} tileX - [description]
  * @param {Phaser.Cameras.Scene2D.Camera} [camera=main camera] - [description]
  * @param {Phaser.Tilemaps.LayerData} layer - The Tilemap Layer to act upon.
- * 
+ *
  * @return {number}
  */
 var TileToWorldX = function (tileX, camera, layer)
@@ -30982,7 +30982,7 @@ var IsInLayerBounds = __webpack_require__(101);
  * @param {boolean} [nonNull=false] - If true getTile won't return null for empty tiles, but a Tile
  * object with an index of -1.
  * @param {Phaser.Tilemaps.LayerData} layer - The Tilemap Layer to act upon.
- * 
+ *
  * @return {Phaser.Tilemaps.Tile} The tile at the given coordinates or null if no tile was found or the coordinates
  * were invalid.
  */
@@ -31100,14 +31100,14 @@ module.exports = Bounds;
      * @return {bounds} A new bounds object
      */
     Bounds.create = function(vertices) {
-        var bounds = { 
-            min: { x: 0, y: 0 }, 
+        var bounds = {
+            min: { x: 0, y: 0 },
             max: { x: 0, y: 0 }
         };
 
         if (vertices)
             Bounds.update(bounds, vertices);
-        
+
         return bounds;
     };
 
@@ -31131,14 +31131,14 @@ module.exports = Bounds;
             if (vertex.y > bounds.max.y) bounds.max.y = vertex.y;
             if (vertex.y < bounds.min.y) bounds.min.y = vertex.y;
         }
-        
+
         if (velocity) {
             if (velocity.x > 0) {
                 bounds.max.x += velocity.x;
             } else {
                 bounds.min.x += velocity.x;
             }
-            
+
             if (velocity.y > 0) {
                 bounds.max.y += velocity.y;
             } else {
@@ -31155,7 +31155,7 @@ module.exports = Bounds;
      * @return {boolean} True if the bounds contain the point, otherwise false
      */
     Bounds.contains = function(bounds, point) {
-        return point.x >= bounds.min.x && point.x <= bounds.max.x 
+        return point.x >= bounds.min.x && point.x <= bounds.max.x
                && point.y >= bounds.min.y && point.y <= bounds.max.y;
     };
 
@@ -31193,13 +31193,13 @@ module.exports = Bounds;
     Bounds.shift = function(bounds, position) {
         var deltaX = bounds.max.x - bounds.min.x,
             deltaY = bounds.max.y - bounds.min.y;
-            
+
         bounds.min.x = position.x;
         bounds.max.x = position.x + deltaX;
         bounds.min.y = position.y;
         bounds.max.y = position.y + deltaY;
     };
-    
+
 })();
 
 
@@ -31270,7 +31270,7 @@ var Common = __webpack_require__(45);
     };
 
     /**
-     * Parses a string containing ordered x y pairs separated by spaces (and optionally commas), 
+     * Parses a string containing ordered x y pairs separated by spaces (and optionally commas),
      * into a `Matter.Vertices` object for the given `Matter.Body`.
      * For parsing SVG paths, see `Svg.pathToVertices`.
      * @method fromPath
@@ -31419,7 +31419,7 @@ var Common = __webpack_require__(45);
             var vertice = vertices[i],
                 dx = vertice.x - point.x,
                 dy = vertice.y - point.y;
-                
+
             vertice.x = point.x + (dx * cos - dy * sin);
             vertice.y = point.y + (dx * sin + dy * cos);
         }
@@ -31512,13 +31512,13 @@ var Common = __webpack_require__(45);
                 continue;
             }
 
-            var prevNormal = Vector.normalise({ 
-                x: vertex.y - prevVertex.y, 
+            var prevNormal = Vector.normalise({
+                x: vertex.y - prevVertex.y,
                 y: prevVertex.x - vertex.x
             });
 
-            var nextNormal = Vector.normalise({ 
-                x: nextVertex.y - vertex.y, 
+            var nextNormal = Vector.normalise({
+                x: nextVertex.y - vertex.y,
                 y: vertex.x - nextVertex.x
             });
 
@@ -31621,7 +31621,7 @@ var Common = __webpack_require__(45);
         // http://geomalgorithms.com/a10-_hull-1.html
 
         var upper = [],
-            lower = [], 
+            lower = [],
             vertex,
             i;
 
@@ -31636,7 +31636,7 @@ var Common = __webpack_require__(45);
         for (i = 0; i < vertices.length; i += 1) {
             vertex = vertices[i];
 
-            while (lower.length >= 2 
+            while (lower.length >= 2
                    && Vector.cross3(lower[lower.length - 2], lower[lower.length - 1], vertex) <= 0) {
                 lower.pop();
             }
@@ -31648,7 +31648,7 @@ var Common = __webpack_require__(45);
         for (i = vertices.length - 1; i >= 0; i -= 1) {
             vertex = vertices[i];
 
-            while (upper.length >= 2 
+            while (upper.length >= 2
                    && Vector.cross3(upper[upper.length - 2], upper[upper.length - 1], vertex) <= 0) {
                 upper.pop();
             }
@@ -32209,7 +32209,7 @@ var ForwardDiffuseLightPipeline = new Class({
             renderer.setFloat1(program, lightName + 'intensity', light.intensity);
             renderer.setFloat1(program, lightName + 'radius', light.radius);
         }
-        
+
         return this;
     },
 
@@ -37098,7 +37098,7 @@ var TextureManager = new Class({
 
     /**
      * @typedef {object} SpriteSheetConfig
-     * 
+     *
      * @property {integer} frameWidth - The fixed width of each frame.
      * @property {integer} [frameHeight] - The fixed height of each frame. If not set it will use the frameWidth as the height.
      * @property {integer} [startFrame=0] - Skip a number of frames. Useful when there are multiple sprite sheets in one Texture.
@@ -37136,7 +37136,7 @@ var TextureManager = new Class({
 
     /**
      * @typedef {object} SpriteSheetFromAtlasConfig
-     * 
+     *
      * @property {string} atlas - The key of the Texture Atlas in which this Sprite Sheet can be found.
      * @property {string} frame - The key of the Texture Atlas Frame in which this Sprite Sheet can be found.
      * @property {integer} frameWidth - The fixed width of each frame.
@@ -37692,7 +37692,7 @@ var WebAudioSound = new Class({
 
     /**
      * Play this sound, or a marked section of it.
-     * 
+     *
      * It always plays the sound from the start. If you want to start playback from a specific time
      * you can set 'seek' setting of the config object, provided to this call, to that value.
      *
@@ -38159,7 +38159,7 @@ var WebAudioSound = new Class({
 
     /**
      * Sets the playback rate of this Sound.
-     * 
+     *
      * For example, a value of 1.0 plays the audio at full speed, 0.5 plays the audio at half speed
      * and 2.0 doubles the audios playback speed.
      *
@@ -38239,7 +38239,7 @@ var WebAudioSound = new Class({
     /**
      * Boolean indicating whether the sound is muted or not.
      * Gets or sets the muted state of this sound.
-     * 
+     *
      * @name Phaser.Sound.WebAudioSound#mute
      * @type {boolean}
      * @default false
@@ -38288,7 +38288,7 @@ var WebAudioSound = new Class({
 
     /**
      * Gets or sets the volume of this sound, a value between 0 (silence) and 1 (full volume).
-     * 
+     *
      * @name Phaser.Sound.WebAudioSound#volume
      * @type {number}
      * @default 1
@@ -38339,7 +38339,7 @@ var WebAudioSound = new Class({
      * Setting it to a specific value moves current playback to that position.
      * The value given is clamped to the range 0 to current marker duration.
      * Setting seek of a stopped sound has no effect.
-     * 
+     *
      * @name Phaser.Sound.WebAudioSound#seek
      * @type {number}
      * @since 3.0.0
@@ -38417,7 +38417,7 @@ var WebAudioSound = new Class({
 
     /**
      * Flag indicating whether or not the sound or current sound marker will loop.
-     * 
+     *
      * @name Phaser.Sound.WebAudioSound#loop
      * @type {boolean}
      * @default false
@@ -39652,7 +39652,7 @@ var HTML5AudioSound = new Class({
     /**
      * Boolean indicating whether the sound is muted or not.
      * Gets or sets the muted state of this sound.
-     * 
+     *
      * @name Phaser.Sound.HTML5AudioSound#mute
      * @type {boolean}
      * @default false
@@ -39704,7 +39704,7 @@ var HTML5AudioSound = new Class({
 
     /**
      * Gets or sets the volume of this sound, a value between 0 (silence) and 1 (full volume).
-     * 
+     *
      * @name Phaser.Sound.HTML5AudioSound#volume
      * @type {number}
      * @default 1
@@ -39791,7 +39791,7 @@ var HTML5AudioSound = new Class({
 
     /**
      * Sets the playback rate of this Sound.
-     * 
+     *
      * For example, a value of 1.0 plays the audio at full speed, 0.5 plays the audio at half speed
      * and 2.0 doubles the audios playback speed.
      *
@@ -39880,7 +39880,7 @@ var HTML5AudioSound = new Class({
      * Setting it to a specific value moves current playback to that position.
      * The value given is clamped to the range 0 to current marker duration.
      * Setting seek of a stopped sound has no effect.
-     * 
+     *
      * @name Phaser.Sound.HTML5AudioSound#seek
      * @type {number}
      * @since 3.0.0
@@ -39960,7 +39960,7 @@ var HTML5AudioSound = new Class({
 
     /**
      * Flag indicating whether or not the sound or current sound marker will loop.
-     * 
+     *
      * @name Phaser.Sound.HTML5AudioSound#loop
      * @type {boolean}
      * @default false
@@ -41073,7 +41073,7 @@ var SceneManager = new Class({
                 });
             }
         }
-        
+
         game.events.once('ready', this.bootQueue, this);
     },
 
@@ -44061,7 +44061,7 @@ var Key = new Class({
      *
      * @method Phaser.Input.Keyboard.Key.reset
      * @since 3.6.0
-     * 
+     *
      * @return {Phaser.Input.Keyboard.Key} This Key instance.
      */
     reset: function ()
@@ -45988,28 +45988,28 @@ var ModelViewProjection = {
         this.modelMatrixDirty = true;
         this.viewMatrixDirty = true;
         this.projectionMatrixDirty = true;
-        
+
         this.modelMatrix = new Float32Array([
             1, 0, 0, 0,
             0, 1, 0, 0,
             0, 0, 1, 0,
             0, 0, 0, 1
         ]);
-        
+
         this.viewMatrix = new Float32Array([
             1, 0, 0, 0,
             0, 1, 0, 0,
             0, 0, 1, 0,
             0, 0, 0, 1
         ]);
-        
+
         this.projectionMatrix = new Float32Array([
             1, 0, 0, 0,
             0, 1, 0, 0,
             0, 0, 1, 0,
             0, 0, 0, 1
         ]);
-        
+
         return this;
     },
 
@@ -46022,7 +46022,7 @@ var ModelViewProjection = {
             this.renderer.setMatrix4(program, 'uModelMatrix', false, this.modelMatrix);
             this.modelMatrixDirty = false;
         }
-        
+
         if (this.viewMatrixDirty)
         {
             this.renderer.setMatrix4(program, 'uViewMatrix', false, this.viewMatrix);
@@ -46041,7 +46041,7 @@ var ModelViewProjection = {
     modelIdentity: function ()
     {
         var modelMatrix = this.modelMatrix;
-        
+
         modelMatrix[0] = 1;
         modelMatrix[1] = 0;
         modelMatrix[2] = 0;
@@ -46060,7 +46060,7 @@ var ModelViewProjection = {
         modelMatrix[15] = 1;
 
         this.modelMatrixDirty = true;
-        
+
         return this;
     },
 
@@ -46080,7 +46080,7 @@ var ModelViewProjection = {
         modelMatrix[9] = modelMatrix[9] * z;
         modelMatrix[10] = modelMatrix[10] * z;
         modelMatrix[11] = modelMatrix[11] * z;
-    
+
         this.modelMatrixDirty = true;
 
         return this;
@@ -46152,7 +46152,7 @@ var ModelViewProjection = {
         modelMatrix[11] = a03 * s + a23 * c;
 
         this.modelMatrixDirty = true;
-        
+
         return this;
     },
 
@@ -46187,7 +46187,7 @@ var ModelViewProjection = {
     viewIdentity: function ()
     {
         var viewMatrix = this.viewMatrix;
-        
+
         viewMatrix[0] = 1;
         viewMatrix[1] = 0;
         viewMatrix[2] = 0;
@@ -46206,7 +46206,7 @@ var ModelViewProjection = {
         viewMatrix[15] = 1;
 
         this.viewMatrixDirty = true;
-        
+
         return this;
     },
 
@@ -46226,7 +46226,7 @@ var ModelViewProjection = {
         viewMatrix[9] = viewMatrix[9] * z;
         viewMatrix[10] = viewMatrix[10] * z;
         viewMatrix[11] = viewMatrix[11] * z;
-    
+
         this.viewMatrixDirty = true;
 
         return this;
@@ -46298,7 +46298,7 @@ var ModelViewProjection = {
         viewMatrix[11] = a03 * s + a23 * c;
 
         this.viewMatrixDirty = true;
-        
+
         return this;
     },
 
@@ -46385,7 +46385,7 @@ var ModelViewProjection = {
     projIdentity: function ()
     {
         var projectionMatrix = this.projectionMatrix;
-        
+
         projectionMatrix[0] = 1;
         projectionMatrix[1] = 0;
         projectionMatrix[2] = 0;
@@ -46441,7 +46441,7 @@ var ModelViewProjection = {
         var projectionMatrix = this.projectionMatrix;
         var fov = 1.0 / Math.tan(fovy / 2.0);
         var nearFar = 1.0 / (near - far);
-        
+
         projectionMatrix[0] = fov / aspectRatio;
         projectionMatrix[1] = 0.0;
         projectionMatrix[2] = 0.0;
@@ -46458,7 +46458,7 @@ var ModelViewProjection = {
         projectionMatrix[13] = 0.0;
         projectionMatrix[14] = (2.0 * far * near) * nearFar;
         projectionMatrix[15] = 0.0;
-        
+
         this.projectionMatrixDirty = true;
         return this;
     }
@@ -46484,10 +46484,10 @@ var CanvasPool = __webpack_require__(22);
  * These values are read-only and populated during the boot sequence of the game.
  * They are then referenced by internal game systems and are available for you to access
  * via `this.sys.game.device.canvasFeatures` from within any Scene.
- * 
+ *
  * @typedef {object} Phaser.Device.CanvasFeatures
  * @since 3.0.0
- * 
+ *
  * @property {boolean} supportInverseAlpha - Set to true if the browser supports inversed alpha.
  * @property {boolean} supportNewBlendModes - Set to true if the browser supports new canvas blend modes.
  */
@@ -46599,7 +46599,7 @@ var Plugins = {
     /**
      * These are the Global Managers that are created by the Phaser.Game instance.
      * They are referenced from Scene.Systems so that plugins can use them.
-     * 
+     *
      * @name Phaser.Plugins.Global
      * @type {array}
      * @since 3.0.0
@@ -46617,9 +46617,9 @@ var Plugins = {
     /**
      * These are the core plugins that are installed into every Scene.Systems instance, no matter what.
      * They are optionally exposed in the Scene as well (see the InjectionMap for details)
-     * 
+     *
      * They are created in the order in which they appear in this array and EventEmitter is always first.
-     * 
+     *
      * @name Phaser.Plugins.CoreScene
      * @type {array}
      * @since 3.0.0
@@ -46639,15 +46639,15 @@ var Plugins = {
 
     /**
      * These plugins are created in Scene.Systems in addition to the CoreScenePlugins.
-     * 
+     *
      * You can elect not to have these plugins by either creating a DefaultPlugins object as part
      * of the Game Config, by creating a Plugins object as part of a Scene Config, or by modifying this array
      * and building your own bundle.
-     * 
+     *
      * They are optionally exposed in the Scene as well (see the InjectionMap for details)
-     * 
+     *
      * They are always created in the order in which they appear in the array.
-     * 
+     *
      * @name Phaser.Plugins.DefaultScene
      * @type {array}
      * @since 3.0.0
@@ -47621,7 +47621,7 @@ var AnimationManager = new Class({
      *
      * @method Phaser.Animations.AnimationManager#staggerPlay
      * @since 3.0.0
-     * 
+     *
      * @generic {Phaser.GameObjects.GameObject[]} G - [items,$return]
      *
      * @param {string} key - The key of the animation to play on the Game Objects.
@@ -48960,7 +48960,7 @@ var Tilemap = __webpack_require__(304);
  *
  * @function Phaser.Tilemaps.ParseToTilemap
  * @since 3.0.0
- * 
+ *
  * @param {Phaser.Scene} scene - The Scene to which this Tilemap belongs.
  * @param {string} [key] - The key in the Phaser cache that corresponds to the loaded tilemap data.
  * @param {integer} [tileWidth=32] - The width of a tile in pixels.
@@ -48975,7 +48975,7 @@ var Tilemap = __webpack_require__(304);
  * the tile data doesn't need to change then setting this value to `true` will help with memory
  * consumption. However if your map is small or you need to update the tiles dynamically, then leave
  * the default value set.
- * 
+ *
  * @return {Phaser.Tilemaps.Tilemap}
  */
 var ParseToTilemap = function (scene, key, tileWidth, tileHeight, width, height, data, insertNull)
@@ -49254,7 +49254,7 @@ var GetTileAt = __webpack_require__(132);
  * @function Phaser.Tilemaps.Components.CalculateFacesAt
  * @private
  * @since 3.0.0
- * 
+ *
  * @param {integer} tileX - The x coordinate.
  * @param {integer} tileY - The y coordinate.
  * @param {Phaser.Tilemaps.LayerData} layer - The Tilemap Layer to act upon.
@@ -49343,13 +49343,13 @@ var Body = __webpack_require__(77);
      * @return {composite} A new composite
      */
     Composite.create = function(options) {
-        return Common.extend({ 
+        return Common.extend({
             id: Common.nextId(),
             type: 'composite',
             parent: null,
             isModified: false,
-            bodies: [], 
-            constraints: [], 
+            bodies: [],
+            constraints: [],
             composites: [],
             label: 'Composite',
             plugin: {}
@@ -49357,7 +49357,7 @@ var Body = __webpack_require__(77);
     };
 
     /**
-     * Sets the composite's `isModified` flag. 
+     * Sets the composite's `isModified` flag.
      * If `updateParents` is true, all parents will be set (default: false).
      * If `updateChildren` is true, all children will be set (default: false).
      * @method setModified
@@ -49640,7 +49640,7 @@ var Body = __webpack_require__(77);
                 Composite.clear(composite.composites[i], keepStatic, true);
             }
         }
-        
+
         if (keepStatic) {
             composite.bodies = composite.bodies.filter(function(body) { return body.isStatic; });
         } else {
@@ -49726,8 +49726,8 @@ var Body = __webpack_require__(77);
         if (!objects)
             return null;
 
-        object = objects.filter(function(object) { 
-            return object.id.toString() === id.toString(); 
+        object = objects.filter(function(object) {
+            return object.id.toString() === id.toString();
         });
 
         return object.length === 0 ? null : object[0];
@@ -49768,7 +49768,7 @@ var Body = __webpack_require__(77);
     };
 
     /**
-     * Translates all children in the composite by a given vector relative to their current positions, 
+     * Translates all children in the composite by a given vector relative to their current positions,
      * without imparting any velocity.
      * @method translate
      * @param {composite} composite
@@ -49804,7 +49804,7 @@ var Body = __webpack_require__(77);
             var body = bodies[i],
                 dx = body.position.x - point.x,
                 dy = body.position.y - point.y;
-                
+
             Body.setPosition(body, {
                 x: point.x + (dx * cos - dy * sin),
                 y: point.y + (dx * sin + dy * cos)
@@ -49834,7 +49834,7 @@ var Body = __webpack_require__(77);
             var body = bodies[i],
                 dx = body.position.x - point.x,
                 dy = body.position.y - point.y;
-                
+
             Body.setPosition(body, {
                 x: point.x + dx * scaleX,
                 y: point.y + dy * scaleY
@@ -50005,7 +50005,7 @@ var Body = __webpack_require__(77);
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
-* The `Matter.Bodies` module contains factory methods for creating rigid body models 
+* The `Matter.Bodies` module contains factory methods for creating rigid body models
 * with commonly used body configurations (such as rectangles, circles and other polygons).
 *
 * See the included usage [examples](https://github.com/liabru/matter-js/tree/master/examples).
@@ -50029,7 +50029,7 @@ var decomp = __webpack_require__(1000);
 (function() {
 
     /**
-     * Creates a new rigid body model with a rectangle hull. 
+     * Creates a new rigid body model with a rectangle hull.
      * The options parameter is an object that specifies any properties you wish to override the defaults.
      * See the properties section of the `Matter.Body` module for detailed information on what you can pass via the `options` object.
      * @method rectangle
@@ -50043,7 +50043,7 @@ var decomp = __webpack_require__(1000);
     Bodies.rectangle = function(x, y, width, height, options) {
         options = options || {};
 
-        var rectangle = { 
+        var rectangle = {
             label: 'Rectangle Body',
             position: { x: x, y: y },
             vertices: Vertices.fromPath('L 0 0 L ' + width + ' 0 L ' + width + ' ' + height + ' L 0 ' + height)
@@ -50051,16 +50051,16 @@ var decomp = __webpack_require__(1000);
 
         if (options.chamfer) {
             var chamfer = options.chamfer;
-            rectangle.vertices = Vertices.chamfer(rectangle.vertices, chamfer.radius, 
+            rectangle.vertices = Vertices.chamfer(rectangle.vertices, chamfer.radius,
                                     chamfer.quality, chamfer.qualityMin, chamfer.qualityMax);
             delete options.chamfer;
         }
 
         return Body.create(Common.extend({}, rectangle, options));
     };
-    
+
     /**
-     * Creates a new rigid body model with a trapezoid hull. 
+     * Creates a new rigid body model with a trapezoid hull.
      * The options parameter is an object that specifies any properties you wish to override the defaults.
      * See the properties section of the `Matter.Body` module for detailed information on what you can pass via the `options` object.
      * @method trapezoid
@@ -50077,7 +50077,7 @@ var decomp = __webpack_require__(1000);
 
         slope *= 0.5;
         var roof = (1 - (slope * 2)) * width;
-        
+
         var x1 = width * slope,
             x2 = x1 + roof,
             x3 = x2 + x1,
@@ -50089,7 +50089,7 @@ var decomp = __webpack_require__(1000);
             verticesPath = 'L 0 0 L ' + x2 + ' ' + (-height) + ' L ' + x3 + ' 0';
         }
 
-        var trapezoid = { 
+        var trapezoid = {
             label: 'Trapezoid Body',
             position: { x: x, y: y },
             vertices: Vertices.fromPath(verticesPath)
@@ -50097,7 +50097,7 @@ var decomp = __webpack_require__(1000);
 
         if (options.chamfer) {
             var chamfer = options.chamfer;
-            trapezoid.vertices = Vertices.chamfer(trapezoid.vertices, chamfer.radius, 
+            trapezoid.vertices = Vertices.chamfer(trapezoid.vertices, chamfer.radius,
                                     chamfer.quality, chamfer.qualityMin, chamfer.qualityMax);
             delete options.chamfer;
         }
@@ -50106,7 +50106,7 @@ var decomp = __webpack_require__(1000);
     };
 
     /**
-     * Creates a new rigid body model with a circle hull. 
+     * Creates a new rigid body model with a circle hull.
      * The options parameter is an object that specifies any properties you wish to override the defaults.
      * See the properties section of the `Matter.Body` module for detailed information on what you can pass via the `options` object.
      * @method circle
@@ -50124,7 +50124,7 @@ var decomp = __webpack_require__(1000);
             label: 'Circle Body',
             circleRadius: radius
         };
-        
+
         // approximate circles with polygons until true circles implemented in SAT
         maxSides = maxSides || 25;
         var sides = Math.ceil(Math.max(10, Math.min(maxSides, radius)));
@@ -50137,7 +50137,7 @@ var decomp = __webpack_require__(1000);
     };
 
     /**
-     * Creates a new rigid body model with a regular polygon hull with the given number of sides. 
+     * Creates a new rigid body model with a regular polygon hull with the given number of sides.
      * The options parameter is an object that specifies any properties you wish to override the defaults.
      * See the properties section of the `Matter.Body` module for detailed information on what you can pass via the `options` object.
      * @method polygon
@@ -50166,7 +50166,7 @@ var decomp = __webpack_require__(1000);
             path += 'L ' + xx.toFixed(3) + ' ' + yy.toFixed(3) + ' ';
         }
 
-        var polygon = { 
+        var polygon = {
             label: 'Polygon Body',
             position: { x: x, y: y },
             vertices: Vertices.fromPath(path)
@@ -50174,7 +50174,7 @@ var decomp = __webpack_require__(1000);
 
         if (options.chamfer) {
             var chamfer = options.chamfer;
-            polygon.vertices = Vertices.chamfer(polygon.vertices, chamfer.radius, 
+            polygon.vertices = Vertices.chamfer(polygon.vertices, chamfer.radius,
                                     chamfer.quality, chamfer.qualityMin, chamfer.qualityMax);
             delete options.chamfer;
         }
@@ -51867,7 +51867,7 @@ var ContainsArray = function (triangle, points, returnFirst, out)
 
         u = ((dot11 * dot02) - (dot01 * dot12)) * inv;
         v = ((dot00 * dot12) - (dot01 * dot02)) * inv;
-    
+
         if (u >= 0 && v >= 0 && (u + v < 1))
         {
             out.push({ x: points[i].x, y: points[i].y });
@@ -54193,7 +54193,7 @@ var Vector2 = __webpack_require__(6);
  * By default it will be removed from the Display List and instead added to the Containers own internal list.
  *
  * The position of the Game Object automatically becomes relative to the position of the Container.
- * 
+ *
  * When the Container is rendered, all of its children are rendered as well, in the order in which they exist
  * within the Container. Container children can be repositioned using methods such as `MoveUp`, `MoveDown` and `SendToBack`.
  *
@@ -54271,10 +54271,10 @@ var Container = new Class({
 
         /**
          * Does this Container exclusively manage its children?
-         * 
+         *
          * The default is `true` which means a child added to this Container cannot
          * belong in another Container, which includes the Scene display list.
-         * 
+         *
          * If you disable this then this Container will no longer exclusively manage its children.
          * This allows you to create all kinds of interesting graphical effects, such as replicating
          * Game Objects without reparenting them all over the Scene.
@@ -54328,7 +54328,7 @@ var Container = new Class({
          * @since 3.4.0
          */
         this.tempTransformMatrix = new Components.TransformMatrix();
- 
+
         /**
          * A reference to the Scene Display List.
          *
@@ -54432,10 +54432,10 @@ var Container = new Class({
 
     /**
      * Does this Container exclusively manage its children?
-     * 
+     *
      * The default is `true` which means a child added to this Container cannot
      * belong in another Container, which includes the Scene display list.
-     * 
+     *
      * If you disable this then this Container will no longer exclusively manage its children.
      * This allows you to create all kinds of interesting graphical effects, such as replicating
      * Game Objects without reparenting them all over the Scene.
@@ -54463,10 +54463,10 @@ var Container = new Class({
      * Gets the bounds of this Container. It works by iterating all children of the Container,
      * getting their respective bounds, and then working out a min-max rectangle from that.
      * It does not factor in if the children render or not, all are included.
-     * 
+     *
      * Depending on the quantity of children in this Container it could be a really expensive call,
      * so cache it and only poll it as needed.
-     * 
+     *
      * The values are stored and returned in a Rectangle object.
      *
      * @method Phaser.GameObjects.Container#getBounds
@@ -54604,7 +54604,7 @@ var Container = new Class({
 
     /**
      * Adds the given Game Object, or array of Game Objects, to this Container.
-     * 
+     *
      * Each Game Object must be unique within the Container.
      *
      * @method Phaser.GameObjects.Container#add
@@ -54623,9 +54623,9 @@ var Container = new Class({
 
     /**
      * Adds the given Game Object, or array of Game Objects, to this Container at the specified position.
-     * 
+     *
      * Existing Game Objects in the Container are shifted up.
-     * 
+     *
      * Each Game Object must be unique within the Container.
      *
      * @method Phaser.GameObjects.Container#addAt
@@ -54750,7 +54750,7 @@ var Container = new Class({
      *
      * You can also specify a property and value to search for, in which case it will return the first
      * Game Object in this Container with a matching property and / or value.
-     * 
+     *
      * For example: `getFirst('visible', true)` would return the first Game Object that had its `visible` property set.
      *
      * You can limit the search to the `startIndex` - `endIndex` range.
@@ -54778,7 +54778,7 @@ var Container = new Class({
      * For example: `getAll('body')` would return only Game Objects that have a body property.
      *
      * You can also specify a value to compare the property to:
-     * 
+     *
      * `getAll('visible', true)` would return only Game Objects that have their visible property set to `true`.
      *
      * Optionally you can specify a start and end index. For example if this Container had 100 Game Objects,
@@ -54803,9 +54803,9 @@ var Container = new Class({
     /**
      * Returns the total number of Game Objects in this Container that have a property
      * matching the given value.
-     * 
+     *
      * For example: `count('visible', true)` would count all the elements that have their visible property set.
-     * 
+     *
      * You can optionally limit the operation to the `startIndex` - `endIndex` range.
      *
      * @method Phaser.GameObjects.Container#count
@@ -54832,7 +54832,7 @@ var Container = new Class({
      *
      * @param {Phaser.GameObjects.GameObject} child1 - The first Game Object to swap.
      * @param {Phaser.GameObjects.GameObject} child2 - The second Game Object to swap.
-     * 
+     *
      * @return {Phaser.GameObjects.Container} This Container instance.
      */
     swap: function (child1, child2)
@@ -54844,7 +54844,7 @@ var Container = new Class({
 
     /**
      * Moves a Game Object to a new position within this Container.
-     * 
+     *
      * The Game Object must already be a child of this Container.
      *
      * The Game Object is removed from its old position and inserted into the new one.
@@ -54867,7 +54867,7 @@ var Container = new Class({
 
     /**
      * Removes the given Game Object, or array of Game Objects, from this Container.
-     * 
+     *
      * The Game Objects must already be children of this Container.
      *
      * You can also optionally call `destroy` on each Game Object that is removed from the Container.
@@ -54902,7 +54902,7 @@ var Container = new Class({
 
     /**
      * Removes the Game Object at the given position in this Container.
-     * 
+     *
      * You can also optionally call `destroy` on the Game Object, if one is found.
      *
      * @method Phaser.GameObjects.Container#removeAt
@@ -54927,7 +54927,7 @@ var Container = new Class({
 
     /**
      * Removes the Game Objects between the given positions in this Container.
-     * 
+     *
      * You can also optionally call `destroy` on each Game Object that is removed from the Container.
      *
      * @method Phaser.GameObjects.Container#removeBetween
@@ -54956,7 +54956,7 @@ var Container = new Class({
 
     /**
      * Removes all Game Objects from this Container.
-     * 
+     *
      * You can also optionally call `destroy` on each Game Object that is removed from the Container.
      *
      * @method Phaser.GameObjects.Container#removeAll
@@ -55114,7 +55114,7 @@ var Container = new Class({
 
     /**
      * Returns `true` if the given Game Object is a direct child of this Container.
-     * 
+     *
      * This check does not scan nested Containers.
      *
      * @method Phaser.GameObjects.Container#exists
@@ -55131,7 +55131,7 @@ var Container = new Class({
 
     /**
      * Sets the property to the given value on all Game Objects in this Container.
-     * 
+     *
      * Optionally you can specify a start and end index. For example if this Container had 100 Game Objects,
      * and you set `startIndex` to 0 and `endIndex` to 50, it would return matches from only
      * the first 50 Game Objects.
@@ -55143,7 +55143,7 @@ var Container = new Class({
      * @param {any} value - The value to get the property to.
      * @param {integer} [startIndex=0] - An optional start index to search from.
      * @param {integer} [endIndex=Container.length] - An optional end index to search up to (but not included)
-     * 
+     *
      * @return {Phaser.GameObjects.Container} This Container instance.
      */
     setAll: function (property, value, startIndex, endIndex)
@@ -55166,7 +55166,7 @@ var Container = new Class({
      *
      * A copy of the Container is made before passing each entry to your callback.
      * This protects against the callback itself modifying the Container.
-     * 
+     *
      * If you know for sure that the callback will not change the size of this Container
      * then you can use the more performant `Container.iterate` method instead.
      *
@@ -55176,7 +55176,7 @@ var Container = new Class({
      * @param {function} callback - The function to call.
      * @param {object} [context] - Value to use as `this` when executing callback.
      * @param {...*} [args] - Additional arguments that will be passed to the callback, after the child.
-     * 
+     *
      * @return {Phaser.GameObjects.Container} This Container instance.
      */
     each: function (callback, context)
@@ -55213,7 +55213,7 @@ var Container = new Class({
      * @param {function} callback - The function to call.
      * @param {object} [context] - Value to use as `this` when executing callback.
      * @param {...*} [args] - Additional arguments that will be passed to the callback, after the child.
-     * 
+     *
      * @return {Phaser.GameObjects.Container} This Container instance.
      */
     iterate: function (callback, context)
@@ -55255,7 +55255,7 @@ var Container = new Class({
 
     /**
      * Returns the first Game Object within the Container, or `null` if it is empty.
-     * 
+     *
      * You can move the cursor by calling `Container.next` and `Container.previous`.
      *
      * @name Phaser.GameObjects.Container#first
@@ -55283,7 +55283,7 @@ var Container = new Class({
 
     /**
      * Returns the last Game Object within the Container, or `null` if it is empty.
-     * 
+     *
      * You can move the cursor by calling `Container.next` and `Container.previous`.
      *
      * @name Phaser.GameObjects.Container#last
@@ -55311,7 +55311,7 @@ var Container = new Class({
 
     /**
      * Returns the next Game Object within the Container, or `null` if it is empty.
-     * 
+     *
      * You can move the cursor by calling `Container.next` and `Container.previous`.
      *
      * @name Phaser.GameObjects.Container#next
@@ -55339,7 +55339,7 @@ var Container = new Class({
 
     /**
      * Returns the previous Game Object within the Container, or `null` if it is empty.
-     * 
+     *
      * You can move the cursor by calling `Container.next` and `Container.previous`.
      *
      * @name Phaser.GameObjects.Container#previous
@@ -55726,7 +55726,7 @@ var Render = __webpack_require__(898);
  * @extends Phaser.GameObjects.Components.Tint
  * @extends Phaser.GameObjects.Components.Transform
  * @extends Phaser.GameObjects.Components.Visible
- * 
+ *
  * @param {Phaser.Scene} scene - The Scene to which this Game Object belongs. It can only belong to one Scene at any given time.
  * @param {number} x - The x coordinate of this Game Object in world space.
  * @param {number} y - The y coordinate of this Game Object in world space.
@@ -57104,7 +57104,7 @@ var FlatTintPipeline = new Class({
     {
         WebGLPipeline.prototype.resize.call(this, width, height, resolution);
         this.projOrtho(0, this.width, this.height, 0, -1000.0, 1000.0);
-        
+
         return this;
     },
 
@@ -57141,7 +57141,7 @@ var FlatTintPipeline = new Class({
         {
             this.flush();
         }
-        
+
         var vertexViewF32 = this.vertexViewF32;
         var vertexViewU32 = this.vertexViewU32;
         var vertexOffset = this.vertexCount * this.vertexComponentCount;
@@ -57556,7 +57556,7 @@ var FlatTintPipeline = new Class({
         {
             this.flush();
         }
-        
+
         var a0 = currentMatrix[0];
         var b0 = currentMatrix[1];
         var c0 = currentMatrix[2];
@@ -57648,7 +57648,7 @@ var FlatTintPipeline = new Class({
         {
             parentMatrix = parentTransformMatrix.matrix;
         }
-        
+
         this.renderer.setPipeline(this);
 
         var cameraScrollX = camera.scrollX * graphics.scrollFactorX;
@@ -57841,7 +57841,7 @@ var FlatTintPipeline = new Class({
                             /* Graphics Game Object Properties */
                             srcX, srcY, srcScaleX, srcScaleY, srcRotation,
 
-                            /* Rectangle properties */ 
+                            /* Rectangle properties */
                             pathArray[pathArrayIndex].points,
                             fillColor,
                             fillAlpha * alpha,
@@ -57864,7 +57864,7 @@ var FlatTintPipeline = new Class({
                             /* Graphics Game Object Properties */
                             srcX, srcY, srcScaleX, srcScaleY, srcRotation,
 
-                            /* Rectangle properties */ 
+                            /* Rectangle properties */
                             path.points,
                             lineWidth,
                             lineColor,
@@ -57877,14 +57877,14 @@ var FlatTintPipeline = new Class({
                         );
                     }
                     break;
-                    
+
                 case Commands.FILL_RECT:
                     this.batchFillRect(
 
                         /* Graphics Game Object Properties */
                         srcX, srcY, srcScaleX, srcScaleY, srcRotation,
 
-                        /* Rectangle properties */ 
+                        /* Rectangle properties */
                         commands[cmdIndex + 1],
                         commands[cmdIndex + 2],
                         commands[cmdIndex + 3],
@@ -57896,7 +57896,7 @@ var FlatTintPipeline = new Class({
                         mva, mvb, mvc, mvd, mve, mvf,
                         currentMatrix
                     );
-                 
+
                     cmdIndex += 4;
                     break;
 
@@ -57906,7 +57906,7 @@ var FlatTintPipeline = new Class({
                         /* Graphics Game Object Properties */
                         srcX, srcY, srcScaleX, srcScaleY, srcRotation,
 
-                        /* Triangle properties */ 
+                        /* Triangle properties */
                         commands[cmdIndex + 1],
                         commands[cmdIndex + 2],
                         commands[cmdIndex + 3],
@@ -57920,7 +57920,7 @@ var FlatTintPipeline = new Class({
                         mva, mvb, mvc, mvd, mve, mvf,
                         currentMatrix
                     );
-                    
+
                     cmdIndex += 6;
                     break;
 
@@ -57930,7 +57930,7 @@ var FlatTintPipeline = new Class({
                         /* Graphics Game Object Properties */
                         srcX, srcY, srcScaleX, srcScaleY, srcRotation,
 
-                        /* Triangle properties */ 
+                        /* Triangle properties */
                         commands[cmdIndex + 1],
                         commands[cmdIndex + 2],
                         commands[cmdIndex + 3],
@@ -57945,7 +57945,7 @@ var FlatTintPipeline = new Class({
                         mva, mvb, mvc, mvd, mve, mvf,
                         currentMatrix
                     );
-                    
+
                     cmdIndex += 6;
                     break;
 
@@ -58234,7 +58234,7 @@ var WebGLPipeline = __webpack_require__(80);
 var BitmapMaskPipeline = new Class({
 
     Extends: WebGLPipeline,
-    
+
     initialize:
 
     function BitmapMaskPipeline (config)
@@ -58310,7 +58310,7 @@ var BitmapMaskPipeline = new Class({
 
         var renderer = this.renderer;
         var program = this.program;
-        
+
         if (this.resolutionDirty)
         {
             renderer.setFloat2(program, 'uResolution', this.width, this.height);
@@ -58396,10 +58396,10 @@ var BitmapMaskPipeline = new Class({
         {
             // Return to default framebuffer
             renderer.setFramebuffer(null);
-            
+
             // Bind bitmap mask pipeline and draw
             renderer.setPipeline(this);
-            
+
             renderer.setTexture2D(mask.maskTexture, 1);
             renderer.setTexture2D(mask.mainTexture, 0);
             renderer.setInt1(this.program, 'uInvertMaskAlpha', mask.invertAlpha);
@@ -58978,7 +58978,7 @@ var WebGLRenderer = new Class({
         {
             pipelines[pipelineName].resize(width, height, resolution);
         }
-                
+
         this.currentScissor.set([ 0, 0, this.width, this.height ]);
 
         return this;
@@ -61604,9 +61604,9 @@ var CanvasInterpolation = {
      *
      * @function Phaser.Display.Canvas.CanvasInterpolation.setCrisp
      * @since 3.0.0
-     * 
+     *
      * @param {HTMLCanvasElement} canvas - The canvas object to have the style set on.
-     * 
+     *
      * @return {HTMLCanvasElement} The canvas.
      */
     setCrisp: function (canvas)
@@ -61628,9 +61628,9 @@ var CanvasInterpolation = {
      *
      * @function Phaser.Display.Canvas.CanvasInterpolation.setBicubic
      * @since 3.0.0
-     * 
+     *
      * @param {HTMLCanvasElement} canvas - The canvas object to have the style set on.
-     * 
+     *
      * @return {HTMLCanvasElement} The canvas.
      */
     setBicubic: function (canvas)
@@ -64942,7 +64942,7 @@ var Color = __webpack_require__(27);
 
 /**
  * Converts a CSS 'web' string into a Phaser Color object.
- * 
+ *
  * The web string can be in the format `'rgb(r,g,b)'` or `'rgba(r,g,b,a)'` where r/g/b are in the range [0..255] and a is in the range [0..1].
  *
  * @function Phaser.Display.Color.RGBStringToColor
@@ -65130,7 +65130,7 @@ var Color = __webpack_require__(27);
 
 /**
  * Converts a hex string into a Phaser Color object.
- * 
+ *
  * The hex string can supplied as `'#0033ff'` or the short-hand format of `'#03f'`; it can begin with an optional "#" or "0x", or be unprefixed.
  *
  * An alpha channel is _not_ supported.
@@ -65298,17 +65298,17 @@ module.exports = RotateLeft;
 
 /**
  * Provides methods used for setting the WebGL rendering pipeline of a Game Object.
- * 
+ *
  * @name Phaser.GameObjects.Components.Pipeline
  * @webglOnly
  * @since 3.0.0
  */
 
 var Pipeline = {
-    
+
     /**
      * [description]
-     * 
+     *
      * @name Phaser.GameObjects.Components.Pipeline#defaultPipeline
      * @type {Phaser.Renderer.WebGL.WebGLPipeline}
      * @default null
@@ -65319,7 +65319,7 @@ var Pipeline = {
 
     /**
      * [description]
-     * 
+     *
      * @name Phaser.GameObjects.Components.Pipeline#pipeline
      * @type {Phaser.Renderer.WebGL.WebGLPipeline}
      * @default null
@@ -65331,13 +65331,13 @@ var Pipeline = {
     /**
      * Sets the initial WebGL Pipeline of this Game Object.
      * This should only be called during the instantiation of the Game Object.
-     * 
+     *
      * @method Phaser.GameObjects.Components.Pipeline#initPipeline
      * @webglOnly
      * @since 3.0.0
      *
      * @param {string} pipelineName - The name of the pipeline to set on this Game Object.
-     * 
+     *
      * @return {boolean} `true` if the pipeline was set successfully, otherwise `false`.
      */
     initPipeline: function (pipelineName)
@@ -65357,13 +65357,13 @@ var Pipeline = {
 
     /**
      * Sets the active WebGL Pipeline of this Game Object.
-     * 
+     *
      * @method Phaser.GameObjects.Components.Pipeline#setPipeline
      * @webglOnly
      * @since 3.0.0
      *
      * @param {string} pipelineName - The name of the pipeline to set on this Game Object.
-     * 
+     *
      * @return {boolean} `true` if the pipeline was set successfully, otherwise `false`.
      */
     setPipeline: function (pipelineName)
@@ -65376,13 +65376,13 @@ var Pipeline = {
 
             return true;
         }
-        
+
         return false;
     },
 
     /**
      * Resets the WebGL Pipeline of this Game Object back to the default it was created with.
-     * 
+     *
      * @method Phaser.GameObjects.Components.Pipeline#resetPipeline
      * @webglOnly
      * @since 3.0.0
@@ -65398,7 +65398,7 @@ var Pipeline = {
 
     /**
      * Gets the name of the WebGL Pipeline this Game Object is currently using.
-     * 
+     *
      * @method Phaser.GameObjects.Components.Pipeline#getPipelineName
      * @webglOnly
      * @since 3.0.0
@@ -66380,7 +66380,7 @@ var Common = __webpack_require__(45);
         var initialPointA = constraint.bodyA ? Vector.add(constraint.bodyA.position, constraint.pointA) : constraint.pointA,
             initialPointB = constraint.bodyB ? Vector.add(constraint.bodyB.position, constraint.pointB) : constraint.pointB,
             length = Vector.magnitude(Vector.sub(initialPointA, initialPointB));
-    
+
         constraint.length = typeof constraint.length !== 'undefined' ? constraint.length : length;
 
         // option defaults
@@ -66488,7 +66488,7 @@ var Common = __webpack_require__(45);
             Vector.rotate(pointA, bodyA.angle - constraint.angleA, pointA);
             constraint.angleA = bodyA.angle;
         }
-        
+
         // update reference angle
         if (bodyB && !bodyB.isStatic) {
             Vector.rotate(pointB, bodyB.angle - constraint.angleB, pointB);
@@ -66566,7 +66566,7 @@ var Common = __webpack_require__(45);
             // keep track of applied impulses for post solving
             bodyB.constraintImpulse.x += force.x * share;
             bodyB.constraintImpulse.y += force.y * share;
-            
+
             // apply forces
             bodyB.position.x += force.x * share;
             bodyB.position.y += force.y * share;
@@ -66605,7 +66605,7 @@ var Common = __webpack_require__(45);
             // update geometry and reset
             for (var j = 0; j < body.parts.length; j++) {
                 var part = body.parts[j];
-                
+
                 Vertices.translate(part.vertices, impulse);
 
                 if (j > 0) {
@@ -66695,7 +66695,7 @@ var Common = __webpack_require__(45);
      */
 
     /**
-     * A `String` that defines the constraint rendering type. 
+     * A `String` that defines the constraint rendering type.
      * The possible values are 'line', 'pin', 'spring'.
      * An appropriate render type will be automatically chosen unless one is given in options.
      *
@@ -66755,7 +66755,7 @@ var Common = __webpack_require__(45);
      */
 
     /**
-     * A `Number` that specifies the damping of the constraint, 
+     * A `Number` that specifies the damping of the constraint,
      * i.e. the amount of resistance applied to each body based on their velocities to limit the amount of oscillation.
      * Damping will only be apparent when the constraint also has a very low `stiffness`.
      * A value of `0.1` means the constraint will apply heavy damping, resulting in little to no oscillation.
@@ -66767,7 +66767,7 @@ var Common = __webpack_require__(45);
      */
 
     /**
-     * A `Number` that specifies the target resting length of the constraint. 
+     * A `Number` that specifies the target resting length of the constraint.
      * It is calculated automatically in `Constraint.create` from initial positions of the `constraint.bodyA` and `constraint.bodyB`.
      *
      * @property length
@@ -68570,7 +68570,7 @@ module.exports = TweenManager;
 //  flipY: flip Y the GameObject on tween end//  hold: The time the tween will pause before running a yoyo
 //  hold: The time the tween will pause before running a yoyo
 //  loop: The time the tween will pause before starting either a yoyo or returning to the start for a repeat
-//  loopDelay: 
+//  loopDelay:
 //  offset: Used when the Tween is part of a Timeline
 //  paused: Does the tween start in a paused state, or playing?
 //  props: The properties being tweened by the tween
@@ -73807,7 +73807,7 @@ var Class = __webpack_require__(0);
  * @memberOf Phaser.Tilemaps
  * @constructor
  * @since 3.0.0
- * 
+ *
  * @param {string} name - The name of the image collection in the map data.
  * @param {integer} firstgid - The first image index this image collection contains.
  * @param {integer} [width=32] - Width of widest image (in pixels).
@@ -73829,7 +73829,7 @@ var ImageCollection = new Class({
 
         /**
          * The name of the Image Collection.
-         * 
+         *
          * @name Phaser.Tilemaps.ImageCollection#name
          * @type {string}
          * @since 3.0.0
@@ -73839,7 +73839,7 @@ var ImageCollection = new Class({
         /**
          * The Tiled firstgid value.
          * This is the starting index of the first image index this Image Collection contains.
-         * 
+         *
          * @name Phaser.Tilemaps.ImageCollection#firstgid
          * @type {integer}
          * @since 3.0.0
@@ -73848,7 +73848,7 @@ var ImageCollection = new Class({
 
         /**
          * The width of the widest image (in pixels).
-         * 
+         *
          * @name Phaser.Tilemaps.ImageCollection#imageWidth
          * @type {integer}
          * @readOnly
@@ -73858,7 +73858,7 @@ var ImageCollection = new Class({
 
         /**
          * The height of the tallest image (in pixels).
-         * 
+         *
          * @name Phaser.Tilemaps.ImageCollection#imageHeight
          * @type {integer}
          * @readOnly
@@ -73869,7 +73869,7 @@ var ImageCollection = new Class({
         /**
          * The margin around the images in the collection (in pixels).
          * Use `setSpacing` to change.
-         * 
+         *
          * @name Phaser.Tilemaps.ImageCollection#imageMarge
          * @type {integer}
          * @readOnly
@@ -73880,7 +73880,7 @@ var ImageCollection = new Class({
         /**
          * The spacing between each image in the collection (in pixels).
          * Use `setSpacing` to change.
-         * 
+         *
          * @name Phaser.Tilemaps.ImageCollection#imageSpacing
          * @type {integer}
          * @readOnly
@@ -73890,7 +73890,7 @@ var ImageCollection = new Class({
 
         /**
          * Image Collection-specific properties that are typically defined in the Tiled editor.
-         * 
+         *
          * @name Phaser.Tilemaps.ImageCollection#properties
          * @type {object}
          * @since 3.0.0
@@ -73899,7 +73899,7 @@ var ImageCollection = new Class({
 
         /**
          * The cached images that are a part of this collection.
-         * 
+         *
          * @name Phaser.Tilemaps.ImageCollection#images
          * @type {array}
          * @readOnly
@@ -73909,7 +73909,7 @@ var ImageCollection = new Class({
 
         /**
          * The total number of images in the image collection.
-         * 
+         *
          * @name Phaser.Tilemaps.ImageCollection#total
          * @type {integer}
          * @readOnly
@@ -73923,9 +73923,9 @@ var ImageCollection = new Class({
      *
      * @method Phaser.Tilemaps.ImageCollection#containsImageIndex
      * @since 3.0.0
-     * 
+     *
      * @param {integer} imageIndex - The image index to search for.
-     * 
+     *
      * @return {boolean} True if this Image Collection contains the given index.
      */
     containsImageIndex: function (imageIndex)
@@ -73938,7 +73938,7 @@ var ImageCollection = new Class({
      *
      * @method Phaser.Tilemaps.ImageCollection#addImage
      * @since 3.0.0
-     * 
+     *
      * @param {integer} gid - The gid of the image in the Image Collection.
      * @param {string} image - The the key of the image in the Image Collection and in the cache.
      *
@@ -74330,7 +74330,7 @@ var IsInLayerBounds = __webpack_require__(101);
  * @param {integer} tileX - [description]
  * @param {integer} tileY - [description]
  * @param {Phaser.Tilemaps.LayerData} layer - The Tilemap Layer to act upon.
- * 
+ *
  * @return {boolean}
  */
 var HasTileAt = function (tileX, tileY, layer)
@@ -74417,18 +74417,18 @@ var CONST = {
 
     /**
      * Linear filter type.
-     * 
+     *
      * @name Phaser.Textures.FilterMode.LINEAR
      */
     LINEAR: 0,
 
     /**
      * Nearest neighbor filter type.
-     * 
+     *
      * @name Phaser.Textures.FilterMode.NEAREST
      */
     NEAREST: 1
-    
+
 };
 
 module.exports = CONST;
@@ -74453,14 +74453,14 @@ var FilterMode = __webpack_require__(316);
 
 /**
  * Linear filter type.
- * 
+ *
  * @name Phaser.Textures.LINEAR
  * @constant
  */
 
 /**
  * Nearest Neighbor filter type.
- * 
+ *
  * @name Phaser.Textures.NEAREST
  * @constant
  */
@@ -74790,7 +74790,7 @@ var ScenePlugin = new Class({
      *
      * @method Phaser.Scenes.ScenePlugin#restart
      * @since 3.4.0
-     * 
+     *
      * @param {object} [data] - The Scene data.
      *
      * @return {Phaser.Scenes.ScenePlugin} This ScenePlugin object.
@@ -74815,7 +74815,7 @@ var ScenePlugin = new Class({
 
     /**
      * @typedef {object} Phaser.Scenes.ScenePlugin.SceneTransitionConfig
-     * 
+     *
      * @property {string} target - The Scene key to transition to.
      * @property {integer} [duration=1000] - The duration, in ms, for the transition to last.
      * @property {boolean} [sleep=false] - Will the Scene responsible for the transition be sent to sleep on completion (`true`), or stopped? (`false`)
@@ -74829,24 +74829,24 @@ var ScenePlugin = new Class({
 
     /**
      * This will start a transition from the current Scene to the target Scene given.
-     * 
+     *
      * The transition will last for the duration specified in milliseconds.
-     * 
+     *
      * You can have the target Scene moved above or below this one in the display list.
-     * 
+     *
      * You can specify an update callback. This callback will be invoked _every frame_ for the duration
      * of the transition.
      *
      * This Scene can either be sent to sleep at the end of the transition, or stopped. The default is to stop.
-     * 
+     *
      * There are also 5 transition related events: This scene will emit the event `transitionto` when
      * the transition begins, which is typically the frame after calling this method.
-     * 
+     *
      * The target Scene will emit the event `transitioninit` when that Scene's `init` method is called.
      * It will then emit the event `transitionstart` when its `create` method is called.
      * If the Scene was sleeping and has been woken up, it will emit the event `transitionwake` instead of these two,
      * as the Scenes `init` and `create` methods are not invoked when a sleep wakes up.
-     * 
+     *
      * When the duration of the transition has elapsed it will emit the event `transitioncomplete`.
      * These events are all cleared of listeners when the Scene shuts down, but not if it is sent to sleep.
      *
@@ -74856,7 +74856,7 @@ var ScenePlugin = new Class({
      * this Scenes update loop to stop, then the transition will also pause for that duration. There are
      * checks in place to prevent you accidentally stopping a transitioning Scene but if you've got code to
      * override this understand that until the target Scene completes it might never be unlocked for input events.
-     * 
+     *
      * @method Phaser.Scenes.ScenePlugin#transition
      * @since 3.5.0
      *
@@ -75591,13 +75591,13 @@ var Events = __webpack_require__(294);
 
             var minMotion = Math.min(body.motion, motion),
                 maxMotion = Math.max(body.motion, motion);
-        
+
             // biased average motion estimation between frames
             body.motion = Sleeping._minBias * minMotion + (1 - Sleeping._minBias) * maxMotion;
-            
+
             if (body.sleepThreshold > 0 && body.motion < Sleeping._motionSleepThreshold * timeFactor) {
                 body.sleepCounter += 1;
-                
+
                 if (body.sleepCounter >= body.sleepThreshold)
                     Sleeping.set(body, true);
             } else if (body.sleepCounter > 0) {
@@ -75618,19 +75618,19 @@ var Events = __webpack_require__(294);
         // wake up bodies involved in collisions
         for (var i = 0; i < pairs.length; i++) {
             var pair = pairs[i];
-            
+
             // don't wake inactive pairs
             if (!pair.isActive)
                 continue;
 
             var collision = pair.collision,
-                bodyA = collision.bodyA.parent, 
+                bodyA = collision.bodyA.parent,
                 bodyB = collision.bodyB.parent;
-        
+
             // don't wake if at least one body is static
             if ((bodyA.isSleeping && bodyB.isSleeping) || bodyA.isStatic || bodyB.isStatic)
                 continue;
-        
+
             if (bodyA.isSleeping || bodyB.isSleeping) {
                 var sleepingBody = (bodyA.isSleeping && !bodyA.isStatic) ? bodyA : bodyB,
                     movingBody = sleepingBody === bodyA ? bodyB : bodyA;
@@ -75641,7 +75641,7 @@ var Events = __webpack_require__(294);
             }
         }
     };
-  
+
     /**
      * Set a body as sleeping or awake.
      * @method set
@@ -82485,7 +82485,7 @@ module.exports = AnimationJSONFile;
 module.exports = {
 
     TouchManager: __webpack_require__(181)
-       
+
 };
 /* eslint-enable */
 
@@ -82508,7 +82508,7 @@ module.exports = {
 module.exports = {
 
     MouseManager: __webpack_require__(183)
-       
+
 };
 /* eslint-enable */
 
@@ -82684,7 +82684,7 @@ module.exports = {
     JustUp: __webpack_require__(352),
     DownDuration: __webpack_require__(351),
     UpDuration: __webpack_require__(350)
-    
+
 };
 
 
@@ -84586,7 +84586,7 @@ module.exports = {
     Button: __webpack_require__(187),
     Gamepad: __webpack_require__(189),
     GamepadManager: __webpack_require__(190),
-    
+
     Configs: __webpack_require__(359)
 };
 
@@ -85300,10 +85300,10 @@ var LineToCircle = function (line, circle, nearest)
 
     nearest.x = line.x1 + px;
     nearest.y = line.y1 + py;
-    
+
     //  len2 of p
     var pLen2 = (px * px) + (py * py);
-    
+
     return (
         pLen2 <= dLen2 &&
         ((px * dx) + (py * dy)) >= 0 &&
@@ -85397,7 +85397,7 @@ module.exports = {
  */
 
 module.exports = {
-    
+
     Circle: __webpack_require__(839),
     Ellipse: __webpack_require__(241),
     Intersects: __webpack_require__(376),
@@ -85934,11 +85934,11 @@ var Light = new Class({
     setColor: function (rgb)
     {
         var color = Utils.getFloatsFromUintRGB(rgb);
-        
+
         this.r = color[0];
         this.g = color[1];
         this.b = color[2];
-        
+
         return this;
     },
 
@@ -86205,7 +86205,7 @@ GameObjectCreator.register('graphics', function (config)
     {
         this.scene.sys.displayList.add(graphics);
     }
-    
+
     return graphics;
 });
 
@@ -86365,7 +86365,7 @@ var GameObjectFactory = __webpack_require__(11);
  * @since 3.0.0
  *
  * @param {object} [config] - [description]
- * 
+ *
  * @return {Phaser.GameObjects.Graphics} The Game Object that was created.
  */
 GameObjectFactory.register('graphics', function (config)
@@ -86374,9 +86374,9 @@ GameObjectFactory.register('graphics', function (config)
 });
 
 //  When registering a factory function 'this' refers to the GameObjectFactory context.
-//  
+//
 //  There are several properties available to use:
-//  
+//
 //  this.scene - a reference to the Scene that owns the GameObjectFactory
 //  this.displayList - a reference to the Display List the Scene owns
 //  this.updateList - a reference to the Update List the Scene owns
@@ -87531,7 +87531,7 @@ var TextCanvasRenderer = function (renderer, src, interpolationPercentage, camer
     {
         return;
     }
-    
+
     var ctx = renderer.currentContext;
 
     // var resolution = src.resolution;
@@ -87626,7 +87626,7 @@ var TextWebGLRenderer = function (renderer, src, interpolationPercentage, camera
     {
         return;
     }
-    
+
     if (src.dirty)
     {
         src.canvasTexture = renderer.canvasToTexture(src.canvas, src.canvasTexture, true, src.scaleMode);
@@ -87701,7 +87701,7 @@ var GetTextSize = function (text, size, lines)
     var lineWidths = [];
     var maxLineWidth = 0;
     var drawnLines = lines.length;
-    
+
     if (style.maxLines > 0 && style.maxLines < lines.length)
     {
         drawnLines = style.maxLines;
@@ -92730,7 +92730,7 @@ var ImageWebGLRenderer = function (renderer, src, interpolationPercentage, camer
     {
         return;
     }
-    
+
     this.pipeline.batchSprite(src, camera, parentMatrix);
 };
 
@@ -93692,7 +93692,7 @@ var UpdateList = new Class({
         {
             this._list.splice(index, 1);
         }
-        
+
         return child;
     },
 
@@ -93998,9 +93998,9 @@ var SafeRange = __webpack_require__(26);
 
 /**
  * Removes the item within the given range in the array.
- * 
+ *
  * The array is modified in-place.
- * 
+ *
  * You can optionally specify a callback to be invoked for the item/s successfully removed from the array.
  *
  * @function Phaser.Utils.Array.RemoveBetween
@@ -94061,9 +94061,9 @@ var SpliceOne = __webpack_require__(70);
 
 /**
  * Removes the item from the given position in the array.
- * 
+ *
  * The array is modified in-place.
- * 
+ *
  * You can optionally specify a callback to be invoked for the item if it is successfully removed from the array.
  *
  * @function Phaser.Utils.Array.RemoveAt
@@ -94112,9 +94112,9 @@ var SpliceOne = __webpack_require__(70);
 
 /**
  * Removes the given item, or array of items, from the array.
- * 
+ *
  * The array is modified in-place.
- * 
+ *
  * You can optionally specify a callback to be invoked for each item successfully removed from the array.
  *
  * @function Phaser.Utils.Array.Remove
@@ -94209,7 +94209,7 @@ var RoundAwayFromZero = __webpack_require__(247);
  *
  * Certain values for `start` and `end` (eg. NaN/undefined/null) are currently coerced to 0;
  * for forward compatibility make sure to pass in actual numbers.
- * 
+ *
  * @example
  * NumberArrayStep(4);
  * // => [0, 1, 2, 3]
@@ -94722,16 +94722,16 @@ module.exports = BringToTop;
 
 /**
  * Adds the given item, or array of items, to the array starting at the index specified.
- * 
+ *
  * Each item must be unique within the array.
- * 
+ *
  * Existing elements in the array are shifted up.
- * 
+ *
  * The array is modified in-place and returned.
- * 
+ *
  * You can optionally specify a limit to the maximum size of the array. If the quantity of items being
  * added will take the array length over this limit, it will stop adding once the limit is reached.
- * 
+ *
  * You can optionally specify a callback to be invoked for each item successfully added to the array.
  *
  * @function Phaser.Utils.Array.AddAt
@@ -94844,14 +94844,14 @@ module.exports = AddAt;
 
 /**
  * Adds the given item, or array of items, to the array.
- * 
+ *
  * Each item must be unique within the array.
- * 
+ *
  * The array is modified in-place and returned.
- * 
+ *
  * You can optionally specify a limit to the maximum size of the array. If the quantity of items being
  * added will take the array length over this limit, it will stop adding once the limit is reached.
- * 
+ *
  * You can optionally specify a callback to be invoked for each item successfully added to the array.
  *
  * @function Phaser.Utils.Array.Add
@@ -94891,7 +94891,7 @@ var Add = function (array, item, limit, callback, context)
             {
                 callback.call(context, item);
             }
-    
+
             return item;
         }
         else
@@ -96656,7 +96656,7 @@ var GetFastValue = __webpack_require__(2);
 
 /**
  * Parses a Sprite Sheet and adds the Frames to the Texture.
- * 
+ *
  * In Phaser terminology a Sprite Sheet is a texture containing different frames, but each frame is the exact
  * same size and cannot be trimmed or rotated.
  *
@@ -97575,10 +97575,10 @@ module.exports = ProcessKeyCombo;
  * These values are read-only and populated during the boot sequence of the game.
  * They are then referenced by internal game systems and are available for you to access
  * via `this.sys.game.device.fullscreen` from within any Scene.
- * 
+ *
  * @typedef {object} Phaser.Device.Fullscreen
  * @since 3.0.0
- * 
+ *
  * @property {boolean} available - Does the browser support the Full Screen API?
  * @property {boolean} keyboard - Does the browser support access to the Keyboard during Full Screen mode?
  * @property {string} cancel - If the browser supports the Full Screen API this holds the call you need to use to cancel it.
@@ -97673,10 +97673,10 @@ module.exports = init();
  * These values are read-only and populated during the boot sequence of the game.
  * They are then referenced by internal game systems and are available for you to access
  * via `this.sys.game.device.video` from within any Scene.
- * 
+ *
  * @typedef {object} Phaser.Device.Video
  * @since 3.0.0
- * 
+ *
  * @property {boolean} h264Video - Can this device play h264 mp4 video files?
  * @property {boolean} hlsVideo - Can this device play hls video files?
  * @property {boolean} mp4Video - Can this device play h264 mp4 video files?
@@ -97760,10 +97760,10 @@ var Browser = __webpack_require__(74);
  * These values are read-only and populated during the boot sequence of the game.
  * They are then referenced by internal game systems and are available for you to access
  * via `this.sys.game.device.audio` from within any Scene.
- * 
+ *
  * @typedef {object} Phaser.Device.Audio
  * @since 3.0.0
- * 
+ *
  * @property {boolean} audioData - Can this device play HTML Audio tags?
  * @property {boolean} dolby - Can this device play EC-3 Dolby Digital Plus files?
  * @property {boolean} m4a - Can this device can play m4a files.
@@ -97886,10 +97886,10 @@ var Browser = __webpack_require__(74);
  * These values are read-only and populated during the boot sequence of the game.
  * They are then referenced by internal game systems and are available for you to access
  * via `this.sys.game.device.input` from within any Scene.
- * 
+ *
  * @typedef {object} Phaser.Device.Input
  * @since 3.0.0
- * 
+ *
  * @property {?string} wheelType - The newest type of Wheel/Scroll event supported: 'wheel', 'mousewheel', 'DOMMouseScroll'
  * @property {boolean} gamepads - Is navigator.getGamepads available?
  * @property {boolean} mspointer - Is mspointer available?
@@ -97901,7 +97901,7 @@ var Input = {
     mspointer: false,
     touch: false,
     wheelEvent: null
-    
+
 };
 
 function init ()
@@ -100963,7 +100963,7 @@ var LineCurve = new Class({
      *
      * @method Phaser.Curves.LineCurve#getTangent
      * @since 3.0.0
-     * 
+     *
      * @generic {Phaser.Math.Vector2} O - [out,$return]
      *
      * @return {Phaser.Math.Vector2} [description]
@@ -103779,7 +103779,7 @@ var tmpVec3 = new Vector3();
 /**
  * Rotates a vector in place by axis angle.
  *
- * This is the same as transforming a point by an 
+ * This is the same as transforming a point by an
  * axis-angle quaternion, but it has higher precision.
  *
  * @function Phaser.Math.RotateVec3
@@ -103872,7 +103872,7 @@ var RandomXYZ = function (vec3, radius)
     var r = Math.random() * 2 * Math.PI;
     var z = (Math.random() * 2) - 1;
     var zScale = Math.sqrt(1 - z * z) * radius;
-    
+
     vec3.x = Math.cos(r) * zScale;
     vec3.y = Math.sin(r) * zScale;
     vec3.z = z * radius;
@@ -105191,7 +105191,7 @@ var Fade = new Class({
 
         /**
          * Has this effect finished running?
-         * 
+         *
          * This is different from `isRunning` because it remains set to `true` when the effect is over,
          * until the effect is either reset or started again.
          *
@@ -106705,7 +106705,7 @@ var _FLAG = 1; // 0001
 /**
  * Provides methods used for setting the visibility of a Game Object.
  * Should be applied as a mixin and not used directly.
- * 
+ *
  * @name Phaser.GameObjects.Components.Visible
  * @since 3.0.0
  */
@@ -106714,7 +106714,7 @@ var Visible = {
 
     /**
      * Private internal value. Holds the visible value.
-     * 
+     *
      * @name Phaser.GameObjects.Components.Visible#_visible
      * @type {boolean}
      * @private
@@ -106725,9 +106725,9 @@ var Visible = {
 
     /**
      * The visible state of the Game Object.
-     * 
+     *
      * An invisible Game Object will skip rendering, but will still process update logic.
-     * 
+     *
      * @name Phaser.GameObjects.Components.Visible#visible
      * @type {boolean}
      * @since 3.0.0
@@ -106757,14 +106757,14 @@ var Visible = {
 
     /**
      * Sets the visibility of this Game Object.
-     * 
+     *
      * An invisible Game Object will skip rendering, but will still process update logic.
      *
      * @method Phaser.GameObjects.Components.Visible#setVisible
      * @since 3.0.0
      *
      * @param {boolean} value - The visible state of the Game Object.
-     * 
+     *
      * @return {Phaser.GameObjects.GameObject} This Game Object instance.
      */
     setVisible: function (value)
@@ -106807,7 +106807,7 @@ var Transform = {
 
     /**
      * Private internal value. Holds the horizontal scale value.
-     * 
+     *
      * @name Phaser.GameObjects.Components.Transform#_scaleX
      * @type {float}
      * @private
@@ -106818,7 +106818,7 @@ var Transform = {
 
     /**
      * Private internal value. Holds the vertical scale value.
-     * 
+     *
      * @name Phaser.GameObjects.Components.Transform#_scaleY
      * @type {float}
      * @private
@@ -106829,7 +106829,7 @@ var Transform = {
 
     /**
      * Private internal value. Holds the rotation value in radians.
-     * 
+     *
      * @name Phaser.GameObjects.Components.Transform#_rotation
      * @type {float}
      * @private
@@ -107194,7 +107194,7 @@ var Transform = {
         }
 
         var parents = [];
-        
+
         while (parent)
         {
             parents.unshift(parent);
@@ -107204,7 +107204,7 @@ var Transform = {
         tempMatrix.loadIdentity();
 
         var length = parents.length;
-        
+
         for (var i = 0; i < length; ++i)
         {
             parent = parents[i];
@@ -107337,7 +107337,7 @@ var GetColor = function (value)
 /**
  * Provides methods used for setting the tint of a Game Object.
  * Should be applied as a mixin and not used directly.
- * 
+ *
  * @name Phaser.GameObjects.Components.Tint
  * @webglOnly
  * @since 3.0.0
@@ -107347,7 +107347,7 @@ var Tint = {
 
     /**
      * Private internal value. Holds the top-left tint value.
-     * 
+     *
      * @name Phaser.GameObjects.Components.Tint#_tintTL
      * @type {number}
      * @private
@@ -107358,7 +107358,7 @@ var Tint = {
 
     /**
      * Private internal value. Holds the top-right tint value.
-     * 
+     *
      * @name Phaser.GameObjects.Components.Tint#_tintTR
      * @type {number}
      * @private
@@ -107369,7 +107369,7 @@ var Tint = {
 
     /**
      * Private internal value. Holds the bottom-left tint value.
-     * 
+     *
      * @name Phaser.GameObjects.Components.Tint#_tintBL
      * @type {number}
      * @private
@@ -107380,7 +107380,7 @@ var Tint = {
 
     /**
      * Private internal value. Holds the bottom-right tint value.
-     * 
+     *
      * @name Phaser.GameObjects.Components.Tint#_tintBR
      * @type {number}
      * @private
@@ -107396,7 +107396,7 @@ var Tint = {
      * @method Phaser.GameObjects.Components.Tint#clearTint
      * @webglOnly
      * @since 3.0.0
-     * 
+     *
      * @return {Phaser.GameObjects.GameObject} This Game Object instance.
      */
     clearTint: function ()
@@ -107417,7 +107417,7 @@ var Tint = {
      * @param {integer} [topRight] - The tint being applied to the top-right of the Game Object.
      * @param {integer} [bottomLeft] - The tint being applied to the bottom-left of the Game Object.
      * @param {integer} [bottomRight] - The tint being applied to the bottom-right of the Game Object.
-     * 
+     *
      * @return {Phaser.GameObjects.GameObject} This Game Object instance.
      */
     setTint: function (topLeft, topRight, bottomLeft, bottomRight)
@@ -107442,7 +107442,7 @@ var Tint = {
     /**
      * The tint value being applied to the top-left of the Game Object.
      * This value is interpolated from the corner to the center of the Game Object.
-     * 
+     *
      * @name Phaser.GameObjects.Components.Tint#tintTopLeft
      * @type {integer}
      * @webglOnly
@@ -107465,7 +107465,7 @@ var Tint = {
     /**
      * The tint value being applied to the top-right of the Game Object.
      * This value is interpolated from the corner to the center of the Game Object.
-     * 
+     *
      * @name Phaser.GameObjects.Components.Tint#tintTopRight
      * @type {integer}
      * @webglOnly
@@ -107488,7 +107488,7 @@ var Tint = {
     /**
      * The tint value being applied to the bottom-left of the Game Object.
      * This value is interpolated from the corner to the center of the Game Object.
-     * 
+     *
      * @name Phaser.GameObjects.Components.Tint#tintBottomLeft
      * @type {integer}
      * @webglOnly
@@ -107511,7 +107511,7 @@ var Tint = {
     /**
      * The tint value being applied to the bottom-right of the Game Object.
      * This value is interpolated from the corner to the center of the Game Object.
-     * 
+     *
      * @name Phaser.GameObjects.Components.Tint#tintBottomRight
      * @type {integer}
      * @webglOnly
@@ -107533,7 +107533,7 @@ var Tint = {
 
     /**
      * The tint value being applied to the whole of the Game Object.
-     * 
+     *
      * @name Phaser.GameObjects.Components.Tint#tint
      * @type {integer}
      * @webglOnly
@@ -107684,7 +107684,7 @@ module.exports = Texture;
 
 /**
  * Provides methods used for getting and setting the size of a Game Object.
- * 
+ *
  * @name Phaser.GameObjects.Components.Size
  * @since 3.0.0
  */
@@ -107693,7 +107693,7 @@ var Size = {
 
     /**
      * A property indicating that a Game Object has this component.
-     * 
+     *
      * @name Phaser.GameObjects.Components.Size#_sizeComponent
      * @type {boolean}
      * @private
@@ -107704,7 +107704,7 @@ var Size = {
 
     /**
      * The native (un-scaled) width of this Game Object.
-     * 
+     *
      * @name Phaser.GameObjects.Components.Size#width
      * @type {number}
      * @since 3.0.0
@@ -107713,7 +107713,7 @@ var Size = {
 
     /**
      * The native (un-scaled) height of this Game Object.
-     * 
+     *
      * @name Phaser.GameObjects.Components.Size#height
      * @type {number}
      * @since 3.0.0
@@ -107723,7 +107723,7 @@ var Size = {
     /**
      * The displayed width of this Game Object.
      * This value takes into account the scale factor.
-     * 
+     *
      * @name Phaser.GameObjects.Components.Size#displayWidth
      * @type {number}
      * @since 3.0.0
@@ -107745,7 +107745,7 @@ var Size = {
     /**
      * The displayed height of this Game Object.
      * This value takes into account the scale factor.
-     * 
+     *
      * @name Phaser.GameObjects.Components.Size#displayHeight
      * @type {number}
      * @since 3.0.0
@@ -107766,12 +107766,12 @@ var Size = {
 
     /**
      * Sets the size of this Game Object to be that of the given Frame.
-     * 
+     *
      * @method Phaser.GameObjects.Components.Size#setSizeToFrame
      * @since 3.0.0
      *
      * @param {Phaser.Textures.Frame} frame - The frame to base the size of this Game Object on.
-     * 
+     *
      * @return {Phaser.GameObjects.GameObject} This Game Object instance.
      */
     setSizeToFrame: function (frame)
@@ -107786,13 +107786,13 @@ var Size = {
 
     /**
      * Sets the size of this Game Object.
-     * 
+     *
      * @method Phaser.GameObjects.Components.Size#setSize
      * @since 3.0.0
      *
      * @param {number} width - The width of this Game Object.
      * @param {number} height - The height of this Game Object.
-     * 
+     *
      * @return {Phaser.GameObjects.GameObject} This Game Object instance.
      */
     setSize: function (width, height)
@@ -107806,13 +107806,13 @@ var Size = {
     /**
      * Sets the display size of this Game Object.
      * Calling this will adjust the scale.
-     * 
+     *
      * @method Phaser.GameObjects.Components.Size#setDisplaySize
      * @since 3.0.0
      *
      * @param {number} width - The width of this Game Object.
      * @param {number} height - The height of this Game Object.
-     * 
+     *
      * @return {Phaser.GameObjects.GameObject} This Game Object instance.
      */
     setDisplaySize: function (width, height)
@@ -108207,7 +108207,7 @@ module.exports = Origin;
 /**
  * Provides methods used for getting and setting the transform values of a Game Object.
  * Should be applied as a mixin and not used directly.
- * 
+ *
  * @name Phaser.GameObjects.Components.MatrixStack
  * @since 3.2.0
  */
@@ -108216,7 +108216,7 @@ var MatrixStack = {
 
     /**
      * [description]
-     * 
+     *
      * @name Phaser.GameObjects.Components.MatrixStack#matrixStack
      * @type {Float32Array}
      * @private
@@ -108226,7 +108226,7 @@ var MatrixStack = {
 
     /**
      * [description]
-     * 
+     *
      * @name Phaser.GameObjects.Components.MatrixStack#currentMatrix
      * @type {Float32Array}
      * @private
@@ -108236,7 +108236,7 @@ var MatrixStack = {
 
     /**
      * [description]
-     * 
+     *
      * @name Phaser.GameObjects.Components.MatrixStack#currentMatrixIndex
      * @type {integer}
      * @private
@@ -108246,7 +108246,7 @@ var MatrixStack = {
 
     /**
      * [description]
-     * 
+     *
      * @method Phaser.GameObjects.Components.MatrixStack#initMatrixStack
      * @since 3.2.0
      *
@@ -108263,10 +108263,10 @@ var MatrixStack = {
 
     /**
      * [description]
-     * 
+     *
      * @method Phaser.GameObjects.Components.MatrixStack#save
      * @since 3.2.0
-     * 
+     *
      * @return {Phaser.GameObjects.GameObject} This Game Object instance.
      */
     save: function ()
@@ -108284,16 +108284,16 @@ var MatrixStack = {
         matrixStack[currentMatrixIndex + 3] = currentMatrix[3];
         matrixStack[currentMatrixIndex + 4] = currentMatrix[4];
         matrixStack[currentMatrixIndex + 5] = currentMatrix[5];
-        
+
         return this;
     },
 
     /**
      * [description]
-     * 
+     *
      * @method Phaser.GameObjects.Components.MatrixStack#restore
      * @since 3.2.0
-     * 
+     *
      * @return {Phaser.GameObjects.GameObject} This Game Object instance.
      */
     restore: function ()
@@ -108318,10 +108318,10 @@ var MatrixStack = {
 
     /**
      * [description]
-     * 
+     *
      * @method Phaser.GameObjects.Components.MatrixStack#loadIdentity
      * @since 3.2.0
-     * 
+     *
      * @return {Phaser.GameObjects.GameObject} This Game Object instance.
      */
     loadIdentity: function ()
@@ -108333,7 +108333,7 @@ var MatrixStack = {
 
     /**
      * [description]
-     * 
+     *
      * @method Phaser.GameObjects.Components.MatrixStack#transform
      * @since 3.2.0
      *
@@ -108343,7 +108343,7 @@ var MatrixStack = {
      * @param {number} d - [description]
      * @param {number} tx - [description]
      * @param {number} ty - [description]
-     * 
+     *
      * @return {Phaser.GameObjects.GameObject} This Game Object instance.
      */
     transform: function (a, b, c, d, tx, ty)
@@ -108368,7 +108368,7 @@ var MatrixStack = {
 
     /**
      * [description]
-     * 
+     *
      * @method Phaser.GameObjects.Components.MatrixStack#setTransform
      * @since 3.2.0
      *
@@ -108378,7 +108378,7 @@ var MatrixStack = {
      * @param {number} d - [description]
      * @param {number} tx - [description]
      * @param {number} ty - [description]
-     * 
+     *
      * @return {Phaser.GameObjects.GameObject} This Game Object instance.
      */
     setTransform: function (a, b, c, d, tx, ty)
@@ -108397,13 +108397,13 @@ var MatrixStack = {
 
     /**
      * [description]
-     * 
+     *
      * @method Phaser.GameObjects.Components.MatrixStack#translate
      * @since 3.2.0
      *
      * @param {number} x - [description]
      * @param {number} y - [description]
-     * 
+     *
      * @return {Phaser.GameObjects.GameObject} This Game Object instance.
      */
     translate: function (x, y)
@@ -108424,13 +108424,13 @@ var MatrixStack = {
 
     /**
      * [description]
-     * 
+     *
      * @method Phaser.GameObjects.Components.MatrixStack#scale
      * @since 3.2.0
      *
      * @param {number} x - [description]
      * @param {number} y - [description]
-     * 
+     *
      * @return {Phaser.GameObjects.GameObject} This Game Object instance.
      */
     scale: function (x, y)
@@ -108451,12 +108451,12 @@ var MatrixStack = {
 
     /**
      * [description]
-     * 
+     *
      * @method Phaser.GameObjects.Components.MatrixStack#rotate
      * @since 3.2.0
      *
      * @param {number} t - The angle of rotation, in radians.
-     * 
+     *
      * @return {Phaser.GameObjects.GameObject} This Game Object instance.
      */
     rotate: function (t)
@@ -108698,7 +108698,7 @@ var GetBounds = {
 
         var TLx, TLy, TRx, TRy, BLx, BLy, BRx, BRy;
 
-        // Instead of doing a check if parent container is 
+        // Instead of doing a check if parent container is
         // defined per corner we only do it once.
         if (this.parentContainer)
         {
@@ -108777,7 +108777,7 @@ module.exports = GetBounds;
 /**
  * Provides methods used for visually flipping a Game Object.
  * Should be applied as a mixin and not used directly.
- * 
+ *
  * @name Phaser.GameObjects.Components.Flip
  * @since 3.0.0
  */
@@ -108788,7 +108788,7 @@ var Flip = {
      * The horizontally flipped state of the Game Object.
      * A Game Object that is flipped horizontally will render inversed on the horizontal axis.
      * Flipping always takes place from the middle of the texture and does not impact the scale value.
-     * 
+     *
      * @name Phaser.GameObjects.Components.Flip#flipX
      * @type {boolean}
      * @default false
@@ -108800,7 +108800,7 @@ var Flip = {
      * The vertically flipped state of the Game Object.
      * A Game Object that is flipped vertically will render inversed on the vertical axis (i.e. upside down)
      * Flipping always takes place from the middle of the texture and does not impact the scale value.
-     * 
+     *
      * @name Phaser.GameObjects.Components.Flip#flipY
      * @type {boolean}
      * @default false
@@ -108810,10 +108810,10 @@ var Flip = {
 
     /**
      * Toggles the horizontal flipped state of this Game Object.
-     * 
+     *
      * @method Phaser.GameObjects.Components.Flip#toggleFlipX
      * @since 3.0.0
-     * 
+     *
      * @return {Phaser.GameObjects.GameObject} This Game Object instance.
      */
     toggleFlipX: function ()
@@ -108825,10 +108825,10 @@ var Flip = {
 
     /**
      * Toggles the vertical flipped state of this Game Object.
-     * 
+     *
      * @method Phaser.GameObjects.Components.Flip#toggleFlipY
      * @since 3.0.0
-     * 
+     *
      * @return {Phaser.GameObjects.GameObject} This Game Object instance.
      */
     toggleFlipY: function ()
@@ -108840,12 +108840,12 @@ var Flip = {
 
     /**
      * Sets the horizontal flipped state of this Game Object.
-     * 
+     *
      * @method Phaser.GameObjects.Components.Flip#setFlipX
      * @since 3.0.0
      *
      * @param {boolean} value - The flipped state. `false` for no flip, or `true` to be flipped.
-     * 
+     *
      * @return {Phaser.GameObjects.GameObject} This Game Object instance.
      */
     setFlipX: function (value)
@@ -108857,12 +108857,12 @@ var Flip = {
 
     /**
      * Sets the vertical flipped state of this Game Object.
-     * 
+     *
      * @method Phaser.GameObjects.Components.Flip#setFlipY
      * @since 3.0.0
      *
      * @param {boolean} value - The flipped state. `false` for no flip, or `true` to be flipped.
-     * 
+     *
      * @return {Phaser.GameObjects.GameObject} This Game Object instance.
      */
     setFlipY: function (value)
@@ -108874,13 +108874,13 @@ var Flip = {
 
     /**
      * Sets the horizontal and vertical flipped state of this Game Object.
-     * 
+     *
      * @method Phaser.GameObjects.Components.Flip#setFlip
      * @since 3.0.0
      *
      * @param {boolean} x - The horizontal flipped state. `false` for no flip, or `true` to be flipped.
      * @param {boolean} y - The horizontal flipped state. `false` for no flip, or `true` to be flipped.
-     * 
+     *
      * @return {Phaser.GameObjects.GameObject} This Game Object instance.
      */
     setFlip: function (x, y)
@@ -108893,7 +108893,7 @@ var Flip = {
 
     /**
      * Resets the horizontal and vertical flipped state of this Game Object back to their default un-flipped state.
-     * 
+     *
      * @method Phaser.GameObjects.Components.Flip#resetFlip
      * @since 3.0.0
      *
@@ -108925,7 +108925,7 @@ module.exports = Flip;
 /**
  * Provides methods used for setting the depth of a Game Object.
  * Should be applied as a mixin and not used directly.
- * 
+ *
  * @name Phaser.GameObjects.Components.Depth
  * @since 3.0.0
  */
@@ -108934,7 +108934,7 @@ var Depth = {
 
     /**
      * Private internal value. Holds the depth of the Game Object.
-     * 
+     *
      * @name Phaser.GameObjects.Components.Depth#_depth
      * @type {integer}
      * @private
@@ -108945,7 +108945,7 @@ var Depth = {
 
     /**
      * The depth of this Game Object within the Scene.
-     * 
+     *
      * The depth is also known as the 'z-index' in some environments, and allows you to change the rendering order
      * of Game Objects, without actually moving their position in the display list.
      *
@@ -108953,7 +108953,7 @@ var Depth = {
      * value will always render in front of one with a lower value.
      *
      * Setting the depth will queue a depth sort event within the Scene.
-     * 
+     *
      * @name Phaser.GameObjects.Components.Depth#depth
      * @type {number}
      * @since 3.0.0
@@ -108975,7 +108975,7 @@ var Depth = {
 
     /**
      * The depth of this Game Object within the Scene.
-     * 
+     *
      * The depth is also known as the 'z-index' in some environments, and allows you to change the rendering order
      * of Game Objects, without actually moving their position in the display list.
      *
@@ -108983,12 +108983,12 @@ var Depth = {
      * value will always render in front of one with a lower value.
      *
      * Setting the depth will queue a depth sort event within the Scene.
-     * 
+     *
      * @method Phaser.GameObjects.Components.Depth#setDepth
      * @since 3.0.0
      *
      * @param {integer} value - The depth of this Game Object.
-     * 
+     *
      * @return {Phaser.GameObjects.GameObject} This Game Object instance.
      */
     setDepth: function (value)
@@ -109018,7 +109018,7 @@ module.exports = Depth;
 /**
  * Provides methods used for calculating and setting the size of a non-Frame based Game Object.
  * Should be applied as a mixin and not used directly.
- * 
+ *
  * @name Phaser.GameObjects.Components.ComputedSize
  * @since 3.0.0
  */
@@ -109027,7 +109027,7 @@ var ComputedSize = {
 
     /**
      * The native (un-scaled) width of this Game Object.
-     * 
+     *
      * @name Phaser.GameObjects.Components.ComputedSize#width
      * @type {number}
      * @since 3.0.0
@@ -109036,7 +109036,7 @@ var ComputedSize = {
 
     /**
      * The native (un-scaled) height of this Game Object.
-     * 
+     *
      * @name Phaser.GameObjects.Components.ComputedSize#height
      * @type {number}
      * @since 3.0.0
@@ -109046,7 +109046,7 @@ var ComputedSize = {
     /**
      * The displayed width of this Game Object.
      * This value takes into account the scale factor.
-     * 
+     *
      * @name Phaser.GameObjects.Components.ComputedSize#displayWidth
      * @type {number}
      * @since 3.0.0
@@ -109068,7 +109068,7 @@ var ComputedSize = {
     /**
      * The displayed height of this Game Object.
      * This value takes into account the scale factor.
-     * 
+     *
      * @name Phaser.GameObjects.Components.ComputedSize#displayHeight
      * @type {number}
      * @since 3.0.0
@@ -109089,13 +109089,13 @@ var ComputedSize = {
 
     /**
      * Sets the size of this Game Object.
-     * 
+     *
      * @method Phaser.GameObjects.Components.ComputedSize#setSize
      * @since 3.4.0
      *
      * @param {number} width - The width of this Game Object.
      * @param {number} height - The height of this Game Object.
-     * 
+     *
      * @return {Phaser.GameObjects.GameObject} This Game Object instance.
      */
     setSize: function (width, height)
@@ -109109,13 +109109,13 @@ var ComputedSize = {
     /**
      * Sets the display size of this Game Object.
      * Calling this will adjust the scale.
-     * 
+     *
      * @method Phaser.GameObjects.Components.ComputedSize#setDisplaySize
      * @since 3.4.0
      *
      * @param {number} width - The width of this Game Object.
      * @param {number} height - The height of this Game Object.
-     * 
+     *
      * @return {Phaser.GameObjects.GameObject} This Game Object instance.
      */
     setDisplaySize: function (width, height)
@@ -109155,7 +109155,7 @@ var BlendMode = {
 
     /**
      * Private internal value. Holds the current blend mode.
-     * 
+     *
      * @name Phaser.GameObjects.Components.BlendMode#_blendMode
      * @type {integer}
      * @private
@@ -109269,7 +109269,7 @@ var _FLAG = 2; // 0010
 /**
  * Provides methods used for setting the alpha properties of a Game Object.
  * Should be applied as a mixin and not used directly.
- * 
+ *
  * @name Phaser.GameObjects.Components.Alpha
  * @since 3.0.0
  */
@@ -109278,7 +109278,7 @@ var Alpha = {
 
     /**
      * Private internal value. Holds the global alpha value.
-     * 
+     *
      * @name Phaser.GameObjects.Components.Alpha#_alpha
      * @type {float}
      * @private
@@ -109289,7 +109289,7 @@ var Alpha = {
 
     /**
      * Private internal value. Holds the top-left alpha value.
-     * 
+     *
      * @name Phaser.GameObjects.Components.Alpha#_alphaTL
      * @type {float}
      * @private
@@ -109300,7 +109300,7 @@ var Alpha = {
 
     /**
      * Private internal value. Holds the top-right alpha value.
-     * 
+     *
      * @name Phaser.GameObjects.Components.Alpha#_alphaTR
      * @type {float}
      * @private
@@ -109311,7 +109311,7 @@ var Alpha = {
 
     /**
      * Private internal value. Holds the bottom-left alpha value.
-     * 
+     *
      * @name Phaser.GameObjects.Components.Alpha#_alphaBL
      * @type {float}
      * @private
@@ -109322,7 +109322,7 @@ var Alpha = {
 
     /**
      * Private internal value. Holds the bottom-right alpha value.
-     * 
+     *
      * @name Phaser.GameObjects.Components.Alpha#_alphaBR
      * @type {float}
      * @private
@@ -109337,7 +109337,7 @@ var Alpha = {
      *
      * @method Phaser.GameObjects.Components.Alpha#clearAlpha
      * @since 3.0.0
-     * 
+     *
      * @return {Phaser.GameObjects.GameObject} This Game Object instance.
      */
     clearAlpha: function ()
@@ -109354,12 +109354,12 @@ var Alpha = {
      *
      * @method Phaser.GameObjects.Components.Alpha#setAlpha
      * @since 3.0.0
-     * 
+     *
      * @param {float} [topLeft=1] - The alpha value used for the top-left of the Game Object. If this is the only value given it's applied across the whole Game Object.
      * @param {float} [topRight] - The alpha value used for the top-right of the Game Object. WebGL only.
      * @param {float} [bottomLeft] - The alpha value used for the bottom-left of the Game Object. WebGL only.
      * @param {float} [bottomRight] - The alpha value used for the bottom-right of the Game Object. WebGL only.
-     * 
+     *
      * @return {Phaser.GameObjects.GameObject} This Game Object instance.
      */
     setAlpha: function (topLeft, topRight, bottomLeft, bottomRight)
@@ -109386,7 +109386,7 @@ var Alpha = {
      * The alpha value of the Game Object.
      *
      * This is a global value, impacting the entire Game Object, not just a region of it.
-     * 
+     *
      * @name Phaser.GameObjects.Components.Alpha#alpha
      * @type {float}
      * @since 3.0.0
@@ -109423,7 +109423,7 @@ var Alpha = {
     /**
      * The alpha value starting from the top-left of the Game Object.
      * This value is interpolated from the corner to the center of the Game Object.
-     * 
+     *
      * @name Phaser.GameObjects.Components.Alpha#alphaTopLeft
      * @type {float}
      * @webglOnly
@@ -109453,7 +109453,7 @@ var Alpha = {
     /**
      * The alpha value starting from the top-right of the Game Object.
      * This value is interpolated from the corner to the center of the Game Object.
-     * 
+     *
      * @name Phaser.GameObjects.Components.Alpha#alphaTopRight
      * @type {float}
      * @webglOnly
@@ -109483,7 +109483,7 @@ var Alpha = {
     /**
      * The alpha value starting from the bottom-left of the Game Object.
      * This value is interpolated from the corner to the center of the Game Object.
-     * 
+     *
      * @name Phaser.GameObjects.Components.Alpha#alphaBottomLeft
      * @type {float}
      * @webglOnly
@@ -109513,7 +109513,7 @@ var Alpha = {
     /**
      * The alpha value starting from the bottom-right of the Game Object.
      * This value is interpolated from the corner to the center of the Game Object.
-     * 
+     *
      * @name Phaser.GameObjects.Components.Alpha#alphaBottomRight
      * @type {float}
      * @webglOnly
@@ -110606,7 +110606,7 @@ var Pair = {};
 module.exports = Pair;
 
 (function() {
-    
+
     /**
      * Creates a pair.
      * @method create
@@ -110656,7 +110656,7 @@ module.exports = Pair;
         //     activeContacts = pair.activeContacts,
         //     parentA = collision.parentA,
         //     parentB = collision.parentB;
-        
+
         pair.collision = collision;
         // pair.inverseMass = parentA.inverseMass + parentB.inverseMass;
         // pair.friction = Math.min(parentA.friction, parentB.friction);
@@ -110664,7 +110664,7 @@ module.exports = Pair;
         // pair.restitution = Math.max(parentA.restitution, parentB.restitution);
         // pair.slop = Math.max(parentA.slop, parentB.slop);
         // activeContacts.length = 0;
-        
+
         if (collision.collided) {
 
             var supports = collision.supports,
@@ -110695,7 +110695,7 @@ module.exports = Pair;
                 Pair.setActive(pair, false, timestamp);
         }
     };
-    
+
     /**
      * Set a pair as active or inactive.
      * @method setActive
@@ -110865,7 +110865,7 @@ var Clone = __webpack_require__(47);
 
 /**
  * Creates a new Object using all values from obj1.
- * 
+ *
  * Then scans obj2. If a property is found in obj2 that *also* exists in obj1, the value from obj2 is used, otherwise the property is skipped.
  *
  * @function Phaser.Utils.Object.MergeRight
@@ -111064,7 +111064,7 @@ var ParseToTilemap = __webpack_require__(205);
  * the tile data doesn't need to change then setting this value to `true` will help with memory
  * consumption. However if your map is small or you need to update the tiles dynamically, then leave
  * the default value set.
- * 
+ *
  * @return {Phaser.Tilemaps.Tilemap}
  */
 GameObjectFactory.register('tilemap', function (key, tileWidth, tileHeight, width, height, data, insertNull)
@@ -111106,7 +111106,7 @@ var ParseToTilemap = __webpack_require__(205);
 
 /**
  * @typedef {object} TilemapConfig
- * 
+ *
  * @property {string} [key] - The key in the Phaser cache that corresponds to the loaded tilemap data.
  * @property {integer[][]} [data] - Instead of loading from the cache, you can also load directly from a 2D array of tile indexes.
  * @property {integer} [tileWidth=32] - The width of a tile in pixels.
@@ -111129,9 +111129,9 @@ var ParseToTilemap = __webpack_require__(205);
  *
  * @method Phaser.GameObjects.GameObjectCreator#tilemap
  * @since 3.0.0
- * 
+ *
  * @param {TilemapConfig} [config] - The config options for the Tilemap.
- * 
+ *
  * @return {Phaser.Tilemaps.Tilemap}
  */
 GameObjectCreator.register('tilemap', function (config)
@@ -112226,7 +112226,7 @@ var Vector2 = __webpack_require__(6);
  * @param {Phaser.Math.Vector2} [point] - [description]
  * @param {Phaser.Cameras.Scene2D.Camera} [camera=main camera] - [description]
  * @param {Phaser.Tilemaps.LayerData} layer - The Tilemap Layer to act upon.
- * 
+ *
  * @return {Phaser.Math.Vector2} The XY location in tile units.
  */
 var WorldToTileXY = function (worldX, worldY, snapToFloor, point, camera, layer)
@@ -112350,7 +112350,7 @@ var Vector2 = __webpack_require__(6);
  * @param {Phaser.Math.Vector2} [point] - [description]
  * @param {Phaser.Cameras.Scene2D.Camera} [camera=main camera] - [description]
  * @param {Phaser.Tilemaps.LayerData} layer - The Tilemap Layer to act upon.
- * 
+ *
  * @return {Phaser.Math.Vector2} The XY location in world coordinates.
  */
 var TileToWorldXY = function (tileX, tileY, point, camera, layer)
@@ -113193,7 +113193,7 @@ var WorldToTileY = __webpack_require__(49);
  * @param {number} worldY - [description]
  * @param {Phaser.Cameras.Scene2D.Camera} [camera=main camera] - [description]
  * @param {Phaser.Tilemaps.LayerData} layer - The Tilemap Layer to act upon.
- * 
+ *
  * @return {boolean}
  */
 var HasTileAtWorldXY = function (worldX, worldY, camera, layer)
@@ -113241,7 +113241,7 @@ var WorldToTileY = __webpack_require__(49);
  * have at least one interesting face.
  * @param {Phaser.Cameras.Scene2D.Camera} [camera=main camera] - [description]
  * @param {Phaser.Tilemaps.LayerData} layer - The Tilemap Layer to act upon.
- * 
+ *
  * @return {Phaser.Tilemaps.Tile[]} Array of Tile objects.
  */
 var GetTilesWithinWorldXY = function (worldX, worldY, width, height, filteringOptions, camera, layer)
@@ -113387,7 +113387,7 @@ var WorldToTileY = __webpack_require__(49);
  * object with an index of -1.
  * @param {Phaser.Cameras.Scene2D.Camera} [camera=main camera] - [description]
  * @param {Phaser.Tilemaps.LayerData} layer - The Tilemap Layer to act upon.
- * 
+ *
  * @return {Phaser.Tilemaps.Tile} The tile at the given coordinates or null if no tile was found or the coordinates
  * were invalid.
  */
@@ -113638,7 +113638,7 @@ var GetTilesWithin = __webpack_require__(20);
  * @param {boolean} [filteringOptions.hasInterestingFace=false] - If true, only return tiles that
  * have at least one interesting face.
  * @param {Phaser.Tilemaps.LayerData} layer - The Tilemap Layer to act upon.
- * 
+ *
  * @return {Phaser.Tilemaps.Tile[]} The filtered array of Tiles.
  */
 var FilterTiles = function (callback, context, tileX, tileY, width, height, filteringOptions, layer)
@@ -114152,12 +114152,12 @@ var Common = __webpack_require__(45);
                 y: 1,
                 scale: 0.001
             },
-            bounds: { 
-                min: { x: -Infinity, y: -Infinity }, 
-                max: { x: Infinity, y: Infinity } 
+            bounds: {
+                min: { x: -Infinity, y: -Infinity },
+                max: { x: Infinity, y: Infinity }
             }
         };
-        
+
         return Common.extend(composite, defaults, options);
     };
 
@@ -114208,7 +114208,7 @@ var Common = __webpack_require__(45);
 
     // World is a Composite body
     // see src/module/Outro.js for these aliases:
-    
+
     /**
      * An alias for Composite.clear
      * @method clear
@@ -114223,7 +114223,7 @@ var Common = __webpack_require__(45);
      * @param {composite} composite
      * @return {world} The original world with the objects from composite added
      */
-    
+
      /**
       * An alias for Composite.addBody
       * @method addBody
@@ -114295,7 +114295,7 @@ var Common = __webpack_require__(45);
     };
 
     /**
-     * Resolves a dependency to a plugin object from the registry if it exists. 
+     * Resolves a dependency to a plugin object from the registry if it exists.
      * The `dependency` may contain a version, but only the name matters when resolving.
      * @method resolve
      * @param dependency {string} The dependency.
@@ -114508,7 +114508,7 @@ var Common = __webpack_require__(45);
     };
 
     /**
-     * Parses a version string into its components.  
+     * Parses a version string into its components.
      * Versions are strictly of the format `x.y.z` (as in [semver](http://semver.org/)).
      * Versions may optionally have a prerelease tag in the format `x.y.z-alpha`.
      * Ranges are a strict subset of [npm ranges](https://docs.npmjs.com/misc/semver#advanced-range-syntax).
@@ -114677,7 +114677,7 @@ var Vector = __webpack_require__(115);
      */
     SAT.collides = function(bodyA, bodyB, previousCollision) {
         var overlapAB,
-            overlapBA, 
+            overlapBA,
             minOverlap,
             collision,
             canReusePrevCol = false;
@@ -114689,7 +114689,7 @@ var Vector = __webpack_require__(115);
                 motion = parentA.speed * parentA.speed + parentA.angularSpeed * parentA.angularSpeed
                        + parentB.speed * parentB.speed + parentB.angularSpeed * parentB.angularSpeed;
 
-            // we may be able to (partially) reuse collision result 
+            // we may be able to (partially) reuse collision result
             // but only safe if collision was resting
             canReusePrevCol = previousCollision && previousCollision.collided && motion < 0.2;
 
@@ -114748,7 +114748,7 @@ var Vector = __webpack_require__(115);
         collision.depth = minOverlap.overlap;
         collision.parentA = collision.bodyA.parent;
         collision.parentB = collision.bodyB.parent;
-        
+
         bodyA = collision.bodyA;
         bodyB = collision.bodyB;
 
@@ -114769,7 +114769,7 @@ var Vector = __webpack_require__(115);
 
         collision.penetration = collision.penetration || {};
         collision.penetration.x = collision.normal.x * collision.depth;
-        collision.penetration.y = collision.normal.y * collision.depth; 
+        collision.penetration.y = collision.normal.y * collision.depth;
 
         // find support points, there is always either exactly one or two
         var verticesB = _findSupports(bodyA, bodyB, collision.normal),
@@ -114785,7 +114785,7 @@ var Vector = __webpack_require__(115);
         // find the supports from bodyA that are inside bodyB
         if (supports.length < 2) {
             var verticesA = _findSupports(bodyB, bodyA, Vector.neg(collision.normal));
-                
+
             if (Vertices.contains(bodyB.vertices, verticesA[0]))
                 supports.push(verticesA[0]);
 
@@ -114796,7 +114796,7 @@ var Vector = __webpack_require__(115);
         // account for the edge case of overlapping but no vertex containment
         if (supports.length < 1)
             supports = [verticesB[0]];
-        
+
         collision.supports = supports;
 
         return collision;
@@ -114812,7 +114812,7 @@ var Vector = __webpack_require__(115);
      * @return result
      */
     var _overlapAxes = function(verticesA, verticesB, axes) {
-        var projectionA = Vector._temp[0], 
+        var projectionA = Vector._temp[0],
             projectionB = Vector._temp[1],
             result = { overlap: Number.MAX_VALUE },
             overlap,
@@ -114856,17 +114856,17 @@ var Vector = __webpack_require__(115);
         for (var i = 1; i < vertices.length; i += 1) {
             var dot = Vector.dot(vertices[i], axis);
 
-            if (dot > max) { 
-                max = dot; 
-            } else if (dot < min) { 
-                min = dot; 
+            if (dot > max) {
+                max = dot;
+            } else if (dot < min) {
+                min = dot;
             }
         }
 
         projection.min = min;
         projection.max = max;
     };
-    
+
     /**
      * Finds supporting vertices given two bodies along a given direction using hill-climbing.
      * @method _findSupports
@@ -114958,14 +114958,14 @@ var Bounds = __webpack_require__(134);
         // @if DEBUG
         var metrics = engine.metrics;
         // @endif
-        
+
         for (var i = 0; i < broadphasePairs.length; i++) {
-            var bodyA = broadphasePairs[i][0], 
+            var bodyA = broadphasePairs[i][0],
                 bodyB = broadphasePairs[i][1];
 
             if ((bodyA.isStatic || bodyA.isSleeping) && (bodyB.isStatic || bodyB.isSleeping))
                 continue;
-            
+
             if (!Detector.canCollide(bodyA.collisionFilter, bodyB.collisionFilter))
                 continue;
 
@@ -115172,7 +115172,7 @@ var MatterTileBody = new Class({
      * made static. This defaults to true since typically tiles should not be moved.
      * @param {boolean} [options.addToWorld=true] - Whether or not to add the newly created body (or
      * existing body if options.body is used) to the Matter world.
-     * 
+     *
      * @return {Phaser.Physics.Matter.TileBody} This TileBody object.
      */
     setFromTileRectangle: function (options)
@@ -115210,7 +115210,7 @@ var MatterTileBody = new Class({
      * made static. This defaults to true since typically tiles should not be moved.
      * @param {boolean} [options.addToWorld=true] - Whether or not to add the newly created body (or
      * existing body if options.body is used) to the Matter world.
-     * 
+     *
      * @return {Phaser.Physics.Matter.TileBody} This TileBody object.
      */
     setFromTileCollision: function (options)
@@ -115299,7 +115299,7 @@ var MatterTileBody = new Class({
      *
      * @param {MatterJS.Body} body - The new Matter body to use.
      * @param {boolean} [addToWorld=true] - Whether or not to add the body to the Matter world.
-     * 
+     *
      * @return {Phaser.Physics.Matter.TileBody} This TileBody object.
      */
     setBody: function (body, addToWorld)
@@ -115391,13 +115391,13 @@ var Common = __webpack_require__(45);
 
         // find the unique axes, using edge normal gradients
         for (var i = 0; i < vertices.length; i++) {
-            var j = (i + 1) % vertices.length, 
-                normal = Vector.normalise({ 
-                    x: vertices[j].y - vertices[i].y, 
+            var j = (i + 1) % vertices.length,
+                normal = Vector.normalise({
+                    x: vertices[j].y - vertices[i].y,
                     y: vertices[i].x - vertices[j].x
                 }),
                 gradient = (normal.y === 0) ? Infinity : (normal.x / normal.y);
-            
+
             // limit precision
             gradient = gradient.toFixed(3).toString();
             axes[gradient] = normal;
@@ -115415,7 +115415,7 @@ var Common = __webpack_require__(45);
     Axes.rotate = function(axes, angle) {
         if (angle === 0)
             return;
-        
+
         var cos = Math.cos(angle),
             sin = Math.sin(angle);
 
@@ -125244,7 +125244,7 @@ var GameObjectFactory = __webpack_require__(11);
  * @param {number} y - The vertical position of this Game Object in the world.
  * @param {string} texture - The key of the Texture this Game Object will use to render with, as stored in the Texture Manager.
  * @param {(string|integer)} [frame] - An optional frame from the Texture this Game Object is rendering with.
- * 
+ *
  * @return {Phaser.GameObjects.Quad} The Game Object that was created.
  */
 if (true)
@@ -125256,9 +125256,9 @@ if (true)
 }
 
 //  When registering a factory function 'this' refers to the GameObjectFactory context.
-//  
+//
 //  There are several properties available to use:
-//  
+//
 //  this.scene - a reference to the Scene that owns the GameObjectFactory
 //  this.displayList - a reference to the Display List the Scene owns
 //  this.updateList - a reference to the Update List the Scene owns
@@ -125705,9 +125705,9 @@ GameObjectCreator.register('particles', function (config)
 });
 
 //  When registering a factory function 'this' refers to the GameObjectCreator context.
-//  
+//
 //  There are several properties available to use:
-//  
+//
 //  this.scene - a reference to the Scene that owns the GameObjectFactory
 //  this.displayList - a reference to the Display List the Scene owns
 //  this.updateList - a reference to the Update List the Scene owns
@@ -125836,7 +125836,7 @@ GameObjectCreator.register('container', function (config)
     var container = new Container(this.scene, x, y);
 
     BuildGameObject(this.scene, container, config);
-    
+
     return container;
 });
 
@@ -125908,7 +125908,7 @@ var GameObjectFactory = __webpack_require__(11);
  * @param {number} y - The vertical position of this Game Object in the world.
  * @param {number} width - The width of the Game Object.
  * @param {number} height - The height of the Game Object.
- * 
+ *
  * @return {Phaser.GameObjects.Zone} The Game Object that was created.
  */
 GameObjectFactory.register('zone', function (x, y, width, height)
@@ -125917,9 +125917,9 @@ GameObjectFactory.register('zone', function (x, y, width, height)
 });
 
 //  When registering a factory function 'this' refers to the GameObjectFactory context.
-//  
+//
 //  There are several properties available to use:
-//  
+//
 //  this.scene - a reference to the Scene that owns the GameObjectFactory
 //  this.displayList - a reference to the Display List the Scene owns
 //  this.updateList - a reference to the Update List the Scene owns
@@ -126085,7 +126085,7 @@ var RenderTexture = __webpack_require__(226);
  * @param {number} y - The vertical position of this Game Object in the world.
  * @param {integer} [width=32] - The width of the Render Texture.
  * @param {integer} [height=32] - The height of the Render Texture.
- * 
+ *
  * @return {Phaser.GameObjects.RenderTexture} The Game Object that was created.
  */
 GameObjectFactory.register('renderTexture', function (x, y, width, height)
@@ -126336,7 +126336,7 @@ var GameObjectFactory = __webpack_require__(11);
  * @param {number} y - The y position of the Game Object.
  * @param {string} key - The key of the Texture the Blitter object will use.
  * @param {(string|integer)} [frame] - The default Frame children of the Blitter will use.
- * 
+ *
  * @return {Phaser.GameObjects.Blitter} The Game Object that was created.
  */
 GameObjectFactory.register('blitter', function (x, y, key, frame)
@@ -126345,9 +126345,9 @@ GameObjectFactory.register('blitter', function (x, y, key, frame)
 });
 
 //  When registering a factory function 'this' refers to the GameObjectFactory context.
-//  
+//
 //  There are several properties available to use:
-//  
+//
 //  this.scene - a reference to the Scene that owns the GameObjectFactory
 //  this.displayList - a reference to the Display List the Scene owns
 //  this.updateList - a reference to the Update List the Scene owns
@@ -126678,7 +126678,7 @@ var RETRO_FONT_CONST = {
 
     /**
      * Text Set 1 =  !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~
-     * 
+     *
      * @name Phaser.GameObjects.RetroFont.TEXT_SET1
      * @type {string}
      * @since 3.6.0
@@ -126687,7 +126687,7 @@ var RETRO_FONT_CONST = {
 
     /**
      * Text Set 2 =  !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ
-     * 
+     *
      * @name Phaser.GameObjects.RetroFont.TEXT_SET2
      * @type {string}
      * @since 3.6.0
@@ -126695,8 +126695,8 @@ var RETRO_FONT_CONST = {
     TEXT_SET2: ' !"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ',
 
     /**
-     * Text Set 3 = ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 
-     * 
+     * Text Set 3 = ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+     *
      * @name Phaser.GameObjects.RetroFont.TEXT_SET3
      * @type {string}
      * @since 3.6.0
@@ -126705,7 +126705,7 @@ var RETRO_FONT_CONST = {
 
     /**
      * Text Set 4 = ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789
-     * 
+     *
      * @name Phaser.GameObjects.RetroFont.TEXT_SET4
      * @type {string}
      * @since 3.6.0
@@ -126714,7 +126714,7 @@ var RETRO_FONT_CONST = {
 
     /**
      * Text Set 5 = ABCDEFGHIJKLMNOPQRSTUVWXYZ.,/() '!?-*:0123456789
-     * 
+     *
      * @name Phaser.GameObjects.RetroFont.TEXT_SET5
      * @type {string}
      * @since 3.6.0
@@ -126722,8 +126722,8 @@ var RETRO_FONT_CONST = {
     TEXT_SET5: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ.,/() \'!?-*:0123456789',
 
     /**
-     * Text Set 6 = ABCDEFGHIJKLMNOPQRSTUVWXYZ!?:;0123456789"(),-.' 
-     * 
+     * Text Set 6 = ABCDEFGHIJKLMNOPQRSTUVWXYZ!?:;0123456789"(),-.'
+     *
      * @name Phaser.GameObjects.RetroFont.TEXT_SET6
      * @type {string}
      * @since 3.6.0
@@ -126732,7 +126732,7 @@ var RETRO_FONT_CONST = {
 
     /**
      * Text Set 7 = AGMSY+:4BHNTZ!;5CIOU.?06DJPV,(17EKQW")28FLRX-'39
-     * 
+     *
      * @name Phaser.GameObjects.RetroFont.TEXT_SET7
      * @type {string}
      * @since 3.6.0
@@ -126741,7 +126741,7 @@ var RETRO_FONT_CONST = {
 
     /**
      * Text Set 8 = 0123456789 .ABCDEFGHIJKLMNOPQRSTUVWXYZ
-     * 
+     *
      * @name Phaser.GameObjects.RetroFont.TEXT_SET8
      * @type {string}
      * @since 3.6.0
@@ -126750,7 +126750,7 @@ var RETRO_FONT_CONST = {
 
     /**
      * Text Set 9 = ABCDEFGHIJKLMNOPQRSTUVWXYZ()-0123456789.:,'"?!
-     * 
+     *
      * @name Phaser.GameObjects.RetroFont.TEXT_SET9
      * @type {string}
      * @since 3.6.0
@@ -126759,7 +126759,7 @@ var RETRO_FONT_CONST = {
 
     /**
      * Text Set 10 = ABCDEFGHIJKLMNOPQRSTUVWXYZ
-     * 
+     *
      * @name Phaser.GameObjects.RetroFont.TEXT_SET10
      * @type {string}
      * @since 3.6.0
@@ -126768,7 +126768,7 @@ var RETRO_FONT_CONST = {
 
     /**
      * Text Set 11 = ABCDEFGHIJKLMNOPQRSTUVWXYZ.,"-+!?()':;0123456789
-     * 
+     *
      * @name Phaser.GameObjects.RetroFont.TEXT_SET11
      * @since 3.6.0
      * @type {string}
@@ -126795,7 +126795,7 @@ var Extend = __webpack_require__(16);
 
 /**
  * @typedef {object} Phaser.GameObjects.RetroFont.Config
- * 
+ *
  * @property {string} image - [description]
  * @property {number} offset.x - If the font set doesn't start at the top left of the given image, specify the X coordinate offset here.
  * @property {number} offset.y - If the font set doesn't start at the top left of the given image, specify the Y coordinate offset here.
@@ -126900,7 +126900,7 @@ var RenderTextureCanvas = {
         this.context.globalAlpha = this.globalAlpha;
         this.context.setTransform(matrix[0], matrix[1], matrix[2], matrix[3], matrix[4], matrix[5]);
         this.context.drawImage(texture.source[frame.sourceIndex].image, frame.cutX, frame.cutY, frame.cutWidth, frame.cutHeight, x, y, frame.cutWidth, frame.cutWidth);
-        
+
         return this;
     }
 
@@ -127217,7 +127217,7 @@ var ParticleManagerCanvasRenderer = function (renderer, emitterManager, interpol
             }
 
             ctx.globalAlpha = alpha;
-        
+
             ctx.save();
 
             ctx.translate(tx, ty);
@@ -127971,7 +127971,7 @@ var DynamicBitmapTextCanvasRenderer = function (renderer, src, interpolationPerc
     {
         return;
     }
-    
+
     var textureFrame = src.frame;
 
     var displayCallback = src.displayCallback;
@@ -128129,7 +128129,7 @@ var DynamicBitmapTextCanvasRenderer = function (renderer, src, interpolationPerc
         ctx.drawImage(image, glyphX, glyphY, glyphW, glyphH, 0, 0, glyphW, glyphH);
 
         ctx.restore();
-        
+
         xAdvance += glyph.xAdvance;
         indexCount += 1;
         lastGlyph = glyph;
@@ -128258,7 +128258,7 @@ var ContainerCanvasRenderer = function (renderer, container, interpolationPercen
 
     var children = container.list;
     var transformMatrix = container.localTransform;
-    
+
     if (parentMatrix === undefined)
     {
         transformMatrix.applyITRS(container.x, container.y, container.rotation, container.scaleX, container.scaleY);
@@ -128331,7 +128331,7 @@ var ContainerWebGLRenderer = function (renderer, container, interpolationPercent
 
     var children = container.list;
     var transformMatrix = container.localTransform;
-    
+
     if (parentMatrix === undefined)
     {
         transformMatrix.applyITRS(container.x, container.y, container.rotation, container.scaleX, container.scaleY);
@@ -128831,7 +128831,7 @@ var BlitterCanvasRenderer = function (renderer, src, interpolationPercentage, ca
             ctx.restore();
         }
     }
-    
+
     ctx.restore();
 };
 
@@ -128945,7 +128945,7 @@ var BitmapTextCanvasRenderer = function (renderer, src, interpolationPercentage,
     {
         return;
     }
-    
+
     var textureFrame = src.frame;
 
     var chars = src.fontData.chars;
@@ -129829,7 +129829,7 @@ module.exports = {
     Smoothing: __webpack_require__(123),
     TouchAction: __webpack_require__(910),
     UserSelect: __webpack_require__(909)
-    
+
 };
 
 
@@ -129924,7 +129924,7 @@ module.exports = {
     SetLeft: __webpack_require__(41),
     SetRight: __webpack_require__(39),
     SetTop: __webpack_require__(37)
-    
+
 };
 
 
@@ -130569,7 +130569,7 @@ module.exports = {
     Canvas: __webpack_require__(911),
     Color: __webpack_require__(526),
     Masks: __webpack_require__(522)
-  
+
 };
 
 
@@ -131787,7 +131787,7 @@ module.exports = {
  */
 
 module.exports = {
-  
+
     GenerateTexture: __webpack_require__(270),
     Palettes: __webpack_require__(938)
 
@@ -132121,7 +132121,7 @@ module.exports = {
     /**
      * This alias will be removed in a future version.
      * Use `FixedKeyControl` instead.
-     * 
+     *
      * @deprecated
      * @name Phaser.Cameras.Controls.Fixed
      */
@@ -132132,7 +132132,7 @@ module.exports = {
     /**
      * This alias will be removed in a future version.
      * Use `SmoothedKeyControl` instead.
-     * 
+     *
      * @deprecated
      * @name Phaser.Cameras.Controls.Smoothed
      */
@@ -134550,13 +134550,13 @@ var World = new Class({
         /**
          * This function is called every time the core game loop steps, which is bound to the
          * Request Animation Frame frequency unless otherwise modified.
-         * 
+         *
          * The function is passed two values: `time` and `delta`, both of which come from the game step values.
-         * 
+         *
          * It must return a number. This number is used as the delta value passed to Matter.Engine.update.
-         * 
+         *
          * You can override this function with your own to define your own timestep.
-         * 
+         *
          * If you need to update the Engine multiple times in a single game step then call
          * `World.update` as many times as required. Each call will trigger the `getDelta` function.
          * If you wish to have full control over when the Engine updates then see the property `autoUpdate`.
@@ -135061,12 +135061,12 @@ var World = new Class({
 
     /**
      * Manually advances the physics simulation by one iteration.
-     * 
+     *
      * You can optionally pass in the `delta` and `correction` values to be used by Engine.update.
      * If undefined they use the Matter defaults of 60Hz and no correction.
-     * 
+     *
      * Calling `step` directly bypasses any checks of `enabled` or `autoUpdate`.
-     * 
+     *
      * It also ignores any custom `getDelta` functions, as you should be passing the delta
      * value in to this call.
      *
@@ -135173,7 +135173,7 @@ var World = new Class({
         {
             graphics.lineStyle(2, this.defaults.jointDebugColor);
 
-            // Render constraints 
+            // Render constraints
             var constraints = Composite.allConstraints(this.localWorld);
 
             for (i = 0; i < constraints.length; i++)
@@ -135399,7 +135399,7 @@ var Body = __webpack_require__(77);
                 element: element,
                 controller: Render
             };
-            
+
             engine.render = Common.extend(renderDefaults, engine.render);
         }
 
@@ -135562,7 +135562,7 @@ var Body = __webpack_require__(77);
 
         return engine;
     };
-    
+
     /**
      * Merges two engines by keeping the configuration of `engineA` but replacing the world with the one from `engineB`.
      * @method merge
@@ -135571,7 +135571,7 @@ var Body = __webpack_require__(77);
      */
     Engine.merge = function(engineA, engineB) {
         Common.extend(engineA, engineB);
-        
+
         if (engineB.world) {
             engineA.world = engineB.world;
 
@@ -135594,7 +135594,7 @@ var Body = __webpack_require__(77);
      */
     Engine.clear = function(engine) {
         var world = engine.world;
-        
+
         Pairs.clear(engine.pairs);
 
         var broadphase = engine.broadphase;
@@ -135635,7 +135635,7 @@ var Body = __webpack_require__(77);
         if ((gravity.x === 0 && gravity.y === 0) || gravityScale === 0) {
             return;
         }
-        
+
         for (var i = 0; i < bodies.length; i++) {
             var body = bodies[i];
 
@@ -135653,10 +135653,10 @@ var Body = __webpack_require__(77);
      * @method updateAll
      * @private
      * @param {body[]} bodies
-     * @param {number} deltaTime 
+     * @param {number} deltaTime
      * The amount of time elapsed between updates
      * @param {number} timeScale
-     * @param {number} correction 
+     * @param {number} correction
      * The Verlet correction factor (deltaTime / lastDeltaTime)
      * @param {bounds} worldBounds
      */
@@ -135774,7 +135774,7 @@ var Body = __webpack_require__(77);
      */
 
     /**
-     * An `Object` containing properties regarding the timing systems of the engine. 
+     * An `Object` containing properties regarding the timing systems of the engine.
      *
      * @property timing
      * @type object
@@ -135792,8 +135792,8 @@ var Body = __webpack_require__(77);
      */
 
     /**
-     * A `Number` that specifies the current simulation-time in milliseconds starting from `0`. 
-     * It is incremented on every `Engine.update` by the given `delta` argument. 
+     * A `Number` that specifies the current simulation-time in milliseconds starting from `0`.
+     * It is incremented on every `Engine.update` by the given `delta` argument.
      *
      * @property timing.timestamp
      * @type number
@@ -135879,10 +135879,10 @@ var Bounds = __webpack_require__(134);
         // find total contacts on each body
         for (i = 0; i < pairs.length; i++) {
             pair = pairs[i];
-            
+
             if (!pair.isActive)
                 continue;
-            
+
             activeCount = pair.activeContacts.length;
             pair.collision.parentA.totalContacts += activeCount;
             pair.collision.parentB.totalContacts += activeCount;
@@ -135923,7 +135923,7 @@ var Bounds = __webpack_require__(134);
         // find impulses required to resolve penetration
         for (i = 0; i < pairs.length; i++) {
             pair = pairs[i];
-            
+
             if (!pair.isActive || pair.isSensor)
                 continue;
 
@@ -135952,7 +135952,7 @@ var Bounds = __webpack_require__(134);
 
             if (bodyA.isStatic || bodyB.isStatic)
                 positionImpulse *= 2;
-            
+
             if (!(bodyA.isStatic || bodyA.isSleeping)) {
                 contactShare = positionImpulse / bodyA.totalContacts;
                 bodyA.positionImpulse.x += normalX * contactShare;
@@ -136028,13 +136028,13 @@ var Bounds = __webpack_require__(134);
             offset,
             impulse = Vector._temp[0],
             tempA = Vector._temp[1];
-        
+
         for (i = 0; i < pairs.length; i++) {
             pair = pairs[i];
-            
+
             if (!pair.isActive || pair.isSensor)
                 continue;
-            
+
             contacts = pair.activeContacts;
             collision = pair.collision;
             bodyA = collision.parentA;
@@ -136053,7 +136053,7 @@ var Bounds = __webpack_require__(134);
                     // total impulse from contact
                     impulse.x = (normal.x * normalImpulse) + (tangent.x * tangentImpulse);
                     impulse.y = (normal.y * normalImpulse) + (tangent.y * tangentImpulse);
-                    
+
                     // apply impulse from contact
                     if (!(bodyA.isStatic || bodyA.isSleeping)) {
                         offset = Vector.sub(contactVertex, bodyA.position, tempA);
@@ -136087,13 +136087,13 @@ var Bounds = __webpack_require__(134);
             tempC = Vector._temp[3],
             tempD = Vector._temp[4],
             tempE = Vector._temp[5];
-        
+
         for (var i = 0; i < pairs.length; i++) {
             var pair = pairs[i];
-            
+
             if (!pair.isActive || pair.isSensor)
                 continue;
-            
+
             var collision = pair.collision,
                 bodyA = collision.parentA,
                 bodyB = collision.parentB,
@@ -136117,7 +136117,7 @@ var Bounds = __webpack_require__(134);
                     offsetA = Vector.sub(contactVertex, bodyA.position, tempA),
                     offsetB = Vector.sub(contactVertex, bodyB.position, tempB),
                     velocityPointA = Vector.add(bodyA.velocity, Vector.mult(Vector.perp(offsetA), bodyA.angularVelocity), tempC),
-                    velocityPointB = Vector.add(bodyB.velocity, Vector.mult(Vector.perp(offsetB), bodyB.angularVelocity), tempD), 
+                    velocityPointB = Vector.add(bodyB.velocity, Vector.mult(Vector.perp(offsetB), bodyB.angularVelocity), tempD),
                     relativeVelocity = Vector.sub(velocityPointA, velocityPointB, tempE),
                     normalVelocity = Vector.dot(normal, relativeVelocity);
 
@@ -136176,7 +136176,7 @@ var Bounds = __webpack_require__(134);
                 // total impulse from contact
                 impulse.x = (normal.x * normalImpulse) + (tangent.x * tangentImpulse);
                 impulse.y = (normal.y * normalImpulse) + (tangent.y * tangentImpulse);
-                
+
                 // apply impulse from contact
                 if (!(bodyA.isStatic || bodyA.isSleeping)) {
                     bodyA.positionPrev.x += impulse.x * bodyA.inverseMass;
@@ -136214,7 +136214,7 @@ var Pair = __webpack_require__(597);
 var Common = __webpack_require__(45);
 
 (function() {
-    
+
     var _pairMaxIdleLife = 1000;
 
     /**
@@ -136224,7 +136224,7 @@ var Common = __webpack_require__(45);
      * @return {pairs} A new pairs structure
      */
     Pairs.create = function(options) {
-        return Common.extend({ 
+        return Common.extend({
             table: {},
             list: [],
             collisionStart: [],
@@ -136267,7 +136267,7 @@ var Common = __webpack_require__(45);
                 pairId = Pair.id(collision.bodyA, collision.bodyB);
 
                 pair = pairsTable[pairId];
-                
+
                 if (pair) {
                     // pair already exists (but may or may not be active)
                     if (pair.isActive) {
@@ -136302,7 +136302,7 @@ var Common = __webpack_require__(45);
             }
         }
     };
-    
+
     /**
      * Finds and removes pairs that have been inactive for a set amount of time.
      * @method removeOld
@@ -136321,7 +136321,7 @@ var Common = __webpack_require__(45);
         for (i = 0; i < pairsList.length; i++) {
             pair = pairsList[i];
             collision = pair.collision;
-            
+
             // never remove sleeping pairs
             if (collision.bodyA.isSleeping || collision.bodyB.isSleeping) {
                 pair.timeUpdated = timestamp;
@@ -136563,12 +136563,12 @@ var Common = __webpack_require__(45);
      * @return {} region
      */
     var _createRegion = function(startCol, endCol, startRow, endRow) {
-        return { 
+        return {
             id: startCol + ',' + endCol + ',' + startRow + ',' + endRow,
-            startCol: startCol, 
-            endCol: endCol, 
-            startRow: startRow, 
-            endRow: endRow 
+            startCol: startCol,
+            endCol: endCol,
+            startRow: startRow,
+            endRow: endRow
         };
     };
 
@@ -136684,7 +136684,7 @@ var Common = __webpack_require__(45);
 
         return pairs;
     };
-    
+
 })();
 
 
@@ -136944,7 +136944,7 @@ var Vector2 = __webpack_require__(6);
 /**
  * @classdesc
  * A Matter Physics Image Game Object.
- * 
+ *
  * An Image is a light-weight Game Object useful for the display of static images in your game,
  * such as logos, backgrounds, scenery or other non-animated elements. Images can have input
  * events and physics bodies, or be tweened, tinted or scrolled. The main difference between an
@@ -137107,37 +137107,37 @@ var Bodies = __webpack_require__(211);
 
         for (var row = 0; row < rows; row++) {
             var maxHeight = 0;
-            
+
             for (var column = 0; column < columns; column++) {
                 var body = callback(x, y, column, row, lastBody, i);
-                    
+
                 if (body) {
                     var bodyHeight = body.bounds.max.y - body.bounds.min.y,
-                        bodyWidth = body.bounds.max.x - body.bounds.min.x; 
+                        bodyWidth = body.bounds.max.x - body.bounds.min.x;
 
                     if (bodyHeight > maxHeight)
                         maxHeight = bodyHeight;
-                    
+
                     Body.translate(body, { x: bodyWidth * 0.5, y: bodyHeight * 0.5 });
 
                     x = body.bounds.max.x + columnGap;
 
                     Composite.addBody(stack, body);
-                    
+
                     lastBody = body;
                     i += 1;
                 } else {
                     x += columnGap;
                 }
             }
-            
+
             y += maxHeight + rowGap;
             x = xx;
         }
 
         return stack;
     };
-    
+
     /**
      * Chains all bodies in the given composite together using constraints.
      * @method chain
@@ -137151,29 +137151,29 @@ var Bodies = __webpack_require__(211);
      */
     Composites.chain = function(composite, xOffsetA, yOffsetA, xOffsetB, yOffsetB, options) {
         var bodies = composite.bodies;
-        
+
         for (var i = 1; i < bodies.length; i++) {
             var bodyA = bodies[i - 1],
                 bodyB = bodies[i],
                 bodyAHeight = bodyA.bounds.max.y - bodyA.bounds.min.y,
-                bodyAWidth = bodyA.bounds.max.x - bodyA.bounds.min.x, 
+                bodyAWidth = bodyA.bounds.max.x - bodyA.bounds.min.x,
                 bodyBHeight = bodyB.bounds.max.y - bodyB.bounds.min.y,
                 bodyBWidth = bodyB.bounds.max.x - bodyB.bounds.min.x;
-        
+
             var defaults = {
                 bodyA: bodyA,
                 pointA: { x: bodyAWidth * xOffsetA, y: bodyAHeight * yOffsetA },
                 bodyB: bodyB,
                 pointB: { x: bodyBWidth * xOffsetB, y: bodyBHeight * yOffsetB }
             };
-            
+
             var constraint = Common.extend(defaults, options);
-        
+
             Composite.addConstraint(composite, Constraint.create(constraint));
         }
 
         composite.label += ' Chain';
-        
+
         return composite;
     };
 
@@ -137194,7 +137194,7 @@ var Bodies = __webpack_require__(211);
             bodyA,
             bodyB,
             bodyC;
-        
+
         for (row = 0; row < rows; row++) {
             for (col = 1; col < columns; col++) {
                 bodyA = bodies[(col - 1) + (row * columns)];
@@ -137222,10 +137222,10 @@ var Bodies = __webpack_require__(211);
         }
 
         composite.label += ' Mesh';
-        
+
         return composite;
     };
-    
+
     /**
      * Create a new composite containing bodies created in the callback in a pyramid arrangement.
      * This function uses the body's bounds to prevent overlaps.
@@ -137243,26 +137243,26 @@ var Bodies = __webpack_require__(211);
         return Composites.stack(xx, yy, columns, rows, columnGap, rowGap, function(x, y, column, row, lastBody, i) {
             var actualRows = Math.min(rows, Math.ceil(columns / 2)),
                 lastBodyWidth = lastBody ? lastBody.bounds.max.x - lastBody.bounds.min.x : 0;
-            
+
             if (row > actualRows)
                 return;
-            
+
             // reverse row order
             row = actualRows - row;
-            
+
             var start = row,
                 end = columns - 1 - row;
 
             if (column < start || column > end)
                 return;
-            
+
             // retroactively fix the first body's position, since width was unknown
             if (i === 1) {
                 Body.translate(lastBody, { x: (column + (columns % 2 === 1 ? 1 : -1)) * lastBodyWidth, y: 0 });
             }
 
             var xOffset = lastBody ? column * lastBodyWidth : 0;
-            
+
             return callback(xx + xOffset + column * columnGap, y, column, row, lastBody, i);
         });
     };
@@ -137282,7 +137282,7 @@ var Bodies = __webpack_require__(211);
 
         for (var i = 0; i < number; i++) {
             var separation = 1.9,
-                circle = Bodies.circle(xx + i * (size * separation), yy + length, size, 
+                circle = Bodies.circle(xx + i * (size * separation), yy + length, size,
                             { inertia: Infinity, restitution: 1, friction: 0, frictionAir: 0.0001, slop: 1 }),
                 constraint = Constraint.create({ pointA: { x: xx + i * (size * separation), y: yy }, bodyB: circle });
 
@@ -137292,7 +137292,7 @@ var Bodies = __webpack_require__(211);
 
         return newtonsCradle;
     };
-    
+
     /**
      * Creates a composite with simple car setup of bodies and constraints.
      * @method car
@@ -137309,9 +137309,9 @@ var Bodies = __webpack_require__(211);
             wheelAOffset = -width * 0.5 + wheelBase,
             wheelBOffset = width * 0.5 - wheelBase,
             wheelYOffset = 0;
-    
+
         var car = Composite.create({ label: 'Car' }),
-            body = Bodies.rectangle(xx, yy, width, height, { 
+            body = Bodies.rectangle(xx, yy, width, height, {
                 collisionFilter: {
                     group: group
                 },
@@ -137320,21 +137320,21 @@ var Bodies = __webpack_require__(211);
                 },
                 density: 0.0002
             });
-    
-        var wheelA = Bodies.circle(xx + wheelAOffset, yy + wheelYOffset, wheelSize, { 
+
+        var wheelA = Bodies.circle(xx + wheelAOffset, yy + wheelYOffset, wheelSize, {
             collisionFilter: {
                 group: group
             },
             friction: 0.8
         });
-                    
-        var wheelB = Bodies.circle(xx + wheelBOffset, yy + wheelYOffset, wheelSize, { 
+
+        var wheelB = Bodies.circle(xx + wheelBOffset, yy + wheelYOffset, wheelSize, {
             collisionFilter: {
                 group: group
             },
             friction: 0.8
         });
-                    
+
         var axelA = Constraint.create({
             bodyB: body,
             pointB: { x: wheelAOffset, y: wheelYOffset },
@@ -137342,7 +137342,7 @@ var Bodies = __webpack_require__(211);
             stiffness: 1,
             length: 0
         });
-                        
+
         var axelB = Constraint.create({
             bodyB: body,
             pointB: { x: wheelBOffset, y: wheelYOffset },
@@ -137350,7 +137350,7 @@ var Bodies = __webpack_require__(211);
             stiffness: 1,
             length: 0
         });
-        
+
         Composite.addBody(car, body);
         Composite.addBody(car, wheelA);
         Composite.addBody(car, wheelB);
@@ -138688,7 +138688,7 @@ var TYPE = __webpack_require__(323);
 
 /**
  * An object containing the 4 wall bodies that bound the physics world.
- * 
+ *
  * @typedef {object} Phaser.Physics.Impact.WorldDefaults
  *
  * @property {boolean} debugShowBody - [description]
@@ -139859,7 +139859,7 @@ var Image = __webpack_require__(66);
 /**
  * @classdesc
  * An Impact Physics Image Game Object.
- * 
+ *
  * An Image is a light-weight Game Object useful for the display of static images in your game,
  * such as logos, backgrounds, scenery or other non-animated elements. Images can have input
  * events and physics bodies, or be tweened, tinted or scrolled. The main difference between an
@@ -140409,18 +140409,18 @@ var CollisionMap = new Class({
         {
             return res;
         }
-        
+
         var steps = Math.ceil(Math.max(Math.abs(vx), Math.abs(vy)) / this.tilesize);
 
         if (steps > 1)
         {
             var sx = vx / steps;
             var sy = vy / steps;
-            
+
             for (var i = 0; i < steps && (sx || sy); i++)
             {
                 this.step(res, x, y, sx, sy, objectWidth, objectHeight, vx, vy, i);
-                
+
                 x = res.pos.x;
                 y = res.pos.y;
 
@@ -140446,7 +140446,7 @@ var CollisionMap = new Class({
         {
             this.step(res, x, y, vx, vy, objectWidth, objectHeight, vx, vy, 0);
         }
-        
+
         return res;
     },
 
@@ -140475,16 +140475,16 @@ var CollisionMap = new Class({
         var tilesize = this.tilesize;
         var mapWidth = this.width;
         var mapHeight = this.height;
-        
+
         //  Horizontal
         if (vx)
         {
             var pxOffsetX = (vx > 0 ? width : 0);
             var tileOffsetX = (vx < 0 ? tilesize : 0);
-            
+
             var firstTileY = Math.max(Math.floor(y / tilesize), 0);
             var lastTileY = Math.min(Math.ceil((y + height) / tilesize), mapHeight);
-            
+
             tileX = Math.floor((res.pos.x + pxOffsetX) / tilesize);
 
             var prevTileX = Math.floor((x + pxOffsetX) / tilesize);
@@ -140493,7 +140493,7 @@ var CollisionMap = new Class({
             {
                 prevTileX = -1;
             }
-           
+
             if (tileX >= 0 && tileX < mapWidth)
             {
                 for (tileY = firstTileY; tileY < lastTileY; tileY++)
@@ -140507,7 +140507,7 @@ var CollisionMap = new Class({
                             break;
                         }
                     }
-                    
+
                     t = this.data[tileY][tileX];
 
                     if (t === 1 || t > this.lastSlope || (t > 1 && this.checkDef(res, t, x, y, rvx, rvy, width, height, tileX, tileY)))
@@ -140516,7 +140516,7 @@ var CollisionMap = new Class({
                         {
                             break;
                         }
-                        
+
                         res.collision.x = true;
                         res.tile.x = t;
                         res.pos.x = (tileX * tilesize) - pxOffsetX + tileOffsetX;
@@ -140528,25 +140528,25 @@ var CollisionMap = new Class({
                 }
             }
         }
-        
+
         //  Vertical
         if (vy)
         {
             var pxOffsetY = (vy > 0 ? height : 0);
             var tileOffsetY = (vy < 0 ? tilesize : 0);
-            
+
             var firstTileX = Math.max(Math.floor(res.pos.x / tilesize), 0);
             var lastTileX = Math.min(Math.ceil((res.pos.x + width) / tilesize), mapWidth);
-            
+
             tileY = Math.floor((res.pos.y + pxOffsetY) / tilesize);
-            
+
             var prevTileY = Math.floor((y + pxOffsetY) / tilesize);
 
             if (step > 0 || tileY === prevTileY || prevTileY < 0 || prevTileY >= mapHeight)
             {
                 prevTileY = -1;
             }
-            
+
             if (tileY >= 0 && tileY < mapHeight)
             {
                 for (tileX = firstTileX; tileX < lastTileX; tileX++)
@@ -140560,7 +140560,7 @@ var CollisionMap = new Class({
                             break;
                         }
                     }
-                    
+
                     t = this.data[tileY][tileX];
 
                     if (t === 1 || t > this.lastSlope || (t > 1 && this.checkDef(res, t, x, y, rvx, rvy, width, height, tileX, tileY)))
@@ -140569,7 +140569,7 @@ var CollisionMap = new Class({
                         {
                             break;
                         }
-                        
+
                         res.collision.y = true;
                         res.tile.y = t;
                         res.pos.y = tileY * tilesize - pxOffsetY + tileOffsetY;
@@ -140580,7 +140580,7 @@ var CollisionMap = new Class({
             }
         }
     },
-    
+
     /**
      * [description]
      *
@@ -140610,43 +140610,43 @@ var CollisionMap = new Class({
         }
 
         var tilesize = this.tilesize;
-        
+
         var lx = (tileX + def[0]) * tilesize;
         var ly = (tileY + def[1]) * tilesize;
         var lvx = (def[2] - def[0]) * tilesize;
         var lvy = (def[3] - def[1]) * tilesize;
         var solid = def[4];
-        
+
         var tx = x + vx + (lvy < 0 ? width : 0) - lx;
         var ty = y + vy + (lvx > 0 ? height : 0) - ly;
-        
+
         if (lvx * ty - lvy * tx > 0)
         {
             if (vx * -lvy + vy * lvx < 0)
             {
                 return solid;
             }
-            
+
             var length = Math.sqrt(lvx * lvx + lvy * lvy);
             var nx = lvy / length;
             var ny = -lvx / length;
-            
+
             var proj = tx * nx + ty * ny;
             var px = nx * proj;
             var py = ny * proj;
-            
+
             if (px * px + py * py >= vx * vx + vy * vy)
             {
                 return solid || (lvx * (ty - vy) - lvy * (tx - vx) < 0.5);
             }
-            
+
             res.pos.x = x + vx - px;
             res.pos.y = y + vy - py;
             res.collision.slope = { x: lvx, y: lvy, nx: nx, ny: ny };
 
             return true;
         }
-        
+
         return false;
     }
 
@@ -141372,8 +141372,8 @@ var MatterWrap = {
 
   Body: {
     /**
-     * Wraps the `body` position such that it always stays within the given bounds. 
-     * Upon crossing a boundary the body will appear on the opposite side of the bounds, 
+     * Wraps the `body` position such that it always stays within the given bounds.
+     * Upon crossing a boundary the body will appear on the opposite side of the bounds,
      * while maintaining its velocity.
      * This is called automatically by the plugin.
      * @function MatterWrap.Body.wrap
@@ -141403,7 +141403,7 @@ var MatterWrap = {
     bounds: function(composite) {
       var bodies = Matter.Composite.allBodies(composite),
         vertices = [];
-      
+
       for (var i = 0; i < bodies.length; i += 1) {
         var body = bodies[i];
         vertices.push(body.bounds.min, body.bounds.max);
@@ -141413,8 +141413,8 @@ var MatterWrap = {
     },
 
     /**
-     * Wraps the `composite` position such that it always stays within the given bounds. 
-     * Upon crossing a boundary the composite will appear on the opposite side of the bounds, 
+     * Wraps the `composite` position such that it always stays within the given bounds.
+     * Upon crossing a boundary the composite will appear on the opposite side of the bounds,
      * while maintaining its velocity.
      * This is called automatically by the plugin.
      * @function MatterWrap.Composite.wrap
@@ -141424,7 +141424,7 @@ var MatterWrap = {
      */
     wrap: function(composite, bounds) {
       var translation = MatterWrap.Bounds.wrap(
-        MatterWrap.Composite.bounds(composite), 
+        MatterWrap.Composite.bounds(composite),
         bounds
       );
 
@@ -141445,14 +141445,14 @@ module.exports = MatterWrap;
  */
 
 /**
- * This plugin adds a new property `body.plugin.wrap` to instances of `Matter.Body`.  
+ * This plugin adds a new property `body.plugin.wrap` to instances of `Matter.Body`.
  * This is a `Matter.Bounds` instance that specifies the wrapping region.
  * @property {Matter.Bounds} body.plugin.wrap
  * @memberof Matter.Body
  */
 
 /**
- * This plugin adds a new property `composite.plugin.wrap` to instances of `Matter.Composite`.  
+ * This plugin adds a new property `composite.plugin.wrap` to instances of `Matter.Composite`.
  * This is a `Matter.Bounds` instance that specifies the wrapping region.
  * @property {Matter.Bounds} composite.plugin.wrap
  * @memberof Matter.Composite
@@ -141768,7 +141768,7 @@ var MatterPhysics = new Class({
      *
      * @method Phaser.Physics.Matter.MatterPhysics#enableAttractorPlugin
      * @since 3.0.0
-     * 
+     *
      * @return {Phaser.Physics.Matter.MatterPhysics} This Matter Physics instance.
      */
     enableAttractorPlugin: function ()
@@ -141784,7 +141784,7 @@ var MatterPhysics = new Class({
      *
      * @method Phaser.Physics.Matter.MatterPhysics#enableWrapPlugin
      * @since 3.0.0
-     * 
+     *
      * @return {Phaser.Physics.Matter.MatterPhysics} This Matter Physics instance.
      */
     enableWrapPlugin: function ()
@@ -141857,12 +141857,12 @@ var MatterPhysics = new Class({
 
     /**
      * Manually advances the physics simulation by one iteration.
-     * 
+     *
      * You can optionally pass in the `delta` and `correction` values to be used by Engine.update.
      * If undefined they use the Matter defaults of 60Hz and no correction.
-     * 
+     *
      * Calling `step` directly bypasses any checks of `enabled` or `autoUpdate`.
-     * 
+     *
      * It also ignores any custom `getDelta` functions, as you should be passing the delta
      * value in to this call.
      *
@@ -141969,8 +141969,8 @@ var Bounds = __webpack_require__(134);
      */
     Svg.pathToVertices = function(path, sampleLength) {
         // https://github.com/wout/svg.topoly.js/blob/master/svg.topoly.js
-        var i, il, total, point, segment, segments, 
-            segmentsQueue, lastSegment, 
+        var i, il, total, point, segment, segments,
+            segmentsQueue, lastSegment,
             lastPoint, segmentIndex, points = [],
             lx, ly, length = 0, x = 0, y = 0;
 
@@ -142011,7 +142011,7 @@ var Bounds = __webpack_require__(134);
             var segType = segment.pathSegTypeAsLetter.toUpperCase();
 
             // skip path ends
-            if (segType === 'Z') 
+            if (segType === 'Z')
                 return;
 
             // map segment to x and y
@@ -142304,7 +142304,7 @@ var Vertices = __webpack_require__(135);
 
         for (var i = 0; i < bodies.length; i++) {
             var bodyA = bodies[i];
-            
+
             if (Bounds.overlaps(bodyA.bounds, ray.bounds)) {
                 for (var j = bodyA.parts.length === 1 ? 0 : 1; j < bodyA.parts.length; j++) {
                     var part = bodyA.parts[j];
@@ -142357,7 +142357,7 @@ var Vertices = __webpack_require__(135);
 
         for (var i = 0; i < bodies.length; i++) {
             var body = bodies[i];
-            
+
             if (Bounds.contains(body.bounds, point)) {
                 for (var j = body.parts.length === 1 ? 0 : 1; j < body.parts.length; j++) {
                     var part = body.parts[j];
@@ -144189,13 +144189,13 @@ var SeperateY = function (world, top, bottom, weak)
     var nudge = (top.pos.y + top.size.y - bottom.pos.y);
     var nudgeX;
     var resTop;
-    
+
     if (weak)
     {
         var strong = (top === weak) ? bottom : top;
 
         weak.vel.y = -weak.vel.y * weak.bounciness + strong.vel.y;
-        
+
         // Riding on a platform?
         nudgeX = 0;
 
@@ -144204,7 +144204,7 @@ var SeperateY = function (world, top, bottom, weak)
             weak.standing = true;
             nudgeX = strong.vel.x * world.delta;
         }
-        
+
         var resWeak = world.collisionMap.trace(weak.pos.x, weak.pos.y, nudgeX, weak === top ? -nudge : nudge, weak.size.x, weak.size.y);
 
         weak.pos.y = resWeak.pos.y;
@@ -144215,7 +144215,7 @@ var SeperateY = function (world, top, bottom, weak)
         resTop = world.collisionMap.trace(top.pos.x, top.pos.y, 0, -(top.pos.y + top.size.y - bottom.pos.y), top.size.x, top.size.y);
 
         top.pos.y = resTop.pos.y;
-        
+
         if (top.bounciness > 0 && top.vel.y > top.minBounceVelocity)
         {
             top.vel.y *= -top.bounciness;
@@ -144232,13 +144232,13 @@ var SeperateY = function (world, top, bottom, weak)
 
         top.vel.y = -v2;
         bottom.vel.y = v2;
-        
+
         nudgeX = bottom.vel.x * world.delta;
 
         resTop = world.collisionMap.trace(top.pos.x, top.pos.y, nudgeX, -nudge / 2, top.size.x, top.size.y);
 
         top.pos.y = resTop.pos.y;
-        
+
         var resBottom = world.collisionMap.trace(bottom.pos.x, bottom.pos.y, 0, nudge / 2, bottom.size.x, bottom.size.y);
 
         bottom.pos.y = resBottom.pos.y;
@@ -144272,14 +144272,14 @@ module.exports = SeperateY;
 var SeperateX = function (world, left, right, weak)
 {
     var nudge = left.pos.x + left.size.x - right.pos.x;
-    
+
     // We have a weak entity, so just move this one
     if (weak)
     {
         var strong = (left === weak) ? right : left;
 
         weak.vel.x = -weak.vel.x * weak.bounciness + strong.vel.x;
-        
+
         var resWeak = world.collisionMap.trace(weak.pos.x, weak.pos.y, weak === left ? -nudge : nudge, 0, weak.size.x, weak.size.y);
 
         weak.pos.x = resWeak.pos.x;
@@ -144290,11 +144290,11 @@ var SeperateX = function (world, left, right, weak)
 
         left.vel.x = -v2;
         right.vel.x = v2;
-    
+
         var resLeft = world.collisionMap.trace(left.pos.x, left.pos.y, -nudge / 2, 0, left.size.x, left.size.y);
 
         left.pos.x = Math.floor(resLeft.pos.x);
-        
+
         var resRight = world.collisionMap.trace(right.pos.x, right.pos.y, nudge / 2, 0, right.size.x, right.size.y);
 
         right.pos.x = Math.ceil(resRight.pos.x);
@@ -145680,7 +145680,7 @@ var M = 2 / 3;
 
 //  Tile ID to Slope defs.
 //  First 4 elements = line data, final = solid or non-solid behind the line
-    
+
 module.exports = {
 
     2: [ 0, 1, 1, 0, true ],
@@ -145798,7 +145798,7 @@ var UpdateMotion = function (body, res)
     if (res.collision.slope)
     {
         var s = res.collision.slope;
-       
+
         if (body.bounciness > 0)
         {
             var proj = body.vel.x * s.nx + body.vel.y * s.ny;
@@ -145810,10 +145810,10 @@ var UpdateMotion = function (body, res)
         {
             var lengthSquared = s.x * s.x + s.y * s.y;
             var dot = (body.vel.x * s.x + body.vel.y * s.y) / lengthSquared;
-            
+
             body.vel.x = s.x * dot;
             body.vel.y = s.y * dot;
-            
+
             var angle = Math.atan2(s.x, s.y);
 
             if (angle > body.slopeStanding.min && angle < body.slopeStanding.max)
@@ -145865,7 +145865,7 @@ var GetVelocity = function (delta, vel, accel, friction, max)
     else if (friction)
     {
         var frictionDelta = friction * delta;
-        
+
         if (vel - frictionDelta > 0)
         {
             return vel - frictionDelta;

@@ -5,19 +5,17 @@ let gameScene = new Phaser.Scene('Game');
 gameScene.init = function() {
   this.playerSpeed = 1.5;
   this.pipeSpeed = 2;
-  this.pipeDownY = 280;
-  this.pipeUpY = 80;
+
 }
 
-function preload ()
-{
+gameScene.preload = function() {
   this.load.image(
     'background',
     '/games/flappy_saikawa/assets/background_school.png'
   );
   this.load.image(
     'player',
-    '/games/flappy_saikawa/assets/bird.png'
+    '/games/flappy_saikawa/assets/flappy.png'
   );
   this.load.image(
     'pipeUp',
@@ -29,13 +27,12 @@ function preload ()
   );
 }
 
-function create ()
-{
+gameScene.create = function() {
   let bg = this.add.sprite(0, 0, 'background');
   bg.setOrigin(0, 0);
 
   // player
-  this.player = this.add.sprite(40, this.sys.game.config.height / 2, 'player');
+  this.player = this.add.sprite(150, this.sys.game.config.height / 2, 'player');
 
   // scale down
   this.player.setScale(0.20);
@@ -46,7 +43,7 @@ function create ()
     repeat: 5,
     setXY: {
       x: 300,
-      y: 0,
+      y: 90,
       stepX: 200,
       stepY: 0
     }
@@ -57,7 +54,7 @@ function create ()
     repeat: 5,
     setXY: {
       x: 300,
-      y: 750,
+      y: 600,
       stepX: 200,
       stepY: 0
     }
@@ -65,11 +62,22 @@ function create ()
 
   Phaser.Actions.ScaleXY(this.pipesTop.getChildren(), -0.5, -0.5);
   Phaser.Actions.ScaleXY(this.pipesBottom.getChildren(), -0.5, -0.5);
+
+  // set speeds
+  Phaser.Actions.Call(this.pipesTop.getChildren(), function(enemy) {
+    enemy.speed = this.pipeSpeed;
+  }, this);
+  Phaser.Actions.Call(this.pipesDown.getChildren(), function(enemy) {
+    enemy.speed = this.pipeSpeed;
+  }, this);
 }
 
-function update ()
-{
+gameScene.update = function() {
 
+  // check for active input
+  if (this.input.activePointer.isDown) {
+
+  }
 }
 
 var config = {
@@ -77,18 +85,15 @@ var config = {
     width: 1334,
     height: 750,
     parent: 'game_container',
+    pixelArt: true,
     physics: {
-        default: 'arcade',
-        arcade: {
-            gravity: { y: 300 },
-            debug: false
-        }
+      default: "arcade",
+      arcade: {
+        gravity: { y: 100 },
+        debug: true
+      }
     },
-    scene: {
-        preload: preload,
-        create: create,
-        update: update
-    }
+    scene: gameScene
 };
 
 // Initialize Phaser

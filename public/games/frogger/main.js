@@ -1,7 +1,6 @@
 // create a new scene named "Game"
 let gameScene = new Phaser.Scene('Game');
 
-
 // some parameters for our scene
 gameScene.init = function() {
   this.playerSpeed = 1.5;
