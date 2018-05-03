@@ -11,9 +11,9 @@ container in the game config should you wish. -->
 
   </div>
   <div class="w3-center w3-margin-top" width="1334">
-    <p></p>
-    <p></p>
-    <a href="https://gamedevacademy.org/how-to-make-a-mario-style-platformer-with-phaser-3/?a=13">Link to the Code.</a>
+    <p>Use the Keyboard arrows to move.</p>
+    <a href="https://gamedevacademy.org/how-to-make-a-mario-style-platformer-with-phaser-3/?a=13"><p>Code Tutorial</p></a>
+    <a href="https://github.com/ichbinbobby/saikava/tree/master/public/games/mario"><p>Link to the Code.</p></a>
   </div>
 
 @endsection()
