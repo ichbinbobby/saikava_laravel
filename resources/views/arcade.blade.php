@@ -89,6 +89,48 @@
     </div>
   </div>
 
+  <!-- Row3 -->
+  <div class="w3-row-padding w3-center w3-margin-top">
+    <div class="w3-third">
+      <div class="w3-card w3-container" style="min-height:460px">
+      <h3>Preloading Screen</h3><br>
+      <i class="fa fa-desktop w3-margin-bottom w3-text-theme" style="font-size:120px"></i>
+      <p>Testing Code</p>
+      <p>Coming soon</p>
+      <p>Highscore</p>
+      <a href="{{ url('arcade/preloading_screen') }}">
+        <p>Play Button</p>
+      </a>
+      </div>
+    </div>
+
+    <div class="w3-third">
+      <div class="w3-card w3-container" style="min-height:460px">
+      <h3>Breakout</h3><br>
+      <i class="fa fa-desktop w3-margin-bottom w3-text-theme" style="font-size:120px"></i>
+      <p>Breakout</p>
+      <p>Coming soon</p>
+      <p>Singleplayer</p>
+      <a href="{{ url('arcade/breakout') }}">
+        <p>Play Button</p>
+      </a>
+      </div>
+    </div>
+
+    <div class="w3-third">
+      <div class="w3-card w3-container" style="min-height:460px">
+      <h3>Ping Pong</h3><br>
+      <i class="fa fa-desktop w3-margin-bottom w3-text-theme" style="font-size:120px"></i>
+      <p>Ping Pong</p></a>
+      <p>Coming soon</p>
+      <p>Multilayer</p>
+      <a href="{{ url('arcade/ping_pong') }}">
+        <p>Play Button</p>
+      </a>
+      </div>
+    </div>
+  </div>
+
   </div>
   <!-- Main End -->
 

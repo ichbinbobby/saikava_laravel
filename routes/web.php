@@ -47,3 +47,7 @@ Route::get('arcade/mario', function () {
 Route::get('arcade/ping_pong', function () {
     return view('games/ping_pong');
 });
+
+Route::get('arcade/preloading_screen', function () {
+    return view('games/preloading_screen');
+});
