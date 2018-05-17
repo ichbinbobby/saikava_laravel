@@ -5,7 +5,7 @@ the player should be able to fill in his username, when he tops one of the highs
 displayed on the website. The arcade games should be simple and may be reinvented in an mobile app later on. Change the dragonmaid 
 characters, images and sounds to prevent copyright issues.
 
-## Deployment
+## Deployment (LAMP)
 
   https://www.hugeserver.com/kb/install-laravel5-php7-apache-ubuntu16/
 
