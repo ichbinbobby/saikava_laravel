@@ -51,3 +51,7 @@ Route::get('arcade/ping_pong', function () {
 Route::get('arcade/preloading_screen', function () {
     return view('games/preloading_screen');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
