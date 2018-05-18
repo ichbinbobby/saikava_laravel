@@ -98,7 +98,7 @@
 
     <script type="text/javascript" src="/js/navbar.js"></script>
     <script type="text/javascript" src="/js/app.js"></script>
-    <script type="text/javascript" src="/js/phaser.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/phaser@3.8.0/dist/phaser.min.js"></script>
     @section('scripts')
 
     @show
