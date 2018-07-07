@@ -8,36 +8,56 @@
 
 
       <!-- First Grid -->
-    <div class="w3-row-padding w3-padding-64 w3-container" >
+    <div class="w3-row-padding w3-padding-64 w3-container w3-justify" >
       <div class="w3-content">
         <div class="w3-twothird">
-          <h1>Saikawa Riko</h1>
-          <h5 class="w3-padding-32">才川 リコ - Kanna's primary school
-            classmate who is initially hostile towards her, but soon develops a
-            crush on her. A running gag involves her becoming overwhelmingly
-            flushed with bliss every time she and Kanna make physical contact.</h5>
+          <h1>SaikaVA</h1>
+          <h5 class="w3-padding-32">
+            Orginally a character from the dragonmaid anime and known for her crush
+            on the famous dragon loli, Saikawa soon became a hit on the internet.
+            A running gag involves her becoming overwhelmingly flushed with bliss
+            every time she and Kanna make physical contact. Due to Saikawas green
+            longsleeve with a yellow rabbit, it came to my mind to combine her with
+            Overwatchs favourite Korean mech pilot DVA. I gave Saikawa DVAs Headset
+            and colored the rabbit on her longsleeve neonpink and that is how
+            <b>SaikaVA</b> was born.
+          </h5>
 
           <p class="w3-text-grey">
-  Noticing Kanna staring longingly at passing students, Kobayashi and Tohru make arrangements for her to go to school, going with her to buy some supplies. On her first day of school, Kanna manages to make some friends, including classmate Riko Saikawa, while also receiving a keychain from Kobayashi. Later, Riko impulsively challenges some park-hogging delinquents to a game of dodgeball, prompting Tohru and the other dragons to join her team. After wiping the floor with the other team, the dragons decide to go against each other in a no-holds-barred battlefield.
+            My goal is it to create little arcade games playable in the browser
+            and/or on mobile devices. Therefore I am learning to code next to
+            creating SaikaVA memes. In order to avoid copyright problems in the
+            future every game sprite needs to be open source or self-made. I would
+            like to use simple pixelarts for that and I am looking for pixelartists
+            and developers. The project is public on Github and you can contribute
+            all you like or join us in our discord.
           </p>
+          <br>
         </div>
 
         <div class="w3-third w3-center">
-          <img src="images/riko_astonished.png" alt="">
+          <a href="https://www.youtube.com/c/SaikaVa">
+            <img src="images/SaikaVA.png" alt="SaikaVA Logo">
+          </a><br><br>
+          <a href="https://github.com/ichbinbobby/saikava">
+            <img src="images/Octocat.png" alt="">
+          </a><br><br>
+          <a href="https://discordapp.com/invite/9R4BRdM">
+            <img src="images/discord_logo140.png" alt="">
+          </a>
         </div>
       </div>
     </div>
 
     <!-- Second Grid -->
-    <div class="w3-row-padding w3-padding-64 w3-container">
+    <div class="w3-row-padding w3-padding-64 w3-container w3-justify">
       <div class="w3-content">
-        <div class="w3-third w3-center">
-          <img src="images/riko_pose.png" alt="">
-        </div>
-
         <div class="w3-twothird">
           <h1>Miss Kobayashi's Dragon Maid</h1>
-          <h5 class="w3-padding-32">Riko invites Kanna, Tohru, and Kobayashi to her house to meet her maid fanatic sister, Georgie. While the others talk about maids, Kanna and Riko get awfully close while playing games together.</h5>
+          <h5 class="w3-padding-32">
+            Are you interested in the anime? It is legal and free to watch on
+            crunchyroll.com.
+          </h5>
 
           <p class="w3-text-grey">
             Japanese: 小林さんちのメイドラゴン
@@ -49,12 +69,18 @@
               aired in Japan between January and April 2017.
           </p>
         </div>
+
+        <div class="w3-third w3-center">
+          <a href="http://www.crunchyroll.com/miss-kobayashis-dragon-maid">
+            <img src="images/crunchyroll_logo.jpg" alt="Crunchyroll Logo">
+          </a>
+        </div>
       </div>
     </div>
 
   </div>
 
-  <div class="w3-container w3-center w3-opacity w3-padding-64">
+  <!-- <div class="w3-container w3-center w3-opacity w3-padding-64">
       <h1 class="w3-margin w3-xlarge">"I need to prepare my heart." - Episode 6</h1>
-  </div>
+  </div> -->
 @endsection
