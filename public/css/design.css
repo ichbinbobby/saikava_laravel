@@ -4,6 +4,7 @@ html, body {
   padding: 0;
   height: 100%;
   background-color: #FAFAFA;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 a:hover{
