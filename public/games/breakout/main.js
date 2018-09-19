@@ -1,3 +1,5 @@
+// https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript
+
 // reference to the <canvas> element
 var canvas = document.getElementById("breakout");
 
