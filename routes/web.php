@@ -52,6 +52,10 @@ Route::get('arcade/preloading_screen', function () {
     return view('games/preloading_screen');
 });
 
+Route::get('arcade/space_shooter', function () {
+    return view('games/space_shooter');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

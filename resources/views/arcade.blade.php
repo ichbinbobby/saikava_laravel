@@ -81,7 +81,7 @@
       <i class="fa fa-desktop w3-margin-bottom w3-text-theme" style="font-size:120px"></i>
       <p>Ping Pong</p></a>
       <p>Coming soon</p>
-      <p>Multilayer</p>
+      <p>Multiplayer</p>
       <a href="{{ url('arcade/ping_pong') }}">
         <p>Play Button</p>
       </a>
@@ -106,12 +106,12 @@
 
     <div class="w3-third">
       <div class="w3-card w3-container" style="min-height:460px">
-      <h3>Breakout</h3><br>
+      <h3>Space Shooter</h3><br>
       <i class="fa fa-desktop w3-margin-bottom w3-text-theme" style="font-size:120px"></i>
-      <p>Breakout</p>
+      <p>Space Shooter</p>
       <p>Coming soon</p>
       <p>Singleplayer</p>
-      <a href="{{ url('arcade/breakout') }}">
+      <a href="{{ url('arcade/space_shooter') }}">
         <p>Play Button</p>
       </a>
       </div>
@@ -123,7 +123,7 @@
       <i class="fa fa-desktop w3-margin-bottom w3-text-theme" style="font-size:120px"></i>
       <p>Ping Pong</p></a>
       <p>Coming soon</p>
-      <p>Multilayer</p>
+      <p>Multiplayer</p>
       <a href="{{ url('arcade/ping_pong') }}">
         <p>Play Button</p>
       </a>
