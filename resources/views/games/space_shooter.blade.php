@@ -11,9 +11,9 @@ container in the game config should you wish. -->
     
   </div>
   <div class="w3-center w3-margin-top" width="1334">
-    <p>Use the mouse or left and right arrows on the keyboard to move.</p>
+    <p>Use W, A, S, D to move and SPACE for shooting.</p>
     <p></p>
-    <a href="">Link to the Code.</a>
+    <a href="https://yorkcs.com/2019/02/06/build-a-space-shooter-with-phaser-3/">Code Tutorial</a>
   </div>
 
 @endsection()

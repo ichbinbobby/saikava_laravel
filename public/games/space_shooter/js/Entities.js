@@ -71,6 +71,16 @@ class Player extends Entity {
             }
         }
     }
+    onDestroy() {
+        this.scene.time.addEvent({ // go to game over scene
+            delay: 1000,
+            callback: function() {
+              this.scene.scene.start("SceneGameOver");
+            },
+            callbackScope: this,
+            loop: false
+        });
+    }
 }
 
 class PlayerLaser extends Entity {
@@ -107,28 +117,28 @@ class ChaserShip extends Entity {
     update() {
         if (!this.getData("isDead") && this.scene.player) {
             if (Phaser.Math.Distance.Between(
-              this.x,
-              this.y,
-              this.scene.player.x,
-              this.scene.player.y
+                this.x,
+                this.y,
+                this.scene.player.x,
+                this.scene.player.y
             ) < 320) {
-              this.state = this.states.CHASE;
+                this.state = this.states.CHASE;
             }
             if (this.state == this.states.CHASE) {
-              var dx = this.scene.player.x - this.x;
-              var dy = this.scene.player.y - this.y;
-              var angle = Math.atan2(dy, dx);
-              var speed = 100;
-              this.body.setVelocity(
-                Math.cos(angle) * speed,
-                Math.sin(angle) * speed
-              );
-              if (this.x < this.scene.player.x) {
-                this.angle -= 5;
-              }
-              else {
-                this.angle += 5;
-              }
+                var dx = this.scene.player.x - this.x;
+                var dy = this.scene.player.y - this.y;
+                var angle = Math.atan2(dy, dx);
+                var speed = 100;
+                this.body.setVelocity(
+                    Math.cos(angle) * speed,
+                    Math.sin(angle) * speed
+                );
+                if (this.x < this.scene.player.x) {
+                    this.angle -= 5;
+                }
+                else {
+                    this.angle += 5;
+                }
             }
         }
     }
@@ -143,9 +153,9 @@ class GunShip extends Entity {
             delay: 1000,
             callback: function() {
               var laser = new EnemyLaser(
-                this.scene,
-                this.x,
-                this.y
+                    this.scene,
+                    this.x,
+                    this.y
               );
               laser.setScale(this.scaleX);
               this.scene.enemyLasers.add(laser);
@@ -157,7 +167,7 @@ class GunShip extends Entity {
     onDestroy() {
         if (this.shootTimer !== undefined) {
             if (this.shootTimer) {
-              this.shootTimer.remove(false);
+                this.shootTimer.remove(false);
             }
         }
     }
@@ -168,5 +178,37 @@ class CarrierShip extends Entity {
         super(scene, x, y, "sprEnemy2", "CarrierShip");
         this.body.velocity.y = Phaser.Math.Between(50, 100);
         this.play("sprEnemy2");
+    }
+}
+
+class ScrollingBackground {
+    constructor(scene, key, velocityY) {
+        this.scene = scene;
+        this.key = key;
+        this.velocityY = velocityY;
+        this.layers = this.scene.add.group();
+        this.createLayers();
+    }
+    update() {
+        if (this.layers.getChildren()[0].y > 0) {
+            for (var i = 0; i < this.layers.getChildren().length; i++) {
+                var layer = this.layers.getChildren()[i];
+                layer.y = (-layer.displayHeight) + (layer.displayHeight * i);
+            }
+        }
+    }
+    createLayers() {
+        for (var i = 0; i < 2; i++) {
+            // creating two backgrounds will allow a continuous scroll
+            var layer = this.scene.add.sprite(0, 0, this.key);
+            layer.y = (layer.displayHeight * i);
+            var flipX = Phaser.Math.Between(0, 10) >= 5 ? -1 : 1;
+            var flipY = Phaser.Math.Between(0, 10) >= 5 ? -1 : 1;
+            layer.setScale(flipX * 2, flipY * 2);
+            layer.setDepth(-5 - (i - 1));
+            this.scene.physics.world.enableBody(layer, 0);
+            layer.body.velocity.y = this.velocityY;
+            this.layers.add(layer);
+        }
     }
 }

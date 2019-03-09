@@ -60,6 +60,11 @@ class SceneMain extends Phaser.Scene {
             ],
             laser: this.sound.add("sndLaser")
         };
+        this.backgrounds = [];
+        for (var i = 0; i < 5; i++) { // create five scrolling backgrounds
+            var bg = new ScrollingBackground(this, "sprBg0", i * 10);
+            this.backgrounds.push(bg);
+        }
         this.player = new Player(
             this,
             this.game.config.width * 0.5,
@@ -122,6 +127,7 @@ class SceneMain extends Phaser.Scene {
             if (!player.getData("isDead") &&
                 !enemy.getData("isDead")) {
               player.explode(false);
+              player.onDestroy();
               enemy.explode(true);
             }
         });
@@ -129,6 +135,7 @@ class SceneMain extends Phaser.Scene {
             if (!player.getData("isDead") &&
                 !laser.getData("isDead")) {
               player.explode(false);
+              player.onDestroy();
               laser.destroy();
             }
         });
@@ -194,6 +201,9 @@ class SceneMain extends Phaser.Scene {
                     laser.destroy();
                 }
             }
+        }
+        for (var i = 0; i < this.backgrounds.length; i++) {
+            this.backgrounds[i].update();
         }
     }
     getEnemiesByType(type) {
