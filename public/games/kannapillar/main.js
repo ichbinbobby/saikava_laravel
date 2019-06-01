@@ -1,12 +1,12 @@
 var config = {
     type: Phaser.WEBGL,
-    width: 1334,
+    width: 1350,
     height: 750,
     parent: 'game_container',
     physics: {
       default: "arcade",
       arcade: {
-        gravity: { y: 500 },
+        gravity: { x: 0, y: 0 },
         debug: true
       }
     },
