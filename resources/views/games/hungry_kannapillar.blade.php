@@ -1,5 +1,5 @@
 @extends('layouts.game')
-@section('title', 'Flappy SaikaVA')
+@section('title', 'The Very Hungry Kannapillar')
 
 @section('content')
 <!-- The canvas element that Phaser creates will be simply be appended to the
