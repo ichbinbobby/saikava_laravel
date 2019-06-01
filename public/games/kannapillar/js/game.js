@@ -1,6 +1,6 @@
 var config = {
     type: Phaser.WEBGL,
-    width: 1350,
+    width: 1200,
     height: 750,
     parent: 'game_container',
     physics: {
