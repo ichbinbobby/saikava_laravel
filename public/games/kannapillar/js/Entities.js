@@ -12,7 +12,7 @@ class Entity extends Phaser.GameObjects.Sprite {
 
 class Player extends Entity {
     constructor(scene, x, y, key) {
-        super(scene, x, y, key, "Player");
+        super(scene, x, y, key, 'Player');
         this.speed = 100;
         this.moveX = this.speed;
         this.moveY = 0;
@@ -78,9 +78,17 @@ class Player extends Entity {
     }
 }
 
+class Tail extends Entity {
+    constructor(scene, x, y, key){
+        super(scene, x, y, key, 'Tail');
+    }
+    update() {
+        //TODO
+    }
+}
+
 class Food extends Entity {
     constructor(scene, x, y) {
-        super(scene, x, y, "Food");
-
+        super(scene, x, y, 'Food');
     }
 }

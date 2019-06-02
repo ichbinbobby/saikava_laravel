@@ -9,7 +9,7 @@ class SceneMain extends Phaser.Scene {
             frameWidth: 75,
             frameHeight: 75
         });
-        this.load.spritesheet("sprBody", "/games/kannapillar/assets/sprBody.png", {
+        this.load.spritesheet("sprTail", "/games/kannapillar/assets/sprTail.png", {
             frameWidth: 75,
             frameHeight: 75
         });
@@ -23,22 +23,22 @@ class SceneMain extends Phaser.Scene {
         bg.setOrigin(0, 0);
 
         this.anims.create({
-            key: "animate",
+            key: 'headWiggle',
             frames: this.anims.generateFrameNames('sprHead', {start: 0, end: 1}),
             frameRate: 4,
             repeat: -1
         });
         this.anims.create({
-            key: "sprBody",
-            frames: this.anims.generateFrameNumbers("sprBody"),
-            frameRate: 20,
+            key: 'tailWiggle',
+            frames: this.anims.generateFrameNumbers('sprTail', {start: 0, end: 1}),
+            frameRate: 4,
             repeat: -1
         });
         this.anims.create({
-            key: "sprEat",
-            frames: this.anims.generateFrameNumbers("sprEat"),
-            frameRate: 20,
-            repeat: -1
+            key: 'eat',
+            frames: this.anims.generateFrameNumbers('sprEat', {start: 0, end: 1}),
+            frameRate: 4,
+            repeat: 1
         });
 
         this.player = new Player(
@@ -47,6 +47,13 @@ class SceneMain extends Phaser.Scene {
             this.game.config.height * 0.5,
             "sprHead"
         );
+        // TODO
+        this.tail = new Tail(
+            this,
+            this.player.x,
+            this.player.y,
+            "sprTail"
+        )
 
         this.keyW = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
         this.keyS = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
@@ -56,7 +63,7 @@ class SceneMain extends Phaser.Scene {
     update() {
         if (!this.player.getData("isDead")) {
             this.player.update();
-            this.player.anims.play('animate', true);
+            this.player.anims.play('headWiggle', true);
             if (this.keyW.isDown) {
                 this.player.moveUp();
             }
@@ -69,6 +76,11 @@ class SceneMain extends Phaser.Scene {
             else if (this.keyD.isDown) {
                 this.player.moveRight();
             }
+            this.tail.anims.play('tailWiggle', true);
+            //TODO
+            this.tail.update();
+            this.tail.x = this.player.x;
+            this.tail.y = this.player.y;
         }
     }
 }
