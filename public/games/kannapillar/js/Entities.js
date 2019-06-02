@@ -7,6 +7,8 @@ class Entity extends Phaser.GameObjects.Sprite {
         this.body.collideWorldBounds = true;
         this.setData("type", type);
         this.setData("isDead", false);
+        this.x2 = 0;
+        this.y2 = 0;
     }
 }
 
@@ -74,7 +76,11 @@ class Player extends Entity {
     update() {
         this.body.setVelocity(this.moveX, this.moveY);
         this.x = Phaser.Math.Clamp(this.x, 0, this.scene.game.config.width);
-        this.y = Phaser.Math.Clamp(this.y, 0, this.scene.game.config.height);   
+        this.y = Phaser.Math.Clamp(this.y, 0, this.scene.game.config.height);
+        if(this.x != this.x2 && this.y != this.y2){
+            this.x2 = this.x;
+            this.y2 = this.y;
+        }   
     }
 }
 

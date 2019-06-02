@@ -61,6 +61,10 @@ class SceneMain extends Phaser.Scene {
         this.keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
     }
     update() {
+        this.tail.anims.play('tailWiggle', true);
+        //TODO
+        
+
         if (!this.player.getData("isDead")) {
             this.player.update();
             this.player.anims.play('headWiggle', true);
@@ -76,11 +80,9 @@ class SceneMain extends Phaser.Scene {
             else if (this.keyD.isDown) {
                 this.player.moveRight();
             }
-            this.tail.anims.play('tailWiggle', true);
-            //TODO
-            this.tail.update();
-            this.tail.x = this.player.x;
-            this.tail.y = this.player.y;
         }
+        
+        this.tail.x = this.player.x2;
+        this.tail.y = this.player.y2;
     }
 }
