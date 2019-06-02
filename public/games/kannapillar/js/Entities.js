@@ -16,26 +16,49 @@ class Player extends Entity {
         this.speed = 100;
         this.moveX = this.speed;
         this.moveY = 0;
+        this.directionUp = false;
+        this.directionDown = false;
+        this.directionLeft = false;
+        this.directionRight = true; // Player starts moving right
     }
     moveUp() {
-        this.moveX = 0;
-        this.moveY = -this.speed;
+        if(this.directionLeft || this.directionRight){
+            this.directionUp = true;
+            this.directionLeft = false;
+            this.directionRight = false;
+            this.moveX = 0;
+            this.moveY = -this.speed;
+        } 
     }
     moveDown() {
-        this.moveX = 0;
-        this.moveY = this.speed;
+        if(this.directionLeft || this.directionRight){
+            this.directionDown = true;
+            this.directionLeft = false;
+            this.directionRight = false;
+            this.moveX = 0;
+            this.moveY = this.speed;
+        }
     }
     moveLeft() {
-        this.moveX = -this.speed;
-        this.moveY = 0;
+        if(this.directionUp || this.directionDown){
+            this.directionLeft = true;
+            this.directionUp = false;
+            this.directionDown = false;
+            this.moveX = -this.speed;
+            this.moveY = 0;
+        }
     }
     moveRight() {
-        this.moveX = this.speed;
-        this.moveY = 0;
+        if(this.directionUp || this.directionDown){
+            this.directionRight = true;
+            this.directionUp = false;
+            this.directionDown = false;
+            this.moveX = this.speed;
+            this.moveY = 0;
+        }
     }
     update() {
-        // set constant movement here
-        this.body.setVelocity(this.moveX, this.moveY); //move right
+        this.body.setVelocity(this.moveX, this.moveY);
         this.x = Phaser.Math.Clamp(this.x, 0, this.scene.game.config.width);
         this.y = Phaser.Math.Clamp(this.y, 0, this.scene.game.config.height);   
     }
