@@ -23,9 +23,9 @@ class SceneMain extends Phaser.Scene {
         bg.setOrigin(0, 0);
 
         this.anims.create({
-            key: "sprHead",
-            frames: this.anims.generateFrameNumbers("sprHead"),
-            frameRate: 20,
+            key: "animate",
+            frames: this.anims.generateFrameNames('sprHead', {start: 0, end: 1}),
+            frameRate: 4,
             repeat: -1
         });
         this.anims.create({
@@ -56,6 +56,7 @@ class SceneMain extends Phaser.Scene {
     update() {
         if (!this.player.getData("isDead")) {
             this.player.update();
+            this.player.anims.play('animate', true);
             if (this.keyW.isDown) {
                 this.player.moveUp();
             }

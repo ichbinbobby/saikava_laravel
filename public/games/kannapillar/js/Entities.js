@@ -4,6 +4,7 @@ class Entity extends Phaser.GameObjects.Sprite {
         this.scene = scene;
         this.scene.add.existing(this);
         this.scene.physics.world.enableBody(this, 0);
+        this.body.collideWorldBounds = true;
         this.setData("type", type);
         this.setData("isDead", false);
     }
@@ -12,28 +13,24 @@ class Entity extends Phaser.GameObjects.Sprite {
 class Player extends Entity {
     constructor(scene, x, y, key) {
         super(scene, x, y, key, "Player");
-        this.setData("speed", 100);
-        this.moveX = 100;
+        this.speed = 100;
+        this.moveX = this.speed;
         this.moveY = 0;
     }
     moveUp() {
-        //this.body.velocity.y -= this.getData("speed");
         this.moveX = 0;
-        this.moveY = -100;
+        this.moveY = -this.speed;
     }
     moveDown() {
-        //this.body.velocity.y += this.getData("speed");
         this.moveX = 0;
-        this.moveY = 100;
+        this.moveY = this.speed;
     }
     moveLeft() {
-        //this.body.velocity.x -= this.getData("speed");
-        this.moveX = -100;
+        this.moveX = -this.speed;
         this.moveY = 0;
     }
     moveRight() {
-        //this.body.velocity.x += this.getData("speed");
-        this.moveX = 100;
+        this.moveX = this.speed;
         this.moveY = 0;
     }
     update() {
