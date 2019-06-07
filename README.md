@@ -76,4 +76,6 @@ MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
 
 ## Game Development
 
+The games are located in [public/games/](https://github.com/ichbinbobby/saikava/tree/master/public/games). Each game has its own folder with a simple project structure and is visualized in the [view](https://github.com/ichbinbobby/saikava/tree/master/resources/views/games) by a blade. assets/ contains sounds and images while js/ posseses the game logic. You don't need to include phaser.js, since it is included in the [game layout](https://github.com/ichbinbobby/saikava/blob/master/resources/views/layouts/game.blade.php). If you want to add your game to the arcade then you need to add it to the [arcade page](https://github.com/ichbinbobby/saikava/blob/master/resources/views/arcade.blade.php) and to the [web routes](https://github.com/ichbinbobby/saikava/blob/master/routes/web.php). Start by learning how the framework works. Here is a good tutorial to understand phaser.
+
 [![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/frRWKxB9Hm0/0.jpg)](https://www.youtube.com/watch?v=frRWKxB9Hm0&list=PLDyH9Tk5ZdFzEu_izyqgPFtHJJXkc79no&index=1)
