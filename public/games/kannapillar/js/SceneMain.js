@@ -48,12 +48,11 @@ class SceneMain extends Phaser.Scene {
             "sprHead"
         );
         // TODO
-        this.tail = new Tail(
-            this,
-            this.player.x,
-            this.player.y,
-            "sprTail"
-        )
+        this.tail = this.physics.add.group();
+        for (let i = 0; i < 3; i++) {
+            let tailPart = this.physics.add.sprite(75, 75, 'sprTail');
+            this.tail.add(tailPart);
+        }
 
         this.keyW = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
         this.keyS = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
@@ -61,9 +60,7 @@ class SceneMain extends Phaser.Scene {
         this.keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
     }
     update() {
-        this.tail.anims.play('tailWiggle', true);
-        //TODO
-        
+        //this.tail.anims.play('tailWiggle', true);
 
         if (!this.player.getData("isDead")) {
             this.player.update();
@@ -81,8 +78,7 @@ class SceneMain extends Phaser.Scene {
                 this.player.moveRight();
             }
         }
-        
-        this.tail.x = this.player.x2;
-        this.tail.y = this.player.y2;
+
+        Phaser.Actions.ShiftPosition(this.tail.getChildren(), this.player.x, this.player.y, 1);
     }
 }
