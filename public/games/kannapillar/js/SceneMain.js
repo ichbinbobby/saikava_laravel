@@ -1,21 +1,31 @@
 class SceneMain extends Phaser.Scene {
     constructor() {
         super({ key: "SceneMain" });
+        this.tileSize = 75;
+        this.frameFree = false;
+        this.fps = 2;
+
+        this.actionTaken = false;
+        this.action = null;
+
+        setInterval(()=> {
+            this.frameFree = true;
+        }, 1000.0 / this.fps);
     }
     preload() {
         this.load.image('background', '/games/kannapillar/assets/background.png');
         this.load.image("chocolate", "/games/kannapillar/assets/chocolate.png");
         this.load.spritesheet("sprHead", "/games/kannapillar/assets/sprHead.png", {
-            frameWidth: 75,
-            frameHeight: 75
+            frameWidth: this.tileSize,
+            frameHeight: this.tileSize
         });
         this.load.spritesheet("sprTail", "/games/kannapillar/assets/sprTail.png", {
-            frameWidth: 75,
-            frameHeight: 75
+            frameWidth: this.tileSize,
+            frameHeight: this.tileSize
         });
         this.load.spritesheet("sprEat", "/games/kannapillar/assets/sprEat.png", {
-            frameWidth: 75,
-            frameHeight: 75
+            frameWidth: this.tileSize,
+            frameHeight: this.tileSize
         });
     }
     create() {
@@ -43,42 +53,58 @@ class SceneMain extends Phaser.Scene {
 
         this.player = new Player(
             this,
-            this.game.config.width * 0.5,
-            this.game.config.height * 0.5,
+            Math.floor(this.game.config.width / this.tileSize * 0.5) + 0.5,
+            Math.floor(this.game.config.height / this.tileSize * 0.5) + 0.5,
             "sprHead"
         );
-        // TODO
-        this.tail = this.physics.add.group();
+        this.player.tail = [];
         for (let i = 0; i < 3; i++) {
-            let tailPart = this.physics.add.sprite(75, 75, 'sprTail');
-            this.tail.add(tailPart);
+            this.grow();
         }
 
         this.keyW = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
         this.keyS = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
         this.keyA = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
         this.keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
-    }
-    update() {
-        //this.tail.anims.play('tailWiggle', true);
+        
+        this.keyW.on("down", this.takeAction.bind(this, this.player.moveUp.bind(this.player)));
+        this.keyS.on("down", this.takeAction.bind(this, this.player.moveDown.bind(this.player)));
+        this.keyA.on("down", this.takeAction.bind(this, this.player.moveLeft.bind(this.player)));
+        this.keyD.on("down", this.takeAction.bind(this, this.player.moveRight.bind(this.player)));
 
+    }
+
+    takeAction(callback){
+        console.log(callback);
+        if(!this.actionTaken){
+            callback();
+        }
+        this.actionTaken = true;
+    }
+
+    update(time, delta) {
+        if(!this.frameFree){
+            return;
+        }
+        this.frameFree = false;
+
+        for(let i = this.player.tail.length - 1; i > 0; i--){
+            this.player.tail[i].gridPosX = this.player.tail[i-1].gridPosX;
+            this.player.tail[i].gridPosY = this.player.tail[i-1].gridPosY;
+        }
+        this.player.tail[0].gridPosX = this.player.gridPosX;
+        this.player.tail[0].gridPosY = this.player.gridPosY;
+        
         if (!this.player.getData("isDead")) {
             this.player.update();
-            this.player.anims.play('headWiggle', true);
-            if (this.keyW.isDown) {
-                this.player.moveUp();
-            }
-            else if (this.keyS.isDown) {
-                this.player.moveDown();
-            }
-            if (this.keyA.isDown) {
-                this.player.moveLeft();
-            }
-            else if (this.keyD.isDown) {
-                this.player.moveRight();
-            }
+            this.player.anims.play('headWiggle', true); 
         }
-
-        Phaser.Actions.ShiftPosition(this.tail.getChildren(), this.player.x, this.player.y, 1);
+        this.actionTaken = false;
+        
+    }
+    grow() {
+        let tailPart = new Tail(this, this.player.gridPosX - this.player.tail.length - 1, this.player.gridPosY, 'sprTail');
+        tailPart.anims.play('tailWiggle', true, this.player.tail.length % 2);
+        this.player.tail.push(tailPart);
     }
 }

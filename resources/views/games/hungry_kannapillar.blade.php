@@ -19,9 +19,12 @@ container in the game config should you wish. -->
 @endsection()
 
 @section("scripts")
-<script type="text/javascript" src="/games/kannapillar/js/Entities.js"></script>
+<script type="text/javascript" src="/games/kannapillar/js/Entity.js"></script>
+<script type="text/javascript" src="/games/kannapillar/js/Tail.js"></script>
+<script type="text/javascript" src="/games/kannapillar/js/Player.js"></script>
+<script type="text/javascript" src="/games/kannapillar/js/Food.js"></script>
 <script type="text/javascript" src="/games/kannapillar/js/SceneMainMenu.js"></script>
 <script type="text/javascript" src="/games/kannapillar/js/SceneMain.js"></script>
 <script type="text/javascript" src="/games/kannapillar/js/SceneGameOver.js"></script>
-<script type="text/javascript" src="/games/kannapillar/js/game.js"></script>
+<script type="text/javascript" src="/games/kannapillar/js/Game.js"></script>
 @endsection()
