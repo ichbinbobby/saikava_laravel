@@ -24,10 +24,6 @@ class SceneMain extends Phaser.Scene {
             frameWidth: this.tileSize,
             frameHeight: this.tileSize
         });
-        this.load.spritesheet("sprEat", "/games/kannapillar/assets/sprEat.png", {
-            frameWidth: this.tileSize,
-            frameHeight: this.tileSize
-        });
     }
     create() {
         let bg = this.add.sprite(0, 0, 'background');
@@ -40,17 +36,18 @@ class SceneMain extends Phaser.Scene {
             repeat: -1
         });
         this.anims.create({
+            key: 'eat',
+            frames: this.anims.generateFrameNumbers('sprHead', {start: 2, end: 3}),
+            frameRate: 4,
+            repeat: 1
+        });
+        this.anims.create({
             key: 'tailWiggle',
             frames: this.anims.generateFrameNumbers('sprTail', {start: 0, end: 1}),
             frameRate: 4,
             repeat: -1
         });
-        this.anims.create({
-            key: 'eat',
-            frames: this.anims.generateFrameNumbers('sprEat', {start: 0, end: 1}),
-            frameRate: 4,
-            repeat: 1
-        });
+        
 
         this.player = new Player(
             this,
@@ -102,15 +99,15 @@ class SceneMain extends Phaser.Scene {
         }
         this.player.tail[0].gridPosX = this.player.gridPosX;
         this.player.tail[0].gridPosY = this.player.gridPosY;
-        
-        if(this.overlap == true) {
-            this.grow();
-            this.relocateFood();
-        }
 
         if (!this.player.getData("isDead")) {
             this.player.update();
-            this.player.anims.play('headWiggle', true); 
+            this.player.anims.play('headWiggle', true);
+            if(this.overlap == true) {
+                this.player.anims.play('eat', true);
+                this.grow();
+                this.relocateFood();
+            }
         }
         this.actionTaken = false;
         this.overlap = false;
