@@ -46,8 +46,7 @@ class SceneMain extends Phaser.Scene {
             frames: this.anims.generateFrameNumbers('sprTail', {start: 0, end: 1}),
             frameRate: 4,
             repeat: -1
-        });
-        
+        });      
 
         this.player = new Player(
             this,
@@ -55,6 +54,7 @@ class SceneMain extends Phaser.Scene {
             Math.floor(this.game.config.height / this.tileSize * 0.5) + 0.5,
             'sprHead'
         );
+        this.player.setDepth(1);
         this.player.tail = [];
         for (let i = 0; i < 3; i++) {
             this.grow();
@@ -103,7 +103,7 @@ class SceneMain extends Phaser.Scene {
         if (!this.player.getData("isDead")) {
             this.player.update();
             this.player.anims.play('headWiggle', true);
-            if(this.overlap == true) {
+            if(this.overlap == true) {               
                 this.player.anims.play('eat', true);
                 this.grow();
                 this.relocateFood();
