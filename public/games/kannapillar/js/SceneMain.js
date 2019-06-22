@@ -7,6 +7,7 @@ class SceneMain extends Phaser.Scene {
 
         this.actionTaken = false;
         this.action = null;
+        this.overlap = false;
 
         setInterval(()=> {
             this.frameFree = true;
@@ -66,9 +67,18 @@ class SceneMain extends Phaser.Scene {
             this,
             Math.floor(this.game.config.width / this.tileSize * 0.8) + 0.5,
             Math.floor(this.game.config.height / this.tileSize * 0.2) + 0.5,
-            'sprChocolate'
+            'chocolate'
         );
-        console.log(this.food);
+
+        this.physics.add.overlap(
+            this.player, 
+            this.food,
+            function() {
+                this.overlap=true;
+            }, 
+            null, 
+            this
+        );
 
         this.keyW = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
         this.keyS = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
@@ -93,11 +103,17 @@ class SceneMain extends Phaser.Scene {
         this.player.tail[0].gridPosX = this.player.gridPosX;
         this.player.tail[0].gridPosY = this.player.gridPosY;
         
+        if(this.overlap == true) {
+            this.grow();
+            this.relocateFood();
+        }
+
         if (!this.player.getData("isDead")) {
             this.player.update();
             this.player.anims.play('headWiggle', true); 
         }
         this.actionTaken = false;
+        this.overlap = false;
     }
     takeAction(callback){
         if(!this.actionTaken){
@@ -109,5 +125,10 @@ class SceneMain extends Phaser.Scene {
         let tailPart = new Tail(this, this.player.gridPosX - this.player.tail.length - 1, this.player.gridPosY, 'sprTail');
         tailPart.anims.play('tailWiggle', true, this.player.tail.length % 2);
         this.player.tail.push(tailPart);
+    }
+    relocateFood() {
+        this.food.gridPosX = Math.floor(this.game.config.width / this.tileSize * Math.random()) + 0.5;
+        this.food.gridPosY = Math.floor(this.game.config.height / this.tileSize * Math.random()) + 0.5;
+        this.food.update();
     }
 }
