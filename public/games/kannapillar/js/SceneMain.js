@@ -38,7 +38,7 @@ class SceneMain extends Phaser.Scene {
         this.anims.create({
             key: 'eat',
             frames: this.anims.generateFrameNumbers('sprHead', {start: 2, end: 3}),
-            frameRate: 4,
+            frameRate: 2,
             repeat: 1
         });
         this.anims.create({
@@ -68,7 +68,7 @@ class SceneMain extends Phaser.Scene {
         );
 
         this.physics.add.overlap(
-            this.player, 
+            this.player,
             this.food,
             function() {
                 this.overlap=true;
@@ -103,8 +103,17 @@ class SceneMain extends Phaser.Scene {
         if (!this.player.getData("isDead")) {
             this.player.update();
             this.player.anims.play('headWiggle', true);
-            if(this.overlap == true) {               
+
+            if(
+                ((this.difference(this.food.x, this.player.x) == this.tileSize ) &&
+                this.food.y == this.player.y) ||
+                ((this.difference(this.food.y, this.player.y) == this.tileSize ) &&
+                this.food.x == this.player.x) 
+            ) {
                 this.player.anims.play('eat', true);
+            }
+
+            if(this.overlap == true) {                  
                 this.grow();
                 this.relocateFood();
             }
@@ -127,5 +136,8 @@ class SceneMain extends Phaser.Scene {
         this.food.gridPosX = Math.floor(this.game.config.width / this.tileSize * Math.random()) + 0.5;
         this.food.gridPosY = Math.floor(this.game.config.height / this.tileSize * Math.random()) + 0.5;
         this.food.update();
+    }
+    difference(a, b) {
+        return Math.abs(a - b);
     }
 }
