@@ -108,7 +108,6 @@ class SceneMain extends Phaser.Scene {
             }
         }
         this.actionTaken = false;
-        this.overlap = false;
     }
     takeAction(callback){
         if(!this.actionTaken){

@@ -1,7 +1,8 @@
 var config = {
     type: Phaser.WEBGL,
-    width: 1200,
-    height: 750,
+    width: 1050,
+    height: 600,
+    //ackgroundColor: '#f8edc5',
     parent: 'game_container',
     physics: {
       default: "arcade",
