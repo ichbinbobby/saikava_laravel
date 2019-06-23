@@ -85,7 +85,7 @@ class SceneMain extends Phaser.Scene {
         for(let i = this.player.tail.length - 1; i > 0; i--){
             this.player.tail[i].gridPosX = this.player.tail[i-1].gridPosX;
             this.player.tail[i].gridPosY = this.player.tail[i-1].gridPosY;
-            
+
             if(this.player.x == this.player.tail[i].x && this.player.y == this.player.tail[i].y) {
                 console.log("GameOver");
                 this.player.setData("isDead", true);
