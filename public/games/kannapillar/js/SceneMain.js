@@ -7,7 +7,6 @@ class SceneMain extends Phaser.Scene {
 
         this.actionTaken = false;
         this.action = null;
-        this.overlap = false;
 
         setInterval(()=> {
             this.frameFree = true;
@@ -67,16 +66,6 @@ class SceneMain extends Phaser.Scene {
             'chocolate'
         );
 
-        this.physics.add.overlap(
-            this.player,
-            this.food,
-            function() {
-                this.overlap=true;
-            }, 
-            null, 
-            this
-        );
-
         this.keyW = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
         this.keyS = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
         this.keyA = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
@@ -104,16 +93,16 @@ class SceneMain extends Phaser.Scene {
             this.player.update();
             this.player.anims.play('headWiggle', true);
 
-            if(
+            if( // this is also true after she ate the chocolate since she will be 75 behind the chocolate too
                 ((this.difference(this.food.x, this.player.x) == this.tileSize ) &&
                 this.food.y == this.player.y) ||
                 ((this.difference(this.food.y, this.player.y) == this.tileSize ) &&
-                this.food.x == this.player.x) 
+                this.food.x == this.player.x)
             ) {
                 this.player.anims.play('eat', true);
             }
-
-            if(this.overlap == true) {                  
+            
+            if(this.food.x == this.player.x && this.food.y == this.player.y) {                  
                 this.grow();
                 this.relocateFood();
             }
