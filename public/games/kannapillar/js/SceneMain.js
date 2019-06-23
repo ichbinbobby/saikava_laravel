@@ -7,6 +7,7 @@ class SceneMain extends Phaser.Scene {
 
         this.actionTaken = false;
         this.action = null;
+        this.score = 0;
 
         setInterval(()=> {
             this.frameFree = true;
@@ -45,7 +46,7 @@ class SceneMain extends Phaser.Scene {
             frames: this.anims.generateFrameNumbers('sprTail', {start: 0, end: 1}),
             frameRate: 4,
             repeat: -1
-        });      
+        });
 
         this.player = new Player(
             this,
@@ -112,6 +113,7 @@ class SceneMain extends Phaser.Scene {
             if(this.food.x == this.player.x && this.food.y == this.player.y) {                  
                 this.grow();
                 this.relocateFood();
+                this.score += 10;
             }
         }
         this.actionTaken = false;
