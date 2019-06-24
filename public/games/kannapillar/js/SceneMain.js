@@ -90,7 +90,7 @@ class SceneMain extends Phaser.Scene {
             if(this.player.x == this.player.tail[i].x && this.player.y == this.player.tail[i].y) {
                 console.log("GameOver");
                 this.player.setData("isDead", true);
-                //this.scene.start("SceneGameOver");
+                //this.scene.start('SceneGameOver', {score: this.score});
             }
         }
         
