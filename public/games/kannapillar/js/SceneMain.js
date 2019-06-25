@@ -88,9 +88,8 @@ class SceneMain extends Phaser.Scene {
             this.player.tail[i].gridPosY = this.player.tail[i-1].gridPosY;
 
             if(this.player.x == this.player.tail[i].x && this.player.y == this.player.tail[i].y) {
-                console.log("GameOver");
                 this.player.setData("isDead", true);
-                //this.scene.start('SceneGameOver', {score: this.score});
+                this.scene.start('SceneGameOver', {score: this.score});
             }
         }
         
@@ -101,7 +100,7 @@ class SceneMain extends Phaser.Scene {
             this.player.update();
             this.player.anims.play('headWiggle', true);
 
-            if( // this is also true after she ate the chocolate since she will be 75 behind the chocolate too
+            if(
                 ((this.difference(this.food.x, this.player.x) == this.tileSize ) &&
                 this.food.y == this.player.y) ||
                 ((this.difference(this.food.y, this.player.y) == this.tileSize ) &&

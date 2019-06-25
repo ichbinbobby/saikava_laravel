@@ -6,7 +6,7 @@ class Player extends Entity {
         this.directionUp = false;
         this.directionDown = false;
         this.directionLeft = false;
-        this.directionRight = true; // Player starts moving right
+        this.directionRight = true;
     }
     moveUp() {
         if (this.directionLeft || this.directionRight) {
@@ -31,7 +31,6 @@ class Player extends Entity {
             else {
                 this.angle = -90;
             }
-
             this.directionDown = true;
             this.directionLeft = false;
             this.directionRight = false;
@@ -64,7 +63,6 @@ class Player extends Entity {
     update() {
         this.gridPosX += this.moveX;
         this.gridPosY += this.moveY;
-
         if (this.gridPosY * this.scene.tileSize > config.height) {
             this.gridPosY -= Math.floor(config.height / this.scene.tileSize);
         }
@@ -77,7 +75,6 @@ class Player extends Entity {
         else if (this.gridPosX < 0) {
             this.gridPosX += Math.floor(config.width / this.scene.tileSize);
         }
-
         this.x = this.gridPosX * this.scene.tileSize;
         this.y = this.gridPosY * this.scene.tileSize;
     }

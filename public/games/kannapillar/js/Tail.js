@@ -4,25 +4,18 @@ class Tail extends Entity {
         this._gridPosX = x;
         this._gridPosY = y;
     }
-
     set gridPosX(value){
         this._gridPosX = value;
         this.x = value * this.scene.tileSize;
     }
-
     get gridPosX(){
         return this._gridPosX;
     }
-
     set gridPosY(value){
         this._gridPosY = value;
         this.y = value * this.scene.tileSize;
     }
-
     get gridPosY(){
         return this._gridPosY;
-    }
-
-    update() {
     }
 }
