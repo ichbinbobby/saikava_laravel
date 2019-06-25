@@ -22,39 +22,6 @@ class SceneMainMenu extends Phaser.Scene {
         let bg = this.add.sprite(0, 0, 'background');
         bg.setOrigin(0, 0);
 
-        this.title = this.add.text(this.game.config.width * 0.5, 125, "THE VERY HUNGRY KANNAPILLAR", {
-            fontFamily: 'monospace',
-            fontSize: 48,
-            fontStyle: 'bold',
-            color: '#d2b2ff',
-            stroke: '#ffffff',
-            strokeThickness: 5,
-            align: 'center'
-        });
-        this.title.setOrigin(0.5);
-        this.btnText = this.add.text(this.game.config.width * 0.5, 530, "PLAY", {
-            fontFamily: 'monospace',
-            fontSize: 48,
-            fontStyle: 'bold',
-            color: '#d2b2ff',
-            stroke: '#ffffff',
-            strokeThickness: 5,
-            align: 'center'
-        });
-        this.btnText.setOrigin(0.5);
-        this.btnText.setInteractive();
-        this.btnText.on('pointerover', function() {
-            this.btnText.setStroke({color: '#ffffff', thickness: 7});
-            console.log(this.btnText.style.stroke);
-        }, this);
-        this.btnText.on('pointerout', function() {
-            this.btnText.setStroke({color: '#ffffff', thickness: 5});
-            console.log(this.btnText.style.stroke);
-        }, this);
-        this.btnText.on('pointerup', function() {
-            this.scene.start("SceneMain");
-        }, this);
-
         this.anims.create({
             key: 'headAll',
             frames: this.anims.generateFrameNames('sprHead', {start: 0, end: 3}),
@@ -86,25 +53,25 @@ class SceneMainMenu extends Phaser.Scene {
             repeat: -1
         });
 
-        this.btnPlay = this.add.sprite(
-            this.game.config.width * 0.5,
-            this.game.config.height * 0.7,
-            'sprPlay'
-        );
-        this.btnPlay.setInteractive();
-        this.btnPlay.on('pointerover', function() {
-            this.btnPlay.anims.play('plugAll', true);
-        }, this);
-        this.btnPlay.on('pointerout', function() {
-            this.btnPlay.anims.play('plug0', true);
-        }, this);
-        this.btnPlay.on('pointerdown', function() {
-            this.btnPlay.anims.play('plugAll', true);
-        }, this);
-        this.btnPlay.on('pointerup', function() {
-            this.btnPlay.anims.play('plug3', true);
-            this.scene.start("SceneMain");
-        }, this);
+        this.title = this.add.text(this.game.config.width * 0.5, 125, "THE VERY HUNGRY KANNAPILLAR", {
+            fontFamily: 'monospace',
+            fontSize: 48,
+            fontStyle: 'bold',
+            color: '#d2b2ff',
+            stroke: '#ffffff',
+            strokeThickness: 5,
+            align: 'center'
+        });
+        this.title.setOrigin(0.5);
+        this.btnText = this.add.text(this.game.config.width * 0.5, 525, "PLAY", {
+            fontFamily: 'monospace',
+            fontSize: 48,
+            fontStyle: 'bold',
+            color: '#d2b2ff',
+            stroke: '#ffffff',
+            strokeThickness: 5,
+            align: 'center'
+        });
 
         this.head = this.add.sprite(
             750,
@@ -136,5 +103,53 @@ class SceneMainMenu extends Phaser.Scene {
             'sprTail'
         );
         this.tail4.anims.play('tailWiggle', true, 1);
+
+        this.btnPlay = this.add.sprite(
+            this.game.config.width * 0.5,
+            415,
+            'sprPlay'
+        );
+        this.btnPlay.setInteractive();
+        this.btnPlay.on('pointerover', function() {
+            this.pointerOver();
+        }, this);
+        this.btnPlay.on('pointerout', function() {
+            this.pointerOut();
+        }, this);
+        this.btnPlay.on('pointerdown', function() {
+            this.btnPlay.anims.play('plugAll', true);
+        }, this);
+        this.btnPlay.on('pointerup', function() {
+            this.btnPlay.anims.play('plug3', true);
+            this.scene.start("SceneMain");
+        }, this);
+
+        this.btnText.setOrigin(0.5);
+        this.btnText.setInteractive();
+        this.btnText.on('pointerover', function() {
+            this.pointerOver();
+        }, this);
+        this.btnText.on('pointerout', function() {
+            this.pointerOut();
+        }, this);
+        this.btnText.on('pointerup', function() {
+            this.scene.start("SceneMain");
+        }, this); 
+    }
+    pointerOver() {
+        this.btnText.setStyle({
+            color: '#ffffff',
+            stroke: '#d2b2ff',
+            strokeThickness: 7
+        });
+        this.btnPlay.anims.play('plugAll', true);
+    }
+    pointerOut() {
+        this.btnText.setStyle({
+            color: '#d2b2ff',
+            stroke: '#ffffff',
+            strokeThickness: 5
+        });
+        this.btnPlay.anims.play('plug0', true);
     }
 }
