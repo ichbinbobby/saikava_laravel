@@ -77,8 +77,10 @@ class SceneGameOver extends Phaser.Scene {
             this.btnPlay.anims.play('plugAll', true);
         }, this);
         this.btnPlay.on('pointerup', function() {
-            this.btnPlay.anims.play('plug3', true);
-            this.scene.start("SceneMainMenu");
+			this.btnPlay.anims.play('plug3', true);
+			// this.scene.start("SceneMainMenu");
+			// keyboard control not working, because scene is instantiated only once
+			location.reload(true);
         }, this);
     }
 }
