@@ -71,7 +71,7 @@ class SceneMain extends Phaser.Scene {
         this.keyS = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
         this.keyA = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
         this.keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
-        
+
         this.keyW.on("down", this.takeAction.bind(this, this.player.moveUp.bind(this.player)));
         this.keyS.on("down", this.takeAction.bind(this, this.player.moveDown.bind(this.player)));
         this.keyA.on("down", this.takeAction.bind(this, this.player.moveLeft.bind(this.player)));
@@ -92,7 +92,7 @@ class SceneMain extends Phaser.Scene {
                 this.scene.start('SceneGameOver', {score: this.score});
             }
         }
-        
+
         this.player.tail[0].gridPosX = this.player.gridPosX;
         this.player.tail[0].gridPosY = this.player.gridPosY;
 
@@ -108,11 +108,11 @@ class SceneMain extends Phaser.Scene {
             ) {
                 this.player.anims.play('eat', true);
             }
-            
-            if(this.food.x == this.player.x && this.food.y == this.player.y) {                  
+
+            if(this.food.x == this.player.x && this.food.y == this.player.y) {
                 this.grow();
                 this.relocateFood();
-                this.score += 10;
+                this.score += 1;
             }
         }
         this.actionTaken = false;
