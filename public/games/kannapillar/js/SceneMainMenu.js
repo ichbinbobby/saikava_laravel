@@ -127,7 +127,7 @@ class SceneMainMenu extends Phaser.Scene {
         }, this);
         this.btnPlay.on('pointerup', function() {
             this.btnPlay.anims.play('plug3', true);
-            this.scene.start("SceneMain");
+            this.scene.start('SceneMain');
         }, this);
 
         this.btnText.setOrigin(0.5);
@@ -139,7 +139,7 @@ class SceneMainMenu extends Phaser.Scene {
             this.pointerOut();
         }, this);
         this.btnText.on('pointerup', function() {
-            this.scene.start("SceneMain");
+            this.scene.start('SceneMain');
         }, this);
     }
     pointerOver() {
