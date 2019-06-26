@@ -8,8 +8,13 @@ class SceneGameOver extends Phaser.Scene {
             frameWidth: this.tileSize * 2,
             frameHeight: this.tileSize * 2
         });
+        this.load.audio('sfxBtn', '/games/kannapillar/assets/sfxBtn.mp3');
     }
     create(data) {
+        this.sfx = {
+            btn: this.sound.add('sfxBtn')
+        };
+
 		this.anims.create({
             key: 'plug0',
             frames: this.anims.generateFrameNumbers('sprPlay', {start: 0, end: 0}),
@@ -69,13 +74,14 @@ class SceneGameOver extends Phaser.Scene {
         );
 		this.btnPlay.setInteractive();
         this.btnPlay.on('pointerover', function() {
-            this.btnPlay.anims.play('plugAll', true);
+            this.pointerOver();
         }, this);
         this.btnPlay.on('pointerout', function() {
-            this.btnPlay.anims.play('plug0', true);
+            this.pointerOut();
         }, this);
         this.btnPlay.on('pointerdown', function() {
             this.btnPlay.anims.play('plugAll', true);
+            this.sfx.btn.play();
         }, this);
         this.btnPlay.on('pointerup', function() {
 			this.btnPlay.anims.play('plug3', true);
@@ -83,5 +89,43 @@ class SceneGameOver extends Phaser.Scene {
 			// keyboard control not working, because scene is instantiated only once
 			location.reload(true);
         }, this);
+
+        this.btnText = this.add.text(this.game.config.width * 0.5, 525, 'RESET', {
+            fontFamily: 'monospace',
+            fontSize: 48,
+            fontStyle: 'bold',
+            color: '#d2b2ff',
+            stroke: '#ffffff',
+            strokeThickness: 5,
+            align: 'center'
+        });
+        this.btnText.setOrigin(0.5);
+        this.btnText.setInteractive();
+        this.btnText.on('pointerover', function() {
+            this.pointerOver();
+        }, this);
+        this.btnText.on('pointerout', function() {
+            this.pointerOut();
+        }, this);
+        this.btnText.on('pointerup', function() {
+            location.reload(true);
+        }, this);
+    }
+    pointerOver() {
+        this.btnText.setStyle({
+            color: '#ffffff',
+            stroke: '#d2b2ff',
+            strokeThickness: 7
+        });
+        this.btnPlay.anims.play('plugAll', true);
+        this.sfx.btn.play();
+    }
+    pointerOut() {
+        this.btnText.setStyle({
+            color: '#d2b2ff',
+            stroke: '#ffffff',
+            strokeThickness: 5
+        });
+        this.btnPlay.anims.play('plug0', true);
     }
 }

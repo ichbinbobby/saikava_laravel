@@ -117,7 +117,6 @@ class SceneMainMenu extends Phaser.Scene {
         this.btnPlay.setInteractive();
         this.btnPlay.on('pointerover', function() {
             this.pointerOver();
-            this.sfx.btn.play();
         }, this);
         this.btnPlay.on('pointerout', function() {
             this.pointerOut();
@@ -150,6 +149,7 @@ class SceneMainMenu extends Phaser.Scene {
             strokeThickness: 7
         });
         this.btnPlay.anims.play('plugAll', true);
+        this.sfx.btn.play();
     }
     pointerOut() {
         this.btnText.setStyle({
