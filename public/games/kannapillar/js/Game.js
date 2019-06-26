@@ -7,9 +7,10 @@ var config = {
       default: 'arcade'
     },
     scene: [
-      SceneMainMenu,
-      SceneMain,
-      SceneGameOver
+		SceneStart,
+      	SceneMainMenu,
+      	SceneMain,
+      	SceneGameOver
     ],
     pixelArt: true,
     roundPixels: true
