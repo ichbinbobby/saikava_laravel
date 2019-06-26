@@ -16,7 +16,7 @@ class SceneStart extends Phaser.Scene {
             this.scene.start('SceneMainMenu');
         }, this);
 
-        this.text = this.add.text(this.game.config.width * 0.5, 380, 'CLICK ME', {
+        this.text = this.add.text(this.game.config.width * 0.5, 325, 'CLICK ME', {
             fontFamily: 'monospace',
             fontSize: 48,
             fontStyle: 'bold',
