@@ -17,10 +17,15 @@ class SceneMainMenu extends Phaser.Scene {
             frameWidth: this.tileSize * 2,
             frameHeight: this.tileSize * 2
         });
+        this.load.audio('sfxBtn', '/games/kannapillar/assets/sfxBtn.mp3');
     }
     create() {
         let bg = this.add.sprite(0, 0, 'background');
         bg.setOrigin(0, 0);
+
+        this.sfx = {
+            btn: this.sound.add('sfxBtn')
+        };
 
         this.anims.create({
             key: 'headAll',
@@ -112,12 +117,14 @@ class SceneMainMenu extends Phaser.Scene {
         this.btnPlay.setInteractive();
         this.btnPlay.on('pointerover', function() {
             this.pointerOver();
+            this.sfx.btn.play();
         }, this);
         this.btnPlay.on('pointerout', function() {
             this.pointerOut();
         }, this);
         this.btnPlay.on('pointerdown', function() {
             this.btnPlay.anims.play('plugAll', true);
+            this.sfx.btn.play();
         }, this);
         this.btnPlay.on('pointerup', function() {
             this.btnPlay.anims.play('plug3', true);
@@ -134,7 +141,7 @@ class SceneMainMenu extends Phaser.Scene {
         }, this);
         this.btnText.on('pointerup', function() {
             this.scene.start("SceneMain");
-        }, this); 
+        }, this);
     }
     pointerOver() {
         this.btnText.setStyle({

@@ -1,6 +1,7 @@
 class SceneGameOver extends Phaser.Scene {
     constructor() {
         super({ key: "SceneGameOver" });
+        this.tileSize = 75;
 	}
 	preload() {
         this.load.spritesheet('sprPlay', '/games/kannapillar/assets/sprPlay.png', {

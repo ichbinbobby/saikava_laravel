@@ -24,10 +24,21 @@ class SceneMain extends Phaser.Scene {
             frameWidth: this.tileSize,
             frameHeight: this.tileSize
         });
+        this.load.audio('sfxEat', '/games/kannapillar/assets/sfxEat.mp3');
+        this.load.audio('sfxLoop', '/games/kannapillar/assets/sfxLoop.mp3');
+        this.load.audio('sfxWicked', '/games/kannapillar/assets/sfxWicked.mp3');
     }
     create() {
         let bg = this.add.sprite(0, 0, 'background');
         bg.setOrigin(0, 0);
+
+        this.sfx = {
+            eat: this.sound.add('sfxEat'),
+            backgroundMusic: this.sound.add('sfxLoop'),
+            gameOver: this.sound.add('sfxWicked')
+        };
+        this.sfx.backgroundMusic.loop = true;
+        this.sfx.backgroundMusic.play();
 
         this.anims.create({
             key: 'headWiggle',
@@ -88,7 +99,7 @@ class SceneMain extends Phaser.Scene {
             this.player.tail[i].gridPosY = this.player.tail[i-1].gridPosY;
 
             if(this.player.x == this.player.tail[i].x && this.player.y == this.player.tail[i].y) {
-                this.player.setData("isDead", true);
+                this.sfx.gameOver.play();
                 this.scene.start('SceneGameOver', {score: this.score});
             }
         }
@@ -107,6 +118,7 @@ class SceneMain extends Phaser.Scene {
                 this.food.x == this.player.x)
             ) {
                 this.player.anims.play('eat', true);
+                this.sfx.eat.play();
             }
 
             if(this.food.x == this.player.x && this.food.y == this.player.y) {
