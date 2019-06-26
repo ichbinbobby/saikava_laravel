@@ -1,6 +1,6 @@
 class SceneMain extends Phaser.Scene {
     constructor() {
-        super({ key: "SceneMain" });
+        super({ key: 'SceneMain' });
         this.tileSize = 75;
         this.frameFree = false;
         this.fps = 2;
@@ -16,11 +16,11 @@ class SceneMain extends Phaser.Scene {
     preload() {
         this.load.image('background', '/games/kannapillar/assets/background.png');
         this.load.image('chocolate', '/games/kannapillar/assets/chocolate.png');
-        this.load.spritesheet("sprHead", "/games/kannapillar/assets/sprHead.png", {
+        this.load.spritesheet('sprHead', '/games/kannapillar/assets/sprHead.png', {
             frameWidth: this.tileSize,
             frameHeight: this.tileSize
         });
-        this.load.spritesheet("sprTail", "/games/kannapillar/assets/sprTail.png", {
+        this.load.spritesheet('sprTail', '/games/kannapillar/assets/sprTail.png', {
             frameWidth: this.tileSize,
             frameHeight: this.tileSize
         });
@@ -83,10 +83,10 @@ class SceneMain extends Phaser.Scene {
         this.keyA = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
         this.keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
 
-        this.keyW.on("down", this.takeAction.bind(this, this.player.moveUp.bind(this.player)));
-        this.keyS.on("down", this.takeAction.bind(this, this.player.moveDown.bind(this.player)));
-        this.keyA.on("down", this.takeAction.bind(this, this.player.moveLeft.bind(this.player)));
-        this.keyD.on("down", this.takeAction.bind(this, this.player.moveRight.bind(this.player)));
+        this.keyW.on('down', this.takeAction.bind(this, this.player.moveUp.bind(this.player)));
+        this.keyS.on('down', this.takeAction.bind(this, this.player.moveDown.bind(this.player)));
+        this.keyA.on('down', this.takeAction.bind(this, this.player.moveLeft.bind(this.player)));
+        this.keyD.on('down', this.takeAction.bind(this, this.player.moveRight.bind(this.player)));
     }
     update(time, delta) {
         if(!this.frameFree){
@@ -107,7 +107,7 @@ class SceneMain extends Phaser.Scene {
         this.player.tail[0].gridPosX = this.player.gridPosX;
         this.player.tail[0].gridPosY = this.player.gridPosY;
 
-        if (!this.player.getData("isDead")) {
+        if (!this.player.getData('isDead')) {
             this.player.update();
             this.player.anims.play('headWiggle', true);
 

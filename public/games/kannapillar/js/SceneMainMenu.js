@@ -1,6 +1,6 @@
 class SceneMainMenu extends Phaser.Scene {
     constructor() {
-        super({ key: "SceneMainMenu" });
+        super({ key: 'SceneMainMenu' });
         this.tileSize = 75;
     }
     preload() {
@@ -58,7 +58,7 @@ class SceneMainMenu extends Phaser.Scene {
             repeat: -1
         });
 
-        this.title = this.add.text(this.game.config.width * 0.5, 125, "THE VERY HUNGRY KANNAPILLAR", {
+        this.title = this.add.text(this.game.config.width * 0.5, 125, 'THE VERY HUNGRY KANNAPILLAR', {
             fontFamily: 'monospace',
             fontSize: 48,
             fontStyle: 'bold',
@@ -68,7 +68,7 @@ class SceneMainMenu extends Phaser.Scene {
             align: 'center'
         });
         this.title.setOrigin(0.5);
-        this.btnText = this.add.text(this.game.config.width * 0.5, 525, "PLAY", {
+        this.btnText = this.add.text(this.game.config.width * 0.5, 525, 'PLAY', {
             fontFamily: 'monospace',
             fontSize: 48,
             fontStyle: 'bold',

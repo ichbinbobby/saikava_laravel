@@ -1,6 +1,6 @@
 class SceneGameOver extends Phaser.Scene {
     constructor() {
-        super({ key: "SceneGameOver" });
+        super({ key: 'SceneGameOver' });
         this.tileSize = 75;
 	}
 	preload() {
@@ -29,7 +29,7 @@ class SceneGameOver extends Phaser.Scene {
             repeat: -1
         });
 
-        this.title = this.add.text(this.game.config.width * 0.5, 75, "GAME OVER", {
+        this.title = this.add.text(this.game.config.width * 0.5, 75, 'GAME OVER', {
             fontFamily: 'monospace',
             fontSize: 60,
             fontStyle: 'bold',
