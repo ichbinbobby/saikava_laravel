@@ -136,7 +136,7 @@ class SceneMain extends Phaser.Scene {
         this.actionTaken = true;
     }
     grow() {
-        let tailPart = new Tail(this, this.player.gridPosX - this.player.tail.length - 1, this.player.gridPosY, 'sprTail');
+        let tailPart = new Tail(this, -75, -75, 'sprTail');
         tailPart.anims.play('tailWiggle', true, this.player.tail.length % 2);
         this.player.tail.push(tailPart);
     }
