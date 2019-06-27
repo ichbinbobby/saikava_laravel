@@ -112,8 +112,8 @@ Navigation has its own css file
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 10px;
-  width: 1334px;
-  height: 750px;
+  max-width: 1334px;
+  max-height: 750px;
 }
 
 /* Footer #51567b color: #FFFFFF;*/
