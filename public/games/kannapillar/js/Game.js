@@ -1,4 +1,4 @@
-var config = {
+let config = {
     type: Phaser.WEBGL,
     width: 1200,
     height: 600,
@@ -15,4 +15,4 @@ var config = {
     pixelArt: true,
     roundPixels: true
 };
-var game = new Phaser.Game(config);
+let game = new Phaser.Game(config);
