@@ -32,8 +32,6 @@ steps:
     ls -a
     mkdir config
     ls -a
-    cd config
-    ls -a
     git init
     git remote add origin -f https://github.com/laravel/laravel.git
     git config core.sparseCheckout true
