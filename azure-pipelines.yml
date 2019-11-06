@@ -29,9 +29,14 @@ steps:
   displayName: 'Use PHP version $(phpVersion)'
 
 - script: |
-    composer global require laravel/installer
-    composer install --no-interaction --prefer-dist
-  displayName: 'composer install'
+    cd /var/www/html/saikava
+    ll
+  displayName: 'List project files'
 
-- script: phpunit
-  displayName: 'Run tests with phpunit'
+#- script: |
+#    composer global require laravel/installer
+#    composer install --no-interaction --prefer-dist
+#  displayName: 'composer install'
+
+#- script: phpunit
+#  displayName: 'Run tests with phpunit'
