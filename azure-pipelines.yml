@@ -29,6 +29,7 @@ steps:
   displayName: 'Use PHP version $(phpVersion)'
 
 - script: |
+    git clone https://github.com/laravel/laravel/tree/master/config
     ls -a
   displayName: 'List project files'
 
