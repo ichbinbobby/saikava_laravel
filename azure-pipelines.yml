@@ -29,7 +29,14 @@ steps:
   displayName: 'Use PHP version $(phpVersion)'
 
 - script: |
-    git clone https://github.com/laravel/laravel/tree/master/config
+    ls -a
+    mkdir config
+    cd config
+    git init
+    git remote add origin -f https://github.com/laravel/laravel.git
+    git config core.sparseCheckout true
+    echo "laravel/config" >> .git/info/sparse-checkout
+    git pull origin master
     ls -a
   displayName: 'List project files'
 
