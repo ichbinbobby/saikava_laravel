@@ -29,7 +29,7 @@ steps:
   displayName: 'Use PHP version $(phpVersion)'
 
 - script: |
-    ll
+    ls -a
   displayName: 'List project files'
 
 #- script: |
