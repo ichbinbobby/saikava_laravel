@@ -31,12 +31,14 @@ steps:
 - script: |
     ls -a
     mkdir config
+    ls -a
     cd config
+    ls -a
     git init
     git remote add origin -f https://github.com/laravel/laravel.git
     git config core.sparseCheckout true
-    echo "laravel/config" >> .git/info/sparse-checkout
-    git pull --depth=1 origin master
+    echo "config" >> .git/info/sparse-checkout
+    git pull origin master
     ls -a
   displayName: 'List project files'
 
