@@ -29,7 +29,6 @@ steps:
   displayName: 'Use PHP version $(phpVersion)'
 
 - script: |
-    cd /var/www/html/saikava
     ll
   displayName: 'List project files'
 
