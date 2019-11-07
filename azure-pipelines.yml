@@ -35,7 +35,7 @@ steps:
   displayName: 'Getting config/ and .env from laravel repository'
 
 - script: |
-    composer install --no-interaction --prefer-dist
+    composer install --prefer-dist
   displayName: 'composer install'
 
 - script: php artisan key:generate
