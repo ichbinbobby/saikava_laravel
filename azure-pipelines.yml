@@ -44,6 +44,8 @@ steps:
     ls -a
     cd config
     ls -a
+    cd ..
+    ls -a
   displayName: 'List project files'
 
 #- script: |
