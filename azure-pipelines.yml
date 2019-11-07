@@ -40,6 +40,10 @@ steps:
     echo "config" >> .git/info/sparse-checkout
     git pull origin master
     ls -a
+    cd config
+    ls -a
+    cd ..
+    ls -a
     mv config/* .
     ls -a
     cd config
