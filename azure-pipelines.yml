@@ -40,15 +40,9 @@ steps:
     echo "config" >> .git/info/sparse-checkout
     echo ".env.example" >> .git/info/sparse-checkout
     git pull origin master
-    ls -a
     mv config/ ..
     mv .env.example .env
     mv .env ..
-    ls -a
-    cd ..
-    ls -a
-    cd config
-    ls -a
     cd ..
     ls -a
   displayName: 'List project files'
