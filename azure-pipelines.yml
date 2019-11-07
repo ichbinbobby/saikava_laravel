@@ -46,7 +46,7 @@ steps:
 
 - script: |
     composer global require "squizlabs/php_codesniffer=*"
-    ls -a
-    ls -a vendor
-    vendor/bin/phpcs --ignore=*/vendor/*,*/config/* .
+    composer global show
+    export PATH=~/.composer/vendor/bin:$PATH
+    phpcs --ignore=*/vendor/*,*/config/* .
   displayName: 'Checking style with PHP Code Sniffer'
