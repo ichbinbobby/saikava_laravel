@@ -32,7 +32,6 @@ steps:
     mv .env ..
     cd ..
     rm -rf laravel
-    ls -a
   displayName: 'Getting config/ and .env from laravel repository'
 
 - script: |
@@ -47,6 +46,5 @@ steps:
 
 - script: |
     composer global require "squizlabs/php_codesniffer=*"
-    composer update
-    vendor/bin/phpcs --ignore=*/vendor/*,*/config/* .
+    phpcs --ignore=*/vendor/*,*/config/* .
   displayName: 'Checking style with PHP Code Sniffer'
