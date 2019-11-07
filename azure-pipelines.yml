@@ -38,13 +38,12 @@ steps:
     git remote add origin -f https://github.com/laravel/laravel.git
     git config core.sparseCheckout true
     echo "config" >> .git/info/sparse-checkout
+    echo ".env.example" .git/info/sparse-checkout
     git pull origin master
     ls -a
-    cd config
-    ls -a
-    cd ..
-    ls -a
     mv config/ ..
+    mv .env.example .env
+    mv .env ..
     ls -a
     cd ..
     ls -a
