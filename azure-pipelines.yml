@@ -37,6 +37,7 @@ steps:
 
 - script: |
     composer install --no-interaction --prefer-dist
+    composer update
     ls -a
     cd vendor
     ls -a
