@@ -35,7 +35,7 @@ steps:
   displayName: 'Getting config/ and .env from laravel repository'
 
 - script: |
-    composer install  --prefer-dist
+    composer install --no-interaction --prefer-dist
   displayName: 'composer install'
 
 - script: php artisan key:generate
@@ -45,6 +45,6 @@ steps:
   displayName: 'Run tests with phpunit'
 
 - script: |
-    sudo composer require "squizlabs/php_codesniffer=*"
-    vendor/bin/phpcs --ignore=*/vendor/*,*/config/* .
+    composer require "squizlabs/php_codesniffer=*"
+    ./vendor/bin/phpcs --ignore=*/vendor/*,*/config/* .
   displayName: 'Checking style with PHP Code Sniffer'
