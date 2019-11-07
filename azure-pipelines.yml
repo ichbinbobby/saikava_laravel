@@ -44,13 +44,14 @@ steps:
     mv .env.example .env
     mv .env ..
     cd ..
+    rm -rf laravel
     ls -a
-  displayName: 'List project files'
+  displayName: 'Getting config/ and .env from laravel repository'
 
-#- script: |
-#    composer global require laravel/installer
-#    composer install --no-interaction --prefer-dist
-#  displayName: 'composer install'
+- script: |
+    composer global require laravel/installer
+    composer install --no-interaction --prefer-dist
+  displayName: 'composer install'
 
 #- script: phpunit
 #  displayName: 'Run tests with phpunit'
