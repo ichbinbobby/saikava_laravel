@@ -30,9 +30,9 @@ steps:
 
 - script: |
     ls -a
-    mkdir config
+    mkdir laravel
     ls -a
-    cd config
+    cd laravel
     ls -a
     git init
     git remote add origin -f https://github.com/laravel/laravel.git
@@ -40,7 +40,7 @@ steps:
     echo "config" >> .git/info/sparse-checkout
     git pull origin master
     ls -a
-    cd config
+    mv config/* .
     ls -a
   displayName: 'List project files'
 
