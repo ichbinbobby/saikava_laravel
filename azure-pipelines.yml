@@ -41,6 +41,7 @@ steps:
     git pull origin master
     ls -a
     mv config/* .
+    ls -a
     cd config
     ls -a
   displayName: 'List project files'
