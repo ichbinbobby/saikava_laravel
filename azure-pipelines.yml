@@ -38,6 +38,8 @@ steps:
 - script: |
     composer install --no-interaction --prefer-dist
     ls -a
+    cd vendor
+    ls -a
   displayName: 'composer install'
 
 - script: php artisan key:generate
@@ -47,6 +49,5 @@ steps:
   displayName: 'Run tests with phpunit'
 
 - script: |
-    composer global require "squizlabs/php_codesniffer=*"
     vendor/bin/phpcs --ignore=*/vendor/*,*/config/* .
   displayName: 'Checking style with PHP Code Sniffer'
