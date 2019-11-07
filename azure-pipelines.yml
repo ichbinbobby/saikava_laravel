@@ -1,0 +1,57 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+# PHP
+# Test and package your PHP project.
+# Add steps that run tests, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/php
+
+trigger:
+- master
+
+pool:
+  vmImage: 'Ubuntu-16.04'
+
+variables:
+  phpVersion: 7.2
+
+steps:
+
+- script: |
+    sudo update-alternatives --set php /usr/bin/php$(phpVersion)
+    sudo update-alternatives --set phar /usr/bin/phar$(phpVersion)
+    sudo update-alternatives --set phpdbg /usr/bin/phpdbg$(phpVersion)
+    sudo update-alternatives --set php-cgi /usr/bin/php-cgi$(phpVersion)
+    sudo update-alternatives --set phar.phar /usr/bin/phar.phar$(phpVersion)
+    php -version
+  displayName: 'Use PHP version $(phpVersion)'
+
+- script: |
+    mkdir laravel
+    cd laravel
+    git init
+    git remote add origin -f https://github.com/laravel/laravel.git
+    git config core.sparseCheckout true
+    echo "config" >> .git/info/sparse-checkout
+    echo ".env.example" >> .git/info/sparse-checkout
+    git pull origin master
+    mv config/ ..
+    mv .env.example .env
+    mv .env ..
+    cd ..
+    rm -rf laravel
+    ls -a
+  displayName: 'Getting config/ and .env from laravel repository'
+
+- script: |
+    composer global require laravel/installer
+    composer install --no-interaction --prefer-dist
+  displayName: 'composer install'
+
+- script: php artisan key:generate
+  displayName: 'Generate application key'
+
+- script: vendor/bin/phpunit
+  displayName: 'Run tests with phpunit'
