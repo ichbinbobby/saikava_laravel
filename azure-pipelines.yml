@@ -46,6 +46,8 @@ steps:
     ls -a
     mv config/* ..
     ls -a
+    cd ..
+    ls -a
     cd config
     ls -a
     cd ..
