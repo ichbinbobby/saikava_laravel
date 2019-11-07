@@ -45,7 +45,6 @@ steps:
   displayName: 'Run tests with phpunit'
 
 - script: |
-    composer require "squizlabs/php_codesniffer=*"
-    export PATH=~/.composer/vendor/bin:$PATH
-    phpcs --ignore=*/vendor/*,*/config/* .
+    sudo composer require "squizlabs/php_codesniffer=*"
+    vendor/bin/phpcs --ignore=*/vendor/*,*/config/* .
   displayName: 'Checking style with PHP Code Sniffer'
