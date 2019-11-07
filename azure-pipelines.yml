@@ -46,7 +46,6 @@ steps:
   displayName: 'Getting config/ and .env from laravel repository'
 
 - script: |
-    composer global require laravel/installer
     composer install --no-interaction --prefer-dist
   displayName: 'composer install'
 
