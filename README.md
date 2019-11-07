@@ -1,4 +1,4 @@
-[![Build Status](https://dev.azure.com/nthanbinh/saikava/_apis/build/status/ichbinbobby.saikava?branchName=azure-pipelines)](https://dev.azure.com/nthanbinh/saikava/_build/latest?definitionId=1&branchName=azure-pipelines)
+[![Build Status](https://dev.azure.com/nthanbinh/saikava/_apis/build/status/ichbinbobby.saikava?branchName=master)](https://dev.azure.com/nthanbinh/saikava/_build/latest?definitionId=1&branchName=master)
 # SaikaVA
 
 SaikaVA is a website with the goal to create little arcade games with the dragonmaid theme. The games will be played in the browser and
