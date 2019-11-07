@@ -37,6 +37,7 @@ steps:
 
 - script: |
     composer install --no-interaction --prefer-dist
+    ls -a
   displayName: 'composer install'
 
 - script: php artisan key:generate
