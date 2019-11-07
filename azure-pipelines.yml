@@ -29,11 +29,8 @@ steps:
   displayName: 'Use PHP version $(phpVersion)'
 
 - script: |
-    ls -a
     mkdir laravel
-    ls -a
     cd laravel
-    ls -a
     git init
     git remote add origin -f https://github.com/laravel/laravel.git
     git config core.sparseCheckout true
