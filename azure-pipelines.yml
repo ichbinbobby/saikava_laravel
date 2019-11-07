@@ -46,5 +46,7 @@ steps:
 
 - script: |
     composer require "squizlabs/php_codesniffer=*"
-    ./vendor/bin/phpcs --ignore=*/vendor/*,*/config/* .
+    ls -a
+    ls -a vendor
+    vendor/bin/phpcs --ignore=*/vendor/*,*/config/* .
   displayName: 'Checking style with PHP Code Sniffer'
