@@ -53,5 +53,5 @@ steps:
 - script: php artisan key:generate
   displayName: 'Generate application key'
 
-- script: phpunit
+- script: vendor/bin/phpunit
   displayName: 'Run tests with phpunit'
