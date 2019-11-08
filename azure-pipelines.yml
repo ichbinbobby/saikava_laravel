@@ -1,13 +1,3 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
-# PHP
-# Test and package your PHP project.
-# Add steps that run tests, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/php
-
 trigger:
 - master
 
@@ -42,7 +32,6 @@ steps:
     mv .env ..
     cd ..
     rm -rf laravel
-    ls -a
   displayName: 'Getting config/ and .env from laravel repository'
 
 - script: |
@@ -54,3 +43,12 @@ steps:
 
 - script: vendor/bin/phpunit
   displayName: 'Run tests with phpunit'
+
+- script: |
+    composer require "squizlabs/php_codesniffer=*"
+    vendor/squizlabs/php_codesniffer/bin/phpcs --config-set colors 1
+    vendor/squizlabs/php_codesniffer/bin/phpcs --config-set ignore_errors_on_exit 1
+    vendor/squizlabs/php_codesniffer/bin/phpcs --config-set ignore_warnings_on_exit 1
+    vendor/squizlabs/php_codesniffer/bin/phpcs --ignore=public/games/kannapillar/js/SceneMain.js public/games/*
+  displayName: 'Checking style with PHP Code Sniffer'
+# vendor/squizlabs/php_codesniffer/bin/phpcs --ignore=*/app/*,*/vendor/*,*/config/*,*/node_modules/*,*/bootstrap/* *
