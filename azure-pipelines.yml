@@ -47,6 +47,7 @@ steps:
 - script: |
     composer require "squizlabs/php_codesniffer=*"
     vendor/squizlabs/php_codesniffer/bin/phpcs --config-set colors 1
+    vendor/squizlabs/php_codesniffer/bin/phpcs --config-set ignore_errors_on_exit 1
     vendor/squizlabs/php_codesniffer/bin/phpcs --ignore=*/vendor/*,*/config/* .*
     vendor/squizlabs/php_codesniffer/bin/phpcbf --ignore=*/vendor/*,*/config/* .*
   displayName: 'Checking style with PHP Code Sniffer'
