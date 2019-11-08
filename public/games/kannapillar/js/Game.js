@@ -4,15 +4,15 @@ let config = {
     height: 600,
     parent: 'game_container',
     physics: {
-      default: 'arcade'
-    },
-    scene: [
-		SceneStart,
-      	SceneMainMenu,
-      	SceneMain,
-      	SceneGameOver
-    ],
-    pixelArt: true,
-    roundPixels: true
-};
-let game = new Phaser.Game(config);
+        default: 'arcade'
+            },
+            scene: [
+            SceneStart,
+            SceneMainMenu,
+            SceneMain,
+            SceneGameOver
+            ],
+            pixelArt: true,
+            roundPixels: true
+            };
+            let game = new Phaser.Game(config);
