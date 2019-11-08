@@ -1,5 +1,6 @@
 class SceneMain extends Phaser.Scene {
-    constructor() {
+    constructor()
+    {
         super({ key: "SceneMain" });
     }
 }

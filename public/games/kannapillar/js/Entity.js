@@ -1,5 +1,6 @@
 class Entity extends Phaser.GameObjects.Sprite {
-    constructor(scene, x, y, key, type) {
+    constructor(scene, x, y, key, type)
+    {
         super(scene, x * scene.tileSize, y * scene.tileSize, key);
         this.gridPosX = x;
         this.gridPosY = y;

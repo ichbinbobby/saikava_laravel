@@ -1,5 +1,6 @@
 class Player extends Entity {
-    constructor(scene, x, y, key) {
+    constructor(scene, x, y, key)
+    {
         super(scene, x, y, key, 'Player');
         this.moveX = 1;
         this.moveY = 0;
@@ -8,7 +9,8 @@ class Player extends Entity {
         this.directionLeft = false;
         this.directionRight = true;
     }
-    moveUp() {
+    moveUp()
+    {
         if (this.directionLeft || this.directionRight) {
             if (this.directionRight) {
                 this.angle = -90;
@@ -23,7 +25,8 @@ class Player extends Entity {
             this.directionRight = false;
         }
     }
-    moveDown() {
+    moveDown()
+    {
         if (this.directionLeft || this.directionRight) {
             if (this.directionRight) {
                 this.angle = 90;
@@ -38,7 +41,8 @@ class Player extends Entity {
             this.moveY = 1;
         }
     }
-    moveLeft() {
+    moveLeft()
+    {
         if (this.directionUp || this.directionDown) {
             this.angle = 0;
             this.directionLeft = true;
@@ -49,7 +53,8 @@ class Player extends Entity {
             this.flipX = true;
         }
     }
-    moveRight() {
+    moveRight()
+    {
         if (this.directionUp || this.directionDown) {
             this.angle = 0;
             this.directionRight = true;
@@ -60,7 +65,8 @@ class Player extends Entity {
             this.flipX = false;
         }
     }
-    update() {
+    update()
+    {
         this.gridPosX += this.moveX;
         this.gridPosY += this.moveY;
         if (this.gridPosY * this.scene.tileSize > config.height) {

@@ -1,5 +1,6 @@
 class SceneMain extends Phaser.Scene {
-    constructor() {
+    constructor()
+    {
         super({ key: 'SceneMain' });
         this.tileSize = 75;
         this.frameFree = false;
@@ -9,26 +10,34 @@ class SceneMain extends Phaser.Scene {
         this.action = null;
         this.score = 0;
 
-        setInterval(()=> {
-            this.frameFree = true;
-        }, 1000.0 / this.fps);
+        setInterval(
+            ()=> {
+                this.frameFree = true;
+            }, 1000.0 / this.fps
+        );
     }
-    preload() {
+    preload()
+    {
         this.load.image('background', '/games/kannapillar/assets/background.png');
         this.load.image('chocolate', '/games/kannapillar/assets/chocolate.png');
-        this.load.spritesheet('sprHead', '/games/kannapillar/assets/sprHead.png', {
-            frameWidth: this.tileSize,
-            frameHeight: this.tileSize
-        });
-        this.load.spritesheet('sprTail', '/games/kannapillar/assets/sprTail.png', {
-            frameWidth: this.tileSize,
-            frameHeight: this.tileSize
-        });
+        this.load.spritesheet(
+            'sprHead', '/games/kannapillar/assets/sprHead.png', {
+                frameWidth: this.tileSize,
+                frameHeight: this.tileSize
+            }
+        );
+        this.load.spritesheet(
+            'sprTail', '/games/kannapillar/assets/sprTail.png', {
+                frameWidth: this.tileSize,
+                frameHeight: this.tileSize
+            }
+        );
         this.load.audio('sfxEat', '/games/kannapillar/assets/sfxEat.mp3');
         this.load.audio('sfxLoop', '/games/kannapillar/assets/sfxLoop.mp3');
         this.load.audio('sfxWicked', '/games/kannapillar/assets/sfxWicked.mp3');
     }
-    create() {
+    create()
+    {
         let bg = this.add.sprite(0, 0, 'background');
         bg.setOrigin(0, 0);
 
@@ -40,24 +49,30 @@ class SceneMain extends Phaser.Scene {
         this.sfx.backgroundMusic.loop = true;
         this.sfx.backgroundMusic.play();
 
-        this.anims.create({
-            key: 'headWiggle',
-            frames: this.anims.generateFrameNames('sprHead', {start: 0, end: 1}),
-            frameRate: 4,
-            repeat: -1
-        });
-        this.anims.create({
-            key: 'eat',
-            frames: this.anims.generateFrameNumbers('sprHead', {start: 2, end: 3}),
-            frameRate: 2,
-            repeat: 1
-        });
-        this.anims.create({
-            key: 'tailWiggle',
-            frames: this.anims.generateFrameNumbers('sprTail', {start: 0, end: 1}),
-            frameRate: 4,
-            repeat: -1
-        });
+        this.anims.create(
+            {
+                key: 'headWiggle',
+                frames: this.anims.generateFrameNames('sprHead', {start: 0, end: 1}),
+                frameRate: 4,
+                repeat: -1
+            }
+        );
+        this.anims.create(
+            {
+                key: 'eat',
+                frames: this.anims.generateFrameNumbers('sprHead', {start: 2, end: 3}),
+                frameRate: 2,
+                repeat: 1
+            }
+        );
+        this.anims.create(
+            {
+                key: 'tailWiggle',
+                frames: this.anims.generateFrameNumbers('sprTail', {start: 0, end: 1}),
+                frameRate: 4,
+                repeat: -1
+            }
+        );
 
         this.player = new Player(
             this,
@@ -88,8 +103,9 @@ class SceneMain extends Phaser.Scene {
         this.keyA.on('down', this.takeAction.bind(this, this.player.moveLeft.bind(this.player)));
         this.keyD.on('down', this.takeAction.bind(this, this.player.moveRight.bind(this.player)));
     }
-    update(time, delta) {
-        if(!this.frameFree){
+    update(time, delta)
+    {
+        if(!this.frameFree) {
             return;
         }
         this.frameFree = false;
@@ -111,11 +127,10 @@ class SceneMain extends Phaser.Scene {
             this.player.update();
             this.player.anims.play('headWiggle', true);
 
-            if(
-                ((this.difference(this.food.x, this.player.x) == this.tileSize ) &&
-                this.food.y == this.player.y) ||
-                ((this.difference(this.food.y, this.player.y) == this.tileSize ) &&
-                this.food.x == this.player.x)
+            if(((this.difference(this.food.x, this.player.x) == this.tileSize ) 
+                && this.food.y == this.player.y) 
+                || ((this.difference(this.food.y, this.player.y) == this.tileSize ) 
+                && this.food.x == this.player.x)
             ) {
                 this.player.anims.play('eat', true);
                 this.sfx.eat.play();
@@ -129,23 +144,27 @@ class SceneMain extends Phaser.Scene {
         }
         this.actionTaken = false;
     }
-    takeAction(callback){
-        if(!this.actionTaken){
+    takeAction(callback)
+    {
+        if(!this.actionTaken) {
             callback();
         }
         this.actionTaken = true;
     }
-    grow() {
+    grow()
+    {
         let tailPart = new Tail(this, -75, -75, 'sprTail');
         tailPart.anims.play('tailWiggle', true, this.player.tail.length % 2);
         this.player.tail.push(tailPart);
     }
-    relocateFood() {
+    relocateFood()
+    {
         this.food.gridPosX = Math.floor(this.game.config.width / this.tileSize * Math.random()) + 0.5;
         this.food.gridPosY = Math.floor(this.game.config.height / this.tileSize * Math.random()) + 0.5;
         this.food.update();
     }
-    difference(a, b) {
+    difference(a, b)
+    {
         return Math.abs(a - b);
     }
 }

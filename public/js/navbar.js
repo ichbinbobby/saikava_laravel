@@ -1,5 +1,6 @@
 // When the user scrolls the page, execute myFunction
-window.onscroll = function() {stickyNavbar()};
+window.onscroll = function () {
+    stickyNavbar()};
 
 // Get the navbar
 var navbar = document.getElementById("navbar");
@@ -8,16 +9,18 @@ var navbar = document.getElementById("navbar");
 var sticky = navbar.offsetTop;
 
 // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-function stickyNavbar() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky")
-  } else {
-    navbar.classList.remove("sticky");
-  }
+function stickyNavbar()
+{
+    if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky")
+    } else {
+        navbar.classList.remove("sticky");
+    }
 }
 
 // Used to toggle the menu on small screens when clicking on the menu button
-function menu_toggle() {
+function menu_toggle()
+{
     var x = document.getElementById("menu_icon");
     if (x.className.indexOf("w3-show") == -1) {
         x.className += " w3-show";
