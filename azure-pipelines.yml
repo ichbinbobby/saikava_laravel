@@ -52,9 +52,3 @@ steps:
     vendor/squizlabs/php_codesniffer/bin/phpcs public/*
   displayName: 'Checking style with PHP Code Sniffer'
 # vendor/squizlabs/php_codesniffer/bin/phpcs --ignore=*/app/*,*/vendor/*,*/config/*,*/node_modules/*,*/bootstrap/* *
-
-- script: |
-    vendor/squizlabs/php_codesniffer/bin/phpcbf --config-set ignore_errors_on_exit 1 --config-set ignore_warnings_on_exit 1
-    vendor/squizlabs/php_codesniffer/bin/phpcbf public/*
-  displayName: 'Fixing errors with PHP Code Sniffer'
-# vendor/squizlabs/php_codesniffer/bin/phpcbf --ignore=*/app/*,*/vendor/*,*/config/*,*/node_modules/*,*/bootstrap/* *
