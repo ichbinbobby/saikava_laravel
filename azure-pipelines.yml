@@ -44,6 +44,7 @@ steps:
 - script: vendor/bin/phpunit
   displayName: 'Run tests with phpunit'
 
+# run this for php files
 - script: |
     composer require "squizlabs/php_codesniffer=*"
     vendor/squizlabs/php_codesniffer/bin/phpcs --config-set colors 1
@@ -52,3 +53,5 @@ steps:
     vendor/squizlabs/php_codesniffer/bin/phpcs --ignore=public/games/kannapillar/js/SceneMain.js public/games/*
   displayName: 'Checking style with PHP Code Sniffer'
 # vendor/squizlabs/php_codesniffer/bin/phpcs --ignore=*/app/*,*/vendor/*,*/config/*,*/node_modules/*,*/bootstrap/* *
+
+# run eslint on javascript files
