@@ -98,8 +98,4 @@
     </div>
 
   </div>
-
-  <!-- <div class="w3-container w3-center w3-opacity w3-padding-64">
-      <h1 class="w3-margin w3-xlarge">"I need to prepare my heart." - Episode 6</h1>
-  </div> -->
 @endsection
